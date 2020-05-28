@@ -26,6 +26,7 @@ class _TabContainerState extends State<TabContainer> {
         style: optionStyle,
       ),
     ),
+    Container(),
     const Center(
       child: Text(
         'Index 2: School',
@@ -41,6 +42,8 @@ class _TabContainerState extends State<TabContainer> {
   ];
 
   void _onItemTapped(int index) {
+    if (index == 2) return;
+
     _pageController.jumpToPage(index);
   }
 
@@ -82,6 +85,10 @@ class _TabContainerState extends State<TabContainer> {
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.school),
+            title: Text(''),
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.school),
             title: Text(S.of(context).tabService),
           ),
           BottomNavigationBarItem(
@@ -94,10 +101,20 @@ class _TabContainerState extends State<TabContainer> {
         onTap: _onItemTapped,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'take photo',
-        child: const Icon(Icons.camera_alt),
+      floatingActionButton: Container(
+        height: 85,
+        width: 85,
+        margin: EdgeInsets.only(top: 10),
+        padding: EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40),
+        ),
+        child: FloatingActionButton(
+          onPressed: () {},
+          elevation: 0,
+          highlightElevation: 0,
+          child: const Icon(Icons.camera_alt, color: Colors.white),
+        ),
       ),
     );
   }

@@ -1,0 +1,9 @@
+{
+  "hello": "Hello World!",
+  "skip": "Skip",
+  "startApp": "Let's Go!",
+  "tabHome": "Home",
+  "tabDiscover": "Discover",
+  "tabService": "Service",
+  "tabUser": "Me"
+}

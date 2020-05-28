@@ -89,7 +89,8 @@ dev_dependencies:
   logging: ^0.11.4
   flutter_stetho: ^0.5.2
   # NoSQL 数据库生成器
-  hive_generator: ^0.7.0+2
+#  hive_generator: ^0.7.0+2
+  hive_generator: any
   # 生成器
   injectable_generator: ^0.4.0
   intl_utils: ^1.5.0

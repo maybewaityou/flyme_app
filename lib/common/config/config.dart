@@ -4,7 +4,12 @@ import 'package:flutter_stetho/flutter_stetho.dart';
 import 'package:flyme_app/common/app/app_component.dart';
 import 'package:flyme_app/common/app/application.dart';
 
-enum EnvType { development, staging, production, testing }
+enum EnvType {
+  development,
+  staging,
+  production,
+  testing,
+}
 
 class Config {
   static Config value;

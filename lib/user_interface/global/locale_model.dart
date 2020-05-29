@@ -14,8 +14,8 @@ class LocaleModel extends _$ViewModel {
     print('==== LocaleModel init ====');
   }
 
-  void changeLocale(Locale locale) {
-    S.load(locale);
+  void changeLocale(String locale) {
+    S.load(Locale(locale));
     notifyListeners();
   }
 }

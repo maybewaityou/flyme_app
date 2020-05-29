@@ -22,20 +22,20 @@ class _TabContainerState extends State<TabContainer> {
     HomePage(),
     const Center(
       child: Text(
-        'Index 1: Business',
+        'Index 1: Community',
         style: optionStyle,
       ),
     ),
     Container(),
     const Center(
       child: Text(
-        'Index 2: School',
+        'Index 2: ScenicArea',
         style: optionStyle,
       ),
     ),
     const Center(
       child: Text(
-        'Index 3: School',
+        'Index 3: Me',
         style: optionStyle,
       ),
     ),
@@ -80,16 +80,16 @@ class _TabContainerState extends State<TabContainer> {
             title: Text(S.of(context).tabHome),
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.search),
-            title: Text(S.of(context).tabDiscover),
+            icon: const Icon(Icons.forum),
+            title: Text(S.of(context).tabCommunity),
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.school),
             title: Text(''),
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.school),
-            title: Text(S.of(context).tabService),
+            icon: const Icon(Icons.map),
+            title: Text(S.of(context).tabScenicArea),
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.account_circle),

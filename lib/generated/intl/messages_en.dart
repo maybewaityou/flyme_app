@@ -24,9 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "hello" : MessageLookupByLibrary.simpleMessage("Hello World!"),
     "skip" : MessageLookupByLibrary.simpleMessage("Skip"),
     "startApp" : MessageLookupByLibrary.simpleMessage("Let\'s Go!"),
-    "tabDiscover" : MessageLookupByLibrary.simpleMessage("Discover"),
+    "tabCommunity" : MessageLookupByLibrary.simpleMessage("Community"),
     "tabHome" : MessageLookupByLibrary.simpleMessage("Home"),
-    "tabService" : MessageLookupByLibrary.simpleMessage("Service"),
+    "tabScenicArea" : MessageLookupByLibrary.simpleMessage("ScenicArea"),
     "tabUser" : MessageLookupByLibrary.simpleMessage("Me")
   };
 }

@@ -51,14 +51,14 @@ class HomePage extends StatelessWidget {
             RaisedButton(
               onPressed: () {
                 final localeModel = getIt.get<LocaleModel>();
-                localeModel.changeLocale(Locale('zh'));
+                localeModel.changeLocale('zh');
               },
               child: const Text('change language zh'),
             ),
             RaisedButton(
               onPressed: () {
                 final localeModel = getIt.get<LocaleModel>();
-                localeModel.changeLocale(Locale('en'));
+                localeModel.changeLocale('en');
               },
               child: const Text('change language en'),
             ),

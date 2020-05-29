@@ -64,7 +64,7 @@ class _TabContainerState extends State<TabContainer> {
           itemBuilder: (ctx, index) => _widgetOptions[index],
           itemCount: _widgetOptions.length,
           controller: _pageController,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           onPageChanged: (index) {
             setState(() {
               _selectedIndex = index;
@@ -84,7 +84,7 @@ class _TabContainerState extends State<TabContainer> {
             title: Text(S.of(context).tabCommunity),
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.school),
+            icon: const Icon(Icons.add),
             title: Text(''),
           ),
           BottomNavigationBarItem(
@@ -104,8 +104,8 @@ class _TabContainerState extends State<TabContainer> {
       floatingActionButton: Container(
         height: 85,
         width: 85,
-        margin: EdgeInsets.only(top: 10),
-        padding: EdgeInsets.all(8),
+        margin: const EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
         ),

@@ -113,7 +113,7 @@ class _TabContainerState extends State<TabContainer> {
           onPressed: () {},
           elevation: 0,
           highlightElevation: 0,
-          child: const Icon(Icons.camera_alt, color: Colors.white),
+          child: const Icon(Icons.photo, color: Colors.white, size: 35),
         ),
       ),
     );

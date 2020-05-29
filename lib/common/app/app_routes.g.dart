@@ -8,11 +8,13 @@ part of 'app_routes.dart';
 
 class AppRoutesPath {
   static const splash = '/splash';
+  static const second = '/home/second';
   static const tab = '/tab';
 }
 
 final _routesMap = {
   AppRoutesPath.splash: (params) => SplashPage(),
+  AppRoutesPath.second: (params) => SecondPage(),
   AppRoutesPath.tab: (params) => TabContainer(),
 };
 

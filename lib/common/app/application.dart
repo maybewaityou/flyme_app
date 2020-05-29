@@ -15,7 +15,6 @@ void configureDependencies() => $initGetIt(getIt);
 class Application {
   Router router;
 
-  @override
   Future<void> init() async {
     _initLog();
     _initRouter();

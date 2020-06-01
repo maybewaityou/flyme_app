@@ -12,7 +12,7 @@ import 'package:injectable/injectable.dart';
 
 typedef Action = void Function();
 
-@singleton
+@lazySingleton
 class NetworkService {
   static const String tag = 'NetworkService';
   static NetworkService _instance;

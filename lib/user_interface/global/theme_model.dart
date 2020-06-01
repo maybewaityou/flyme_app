@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 part 'theme_model.g.dart';
 
-@singleton
+@lazySingleton
 @Properties([
   Property(
     name: 'theme',

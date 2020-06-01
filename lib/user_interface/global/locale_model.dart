@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 
 part 'locale_model.g.dart';
 
-@singleton
+@lazySingleton
 @Properties([])
 class LocaleModel extends _$ViewModel {
   @override

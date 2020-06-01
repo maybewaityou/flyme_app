@@ -11,9 +11,8 @@ import 'package:flyme_app/user_interface/global/theme_model.dart';
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
-  //Eager singletons must be registered in the right order
-  g.registerSingleton<DBService>(DBService());
-  g.registerSingleton<LocaleModel>(LocaleModel());
-  g.registerSingleton<NetworkService>(NetworkService());
-  g.registerSingleton<ThemeModel>(ThemeModel());
+  g.registerLazySingleton<DBService>(() => DBService());
+  g.registerLazySingleton<LocaleModel>(() => LocaleModel());
+  g.registerLazySingleton<NetworkService>(() => NetworkService());
+  g.registerLazySingleton<ThemeModel>(() => ThemeModel());
 }

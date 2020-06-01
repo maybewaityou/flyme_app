@@ -34,6 +34,7 @@ dependencies:
   responsive_builder: ^0.2.0+2
   # SwiftUI 方式编写 UI
   velocity_x: ^0.4.0
+  styled_widget: ^0.2.1+2
   flushbar: ^1.10.4
   # 引导页中的"点"
   dots_indicator: ^1.1.0

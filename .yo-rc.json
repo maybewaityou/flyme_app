@@ -1,0 +1,8 @@
+{
+  "generator-flyme": {
+    "promptValues": {
+      "type": "yes",
+      "modulePath": "lib/feature"
+    }
+  }
+}

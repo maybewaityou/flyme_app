@@ -78,13 +78,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   catcher: e5585ed31458c849f4fd9c3719b2fcb0188b8918
-  device_info: d7d233b645a32c40dfdc212de5cf646ca482f175
+  device_info: 7b574af4d29d2986f3d5b39589540b0fcde9663c
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_mailer: 2ef5a67087bc8c6c4cefd04a178bf1ae2c94cd83
   flutter_stetho: 0e844616b41b86d6429e86a518ae3a46e83af7cd
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
+  package_info: cbdc7ed0cdf81bb22a1007dc0649358dc23e4d9f
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d

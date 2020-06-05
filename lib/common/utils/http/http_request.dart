@@ -1,3 +1,4 @@
+import 'package:flyme_app/anticorruption/anticorruption.dart';
 import 'package:meta/meta.dart';
 
 enum Method { get, post }
@@ -28,23 +29,26 @@ class Meta {
   /// get or post.
   final Method method;
 
-  const Meta(
-      {this.silence,
-      this.message,
-      this.resend,
-      this.successTitle,
-      this.successMessage,
-      this.errorTitle,
-      this.errorMessage,
-      this.method});
+  // data model translator
+  final DataModelTranslator translator;
+
+  const Meta({
+    this.silence,
+    this.message,
+    this.resend,
+    this.successTitle,
+    this.successMessage,
+    this.errorTitle,
+    this.errorMessage,
+    this.method,
+    @required this.translator,
+  });
 }
 
 @immutable
-class ParamsWrapper {
+class ParameterWrapper {
   final Meta meta;
   final Map<String, dynamic> params;
 
-  ParamsWrapper(
-      {this.params,
-      this.meta = const Meta(silence: true, method: Method.post)});
+  const ParameterWrapper({this.params, @required this.meta});
 }

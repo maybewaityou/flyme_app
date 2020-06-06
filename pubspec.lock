@@ -383,7 +383,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "8fe5c4dabdcc591c349d180a0311da7d90b8cf90"
+      resolved-ref: "23c22068e53e7e680572c811f7eda75285ef3b75"
       url: "https://github.com/maybewaityou/flyme_generator.git"
     source: git
     version: "0.0.1"

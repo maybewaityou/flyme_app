@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'app_routes.dart';
-
 // **************************************************************************
 // Generator: Instance of 'RouteConfigGenerator'
 // **************************************************************************
+
+import 'package:fluro/fluro.dart';
+import 'package:flyme_app/common/component/page/not_found_page.dart';
+import 'package:flyme_app/user_interface/splash/splash_page.dart';
+import 'package:flyme_app/user_interface/tab/home/page/second.dart';
+import 'package:flyme_app/user_interface/tab/tab_container.dart';
 
 class AppRoutesPath {
   static const splash = '/splash';

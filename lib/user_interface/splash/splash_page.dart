@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flyme_annotation/router/router.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
-import 'package:flyme_app/common/app/app_routes.dart';
+import 'package:flyme_app/common/app/app_routes.config.dart';
 import 'package:flyme_app/common/app/application.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/service/service.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
-import 'package:flyme_app/common/app/app_routes.dart';
+import 'package:flyme_app/common/app/app_routes.config.dart';
 import 'package:flyme_app/common/app/application.dart';
 import 'package:flyme_app/common/component/responsive_widget/size_config.dart';
 import 'package:flyme_app/common/config/config.dart';

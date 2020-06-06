@@ -19,6 +19,6 @@ class DataModelAdapter {
 
   static T toModel<T extends DataModel>(
       Map<String, dynamic> json, DataModelTranslator<T> translator) {
-    return translator.translate(json);
+    return translator.translate(json['result']);
   }
 }

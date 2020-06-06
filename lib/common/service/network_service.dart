@@ -67,8 +67,7 @@ class NetworkService {
       }
       // 转换格式
       final json = DataModelAdapter.snakeCase2Camelize(response.data);
-      return right(
-          DataModelAdapter.toModel<T>(json['result'], meta.translator));
+      return right(DataModelAdapter.toModel<T>(json, meta.translator));
     } on Exception catch (error) {
       print('== error ===>>>> $error');
       return left(_handleError<T>(error, url: url, wrapper: wrapper));

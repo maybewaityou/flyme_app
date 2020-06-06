@@ -18,7 +18,7 @@ class PasswordAuthRepository implements IAuthRepository {
   @override
   Future<void> login() {
     print('== auth ===>>>> password auth');
-    return Future.value();
+    return _remoteDataSource.login();
   }
 }
 

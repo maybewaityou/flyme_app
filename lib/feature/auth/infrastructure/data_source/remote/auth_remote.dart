@@ -17,15 +17,16 @@ class PasswordRemoteDataSource implements IAuthRemoteDataSource {
 
   @override
   Future<void> login() async {
-    final dogValue = await _service.request<Dog>(
-      '',
+    final userOctocatValue = await _service.request<UserOctocat>(
+      '/userOctocat.json',
       wrapper: ParameterWrapper(
         meta: Meta(
-          translator: DogTranslator(),
+          translator: UserOctocatTranslator(),
         ),
       ),
     );
-    final dog = dogValue.getOrElse(() => null);
+    final userOctocat = userOctocatValue.getOrElse(() => null);
+    print('== userOctocat ===>>>> $userOctocat');
     return Future.value();
   }
 }

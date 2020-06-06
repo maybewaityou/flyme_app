@@ -65,7 +65,10 @@ class NetworkService {
         return left(_handleError<T>(HttpException(response),
             url: url, wrapper: wrapper));
       }
-      return right(DataModelAdapter.toModel<T>(response.data, meta.translator));
+      // 转换格式
+      final json = DataModelAdapter.snakeCase2Camelize(response.data);
+      return right(
+          DataModelAdapter.toModel<T>(json['result'], meta.translator));
     } on Exception catch (error) {
       print('== error ===>>>> $error');
       return left(_handleError<T>(error, url: url, wrapper: wrapper));

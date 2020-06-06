@@ -7,6 +7,6 @@ class Facade extends Config {
 
   final int showIntroductionTimes = 3;
   final String appName = 'Flutter Starter Kit';
-  final String baseUrl = 'https://itunes.apple.com/hk';
+  final String baseUrl = 'http://localhost/api';
   final String dbName = 'flutterStarterKit.db';
 }

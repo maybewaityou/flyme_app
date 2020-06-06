@@ -11,3 +11,10 @@ class DogTranslator extends DataModelTranslator<Dog> {
     return Dog.fromJson(json);
   }
 }
+
+class UserOctocatTranslator extends DataModelTranslator<UserOctocat> {
+  @override
+  UserOctocat translate(Map<String, dynamic> json) {
+    return UserOctocat.fromJson(json);
+  }
+}

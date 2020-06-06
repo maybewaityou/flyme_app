@@ -73,6 +73,7 @@ dependencies:
   flutter_icons: 1.1.0
   # 闪退日志收集
   catcher: ^0.3.7
+  strings: ^0.1.2
   # 生成器注解
   freezed_annotation: ^0.7.1
   flyme_annotation:

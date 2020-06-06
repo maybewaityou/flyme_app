@@ -21,7 +21,7 @@ class AuthUseCase implements IAuthUseCase {
 
   Future<void> login() {
     print('== password ===>>>> $passwordAuthRepository');
-    return Future.value();
+    return passwordAuthRepository.login();
   }
 
   @override

@@ -22,7 +22,7 @@ class UserOctocat extends Equatable implements DataModel {
   final String updatedAt;
   final List<User> customUsers;
 
-  const UserOctocat(
+  const UserOctocat({
     this.login,
     this.nodeId,
     this.avatarUrl,
@@ -34,7 +34,7 @@ class UserOctocat extends Equatable implements DataModel {
     this.createdAt,
     this.updatedAt,
     this.customUsers,
-  );
+  });
 
   factory UserOctocat.fromJson(Map<String, dynamic> json) =>
       _$UserOctocatFromJson(json);
@@ -56,7 +56,7 @@ class User extends Equatable implements DataModel {
   final int age;
   final Dog selfDog;
 
-  const User(this.name, this.userName, this.age, this.selfDog);
+  const User({this.name, this.userName, this.age, this.selfDog});
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
@@ -75,7 +75,7 @@ class Dog extends Equatable implements DataModel {
   final String dogName;
   final int age;
 
-  const Dog(this.dogName, this.age);
+  const Dog({this.dogName, this.age});
 
   factory Dog.fromJson(Map<String, dynamic> json) => _$DogFromJson(json);
   Map<String, dynamic> toJson() => _$DogToJson(this);

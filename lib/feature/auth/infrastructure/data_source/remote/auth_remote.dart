@@ -17,9 +17,11 @@ class PasswordRemoteDataSource implements IAuthRemoteDataSource {
 
   @override
   Future<void> login() async {
+    Dog(dogName: '', age: 3).toJson();
     final userOctocatValue = await _service.request<UserOctocat>(
       '/userOctocat.json',
       wrapper: ParameterWrapper(
+        params: {},
         meta: Meta(
           translator: UserOctocatTranslator(),
         ),

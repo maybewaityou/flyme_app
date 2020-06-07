@@ -8,17 +8,17 @@ part of 'model.dart';
 
 UserOctocat _$UserOctocatFromJson(Map<String, dynamic> json) {
   return UserOctocat(
-    json['login'] as String,
-    json['nodeId'] as String,
-    json['avatarUrl'] as String,
-    json['followersUrl'] as String,
-    json['url'] as String,
-    json['name'] as String,
-    json['company'] as String,
-    json['blog'] as String,
-    json['createdAt'] as String,
-    json['updatedAt'] as String,
-    (json['customUsers'] as List)
+    login: json['login'] as String,
+    nodeId: json['nodeId'] as String,
+    avatarUrl: json['avatarUrl'] as String,
+    followersUrl: json['followersUrl'] as String,
+    url: json['url'] as String,
+    name: json['name'] as String,
+    company: json['company'] as String,
+    blog: json['blog'] as String,
+    createdAt: json['createdAt'] as String,
+    updatedAt: json['updatedAt'] as String,
+    customUsers: (json['customUsers'] as List)
         .map((e) => User.fromJson(e as Map<String, dynamic>))
         .toList(),
   );
@@ -41,10 +41,10 @@ Map<String, dynamic> _$UserOctocatToJson(UserOctocat instance) =>
 
 User _$UserFromJson(Map<String, dynamic> json) {
   return User(
-    json['name'] as String,
-    json['userName'] as String,
-    json['age'] as int,
-    Dog.fromJson(json['selfDog'] as Map<String, dynamic>),
+    name: json['name'] as String,
+    userName: json['userName'] as String,
+    age: json['age'] as int,
+    selfDog: Dog.fromJson(json['selfDog'] as Map<String, dynamic>),
   );
 }
 
@@ -57,8 +57,8 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
 
 Dog _$DogFromJson(Map<String, dynamic> json) {
   return Dog(
-    json['dogName'] as String,
-    json['age'] as int,
+    dogName: json['dogName'] as String,
+    age: json['age'] as int,
   );
 }
 

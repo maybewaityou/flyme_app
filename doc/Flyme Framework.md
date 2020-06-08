@@ -2,6 +2,12 @@
 
 > 基于领域驱动设计思想.
 
+[TOC]
+
+## 架构图
+
+![architecture](./image/DDD.png)
+
 ## 目录结构
 
 ```shell

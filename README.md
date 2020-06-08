@@ -1,16 +1,230 @@
 # flyme_app
 
-A new Flutter project.
+> 基于领域驱动设计思想.
 
-## Getting Started
+[TOC]
 
-This project is a starting point for a Flutter application.
+## 架构图
 
-A few resources to get you started if this is your first Flutter project:
+![architecture](./doc/image/DDD.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## 目录结构
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```shell
+lib
+├── anticorruption																						# 防腐层
+│   ├── adapter																								# 适配器
+│   │   └── adapter.dart
+│   ├── anticorruption.dart
+│   ├── assemble																							# 装配器
+│   │   └── assemble.dart
+│   └── translator																						# 翻译器
+│       └── translator.dart
+├── application																								# 应用层
+│   ├── application.dart
+│   ├── service																								# 应用服务
+│   │   └── service.dart
+│   └── use_case																							# 业务用例
+│       └── use_case.dart
+├── common																										# 全局公共
+│   ├── app
+│   │   ├── app_component.dart
+│   │   ├── app_provider.dart
+│   │   ├── app_routes.config.dart
+│   │   ├── app_routes.dart
+│   │   ├── application.dart
+│   │   └── application.iconfig.dart
+│   ├── component																							# 公共组件
+│   │   ├── app_title
+│   │   │   └── app_title.dart
+│   │   ├── async_loader
+│   │   │   └── async_loader.dart
+│   │   ├── component.dart
+│   │   ├── dialog
+│   │   │   └── dialog.dart
+│   │   ├── page
+│   │   │   └── not_found_page.dart
+│   │   ├── responsive_widget
+│   │   │   ├── responsive_widget.dart
+│   │   │   └── size_config.dart
+│   │   └── widget																						# 公共基础控件
+│   │       └── widget.dart
+│   ├── config																								# 配置文件
+│   │   ├── config.dart
+│   │   └── theme																							# 主题配置
+│   │       └── theme.dart
+│   ├── provider																							# 自定义 Provider
+│   │   ├── model_provider.dart
+│   │   ├── model_provider_selector.dart
+│   │   └── view_model																				# ViewModel 基类
+│   │       └── view_model.dart
+│   ├── service																								# 基础服务
+│   │   ├── db_service.dart
+│   │   ├── network_service.dart
+│   │   └── service.dart
+│   └── utils																									# 常用工具类
+│       ├── function
+│       │   ├── functional.dart
+│       │   └── string.dart
+│       ├── http
+│       │   ├── http_exception.dart
+│       │   └── http_request.dart
+│       ├── log
+│       │   ├── dio_logger.dart
+│       │   └── logger.dart
+│       ├── stroage
+│       │   └── sp_utils.dart
+│       └── utils.dart
+├── domain																										# 领域层
+│   ├── factory																								# 工厂
+│   │   └── factory.dart
+│   ├── model																									# 领域模型
+│   │   ├── aggregate.dart																		# 聚合
+│   │   ├── domain_event.dart																	# 领域事件
+│   │   ├── domain_event_publisher.dart												# 领域发布器
+│   │   ├── domain_event_subscriber.dart											# 领域订阅器
+│   │   ├── entity.dart																				# 实体
+│   │   └── value_object.dart																	# 值对象
+│   ├── repository																						# 数据源 - 接口
+│   │   └── repository.dart
+│   ├── service																								# 领域服务
+│   │   └── service.dart
+│   └── validator																							# 领域验证器
+│       ├── error
+│       │   └── error.dart
+│       ├── failure
+│       │   ├── failure.dart
+│       │   └── failure.freezed.dart
+│       ├── validator.dart
+│       └── value_validators.dart
+├── feature																										# 新特性 (业务模块)
+│   └── auth
+│       ├── application
+│       │   ├── service
+│       │   │   └── service.dart
+│       │   └── use_case
+│       │       └── use_case.dart
+│       ├── domain
+│       │   ├── model
+│       │   │   ├── aggregate
+│       │   │   ├── entity
+│       │   │   ├── event
+│       │   │   ├── service
+│       │   │   └── value_object
+│       │   ├── repository
+│       │   │   ├── auth_repository.dart
+│       │   │   └── repository.dart
+│       │   ├── service
+│       │   │   └── service.dart
+│       │   └── validator
+│       │       ├── error
+│       │       │   └── error.dart
+│       │       ├── failure
+│       │       │   └── failure.dart
+│       │       ├── validator.dart
+│       │       └── value_validators.dart
+│       ├── infrastructure
+│       │   ├── data_source
+│       │   │   ├── local
+│       │   │   │   └── auth_local.dart
+│       │   │   └── remote
+│       │   │       └── auth_remote.dart
+│       │   ├── model
+│       │   │   └── model.dart
+│       │   └── repository
+│       │       └── repository.dart
+│       └── user_interface
+│           ├── component
+│           │   ├── component.dart
+│           │   └── widget
+│           │       └── widget.dart
+│           ├── page
+│           │   ├── auth_page.dart
+│           │   └── page.dart
+│           └── view_model
+│               ├── auth_view_model.dart
+│               ├── auth_view_model.g.dart
+│               └── view_model.dart
+├── generated																									# 国际化相关 (自动生成)
+│   ├── intl
+│   │   ├── messages_all.dart
+│   │   ├── messages_en.dart
+│   │   └── messages_zh.dart
+│   └── l10n.dart
+├── infrastructure																						# 基础设施层
+│   ├── data_source																						# 数据源
+│   │   ├── data_source.dart
+│   │   ├── local																							# 本地数据源
+│   │   │   └── local.dart
+│   │   └── remote																						# 远程数据源
+│   │       └── remote.dart
+│   ├── infrastructure.dart
+│   ├── model																									# 数据模型
+│   │   ├── dto																								# DTO
+│   │   │   ├── user_octocat_dto.dart
+│   │   │   ├── user_octocat_dto.freezed.dart
+│   │   │   └── user_octocat_dto.g.dart
+│   │   ├── model.dart
+│   │   └── model.g.dart
+│   └── repository																						# 资源库 - 实现
+│       └── repository.dart
+├── l10n																											# 国际化相关
+│   ├── intl_en.arb
+│   └── intl_zh.arb
+├── main.dart																									# 程序入口
+└── user_interface																						# 用户接口层
+    ├── global																								# 全局 ViewModel 配置
+    │   ├── locale_model.dart
+    │   ├── locale_model.g.dart
+    │   ├── theme_model.dart
+    │   └── theme_model.g.dart
+    ├── introduction																					# 引导页
+    ├── splash																								# 启动页
+    │   └── splash_page.dart
+    ├── tab																										# tab 页
+    │   ├── home
+    │   │   ├── component																			# 私有模块中的组件
+    │   │   │   ├── component.dart
+    │   │   │   └── widget																		# 私有模块中的基础控件
+    │   │   │       └── widget.dart
+    │   │   ├── page																					# UI 界面
+    │   │   │   ├── page.dart
+    │   │   │   └── second.dart
+    │   │   └── view_model																		# ViewModel - 界面的数据来源与事件绑定
+    │   │       ├── home_view_model.dart
+    │   │       ├── home_view_model.g.dart
+    │   │       └── view_model.dart
+    │   └── tab_container.dart
+    └── user_interface.dart
+```
+
+## 领域驱动设计相关概念
+
+### 领域, 子域和界限上下文
+
+### 实体
+
+### 值对象
+
+### 领域服务
+
+### 领域事件
+
+### 模块
+
+### 聚合
+
+### 工厂
+
+### 资源库
+
+### 集成界限上下文
+
+### 应用程序
+
+
+
+### 
+
+
+

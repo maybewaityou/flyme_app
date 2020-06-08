@@ -3,6 +3,7 @@ import 'package:flyme_app/anticorruption/anticorruption.dart';
 import 'package:flyme_app/common/service/network_service.dart';
 import 'package:flyme_app/common/utils/http/http_request.dart';
 import 'package:flyme_app/feature/auth/domain/repository/repository.dart';
+import 'package:flyme_app/infrastructure/model/dto/user_octocat_dto.dart';
 import 'package:flyme_app/infrastructure/model/model.dart';
 import 'package:injectable/injectable.dart';
 
@@ -27,6 +28,7 @@ class PasswordRemoteDataSource implements IAuthRemoteDataSource {
       ),
     );
     final userOctocat = userOctocatValue.getOrElse(() => null);
+    UserOctocatDTO.fromDomain(userOctocat);
     print('== userOctocat ===>>>> $userOctocat');
     return Future.value();
   }

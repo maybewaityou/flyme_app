@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
-import 'package:flyme_app/common/app/app_routes.config.dart';
+import 'package:flyme_app/common/app/app_routes.dart';
 import 'package:flyme_app/common/app/application.dart';
 import 'package:flyme_app/common/component/app_title/app_title.dart';
 import 'package:flyme_app/common/config/config.dart';

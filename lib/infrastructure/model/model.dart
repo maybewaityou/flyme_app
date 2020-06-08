@@ -8,7 +8,7 @@ part 'model.g.dart';
 @immutable
 abstract class DataModel {}
 
-@JsonSerializable(nullable: false)
+@JsonSerializable()
 class UserOctocat extends Equatable implements DataModel {
   final String login;
   final String nodeId;
@@ -49,7 +49,7 @@ class UserOctocat extends Equatable implements DataModel {
   }
 }
 
-@JsonSerializable(nullable: false)
+@JsonSerializable()
 class User extends Equatable implements DataModel {
   final String name;
   final String userName;
@@ -70,7 +70,7 @@ class User extends Equatable implements DataModel {
   }
 }
 
-@JsonSerializable(nullable: false)
+@JsonSerializable()
 class Dog extends Equatable implements DataModel {
   final String dogName;
   final int age;

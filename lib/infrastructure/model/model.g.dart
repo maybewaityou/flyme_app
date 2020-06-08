@@ -19,8 +19,9 @@ UserOctocat _$UserOctocatFromJson(Map<String, dynamic> json) {
     createdAt: json['createdAt'] as String,
     updatedAt: json['updatedAt'] as String,
     customUsers: (json['customUsers'] as List)
-        .map((e) => User.fromJson(e as Map<String, dynamic>))
-        .toList(),
+        ?.map(
+            (e) => e == null ? null : User.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -44,7 +45,9 @@ User _$UserFromJson(Map<String, dynamic> json) {
     name: json['name'] as String,
     userName: json['userName'] as String,
     age: json['age'] as int,
-    selfDog: Dog.fromJson(json['selfDog'] as Map<String, dynamic>),
+    selfDog: json['selfDog'] == null
+        ? null
+        : Dog.fromJson(json['selfDog'] as Map<String, dynamic>),
   );
 }
 

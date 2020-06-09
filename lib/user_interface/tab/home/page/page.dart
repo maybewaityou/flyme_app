@@ -94,21 +94,9 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
-                    child: const Text('navigate to second page'),
+                    child: const Text('navigate to registry'),
                     onPressed: () {
-                      AppProvider.navigateTo(context, AppRoutesPath.second);
-                    },
-                  ),
-                  RaisedButton(
-                    child: const Text('navigate to second page'),
-                    onPressed: () {
-                      AppProvider.navigateTo(context, AppRoutesPath.second);
-                    },
-                  ),
-                  RaisedButton(
-                    child: const Text('navigate to second page'),
-                    onPressed: () {
-                      AppProvider.navigateTo(context, AppRoutesPath.second);
+                      AppProvider.navigateTo(context, AppRoutesPath.registry);
                     },
                   ),
                   ModelProvider<HomeViewModel>(

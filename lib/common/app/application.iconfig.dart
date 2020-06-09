@@ -32,8 +32,7 @@ void $initGetIt(GetIt g, {String environment}) {
       () => SmsLocalDataSource(g<DBService>()),
       instanceName: 'SmsLocalDataSource');
   g.registerLazySingleton<IRegistryLocalDataSource>(
-      () => RegistryLocalDataSource(g<DBService>()),
-      instanceName: 'RegistryLocalDataSource');
+      () => RegistryLocalDataSource(g<DBService>()));
   g.registerLazySingleton<LocaleModel>(() => LocaleModel());
   g.registerLazySingleton<NetworkService>(() => NetworkService());
   g.registerLazySingleton<ThemeModel>(() => ThemeModel());
@@ -57,12 +56,9 @@ void $initGetIt(GetIt g, {String environment}) {
       g<IAuthRepository>(instanceName: 'PasswordAuthRepository'),
       g<IAuthRepository>(instanceName: 'SmsAuthRepository')));
   g.registerLazySingleton<IRegistryRemoteDataSource>(
-      () => RegistryRemoteDataSource(g<NetworkService>()),
-      instanceName: 'RegistryRemoteDataSource');
-  g.registerLazySingleton<IRegistryRepository>(
-      () => RegistryRepository(
-          g<IRegistryLocalDataSource>(), g<IRegistryRemoteDataSource>()),
-      instanceName: 'RegistryRepository');
+      () => RegistryRemoteDataSource(g<NetworkService>()));
+  g.registerLazySingleton<IRegistryRepository>(() => RegistryRepository(
+      g<IRegistryLocalDataSource>(), g<IRegistryRemoteDataSource>()));
   g.registerLazySingleton<IRegistryUseCase>(
       () => RegistryUseCase(g<IRegistryRepository>()));
   g.registerLazySingleton<RegistryViewModel>(

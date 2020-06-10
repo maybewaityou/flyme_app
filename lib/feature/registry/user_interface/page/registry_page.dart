@@ -42,6 +42,10 @@ Widget _contentBuilder(
         child: Text('Registry.'),
         onPressed: viewModel.handleRegistryPress,
       ),
+      RaisedButton(
+        child: Text('Go back.'),
+        onPressed: () => viewModel.handleGoBack(context),
+      ),
     ],
   );
 }

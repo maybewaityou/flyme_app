@@ -12,16 +12,16 @@
 
 ```shell
 lib
-├── anticorruption																						# 防腐层
+├── shared.anticorruption																						# 防腐层
 │   ├── adapter																								# 适配器
 │   │   └── adapter.dart
-│   ├── anticorruption.dart
+│   ├── shared.anticorruption.dart
 │   ├── assemble																							# 装配器
 │   │   └── assemble.dart
 │   └── translator																						# 翻译器
 │       └── translator.dart
-├── application																								# 应用层
-│   ├── application.dart
+├── shared.application																								# 应用层
+│   ├── shared.application.dart
 │   ├── service																								# 应用服务
 │   │   └── service.dart
 │   └── use_case																							# 业务用例
@@ -32,8 +32,8 @@ lib
 │   │   ├── app_provider.dart
 │   │   ├── app_routes.config.dart
 │   │   ├── app_routes.dart
-│   │   ├── application.dart
-│   │   └── application.iconfig.dart
+│   │   ├── shared.application.dart
+│   │   └── shared.application.iconfig.dart
 │   ├── component																							# 公共组件
 │   │   ├── app_title
 │   │   │   └── app_title.dart
@@ -75,7 +75,7 @@ lib
 │       ├── stroage
 │       │   └── sp_utils.dart
 │       └── utils.dart
-├── domain																										# 领域层
+├── shared.domain																										# 领域层
 │   ├── factory																								# 工厂
 │   │   └── factory.dart
 │   ├── model																									# 领域模型
@@ -99,12 +99,12 @@ lib
 │       └── value_validators.dart
 ├── feature																										# 新特性 (业务模块)
 │   └── auth
-│       ├── application
+│       ├── shared.application
 │       │   ├── service
 │       │   │   └── service.dart
 │       │   └── use_case
 │       │       └── use_case.dart
-│       ├── domain
+│       ├── shared.domain
 │       │   ├── model
 │       │   │   ├── aggregate
 │       │   │   ├── entity
@@ -123,7 +123,7 @@ lib
 │       │       │   └── failure.dart
 │       │       ├── validator.dart
 │       │       └── value_validators.dart
-│       ├── infrastructure
+│       ├── shared.infrastructure
 │       │   ├── data_source
 │       │   │   ├── local
 │       │   │   │   └── auth_local.dart
@@ -151,14 +151,14 @@ lib
 │   │   ├── messages_en.dart
 │   │   └── messages_zh.dart
 │   └── l10n.dart
-├── infrastructure																						# 基础设施层
+├── shared.infrastructure																						# 基础设施层
 │   ├── data_source																						# 数据源
 │   │   ├── data_source.dart
 │   │   ├── local																							# 本地数据源
 │   │   │   └── local.dart
 │   │   └── remote																						# 远程数据源
 │   │       └── remote.dart
-│   ├── infrastructure.dart
+│   ├── shared.infrastructure.dart
 │   ├── model																									# 数据模型
 │   │   ├── dto																								# DTO
 │   │   │   ├── user_octocat_dto.dart

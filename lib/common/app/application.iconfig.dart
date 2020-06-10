@@ -20,7 +20,7 @@ import 'package:flyme_app/feature/registry/domain/repository/registry_repository
 import 'package:flyme_app/feature/registry/application/use_case/registry_use_case.dart';
 import 'package:flyme_app/feature/registry/user_interface/view_model/registry_view_model.dart';
 import 'package:flyme_app/feature/auth/user_interface/view_model/auth_view_model.dart';
-import 'package:flyme_app/user_interface/tab/home/view_model/home_view_model.dart';
+import 'package:flyme_app/feature/home/view_model/home_view_model.dart';
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
@@ -61,7 +61,7 @@ void $initGetIt(GetIt g, {String environment}) {
       g<IRegistryLocalDataSource>(), g<IRegistryRemoteDataSource>()));
   g.registerLazySingleton<IRegistryUseCase>(
       () => RegistryUseCase(g<IRegistryRepository>()));
-  g.registerLazySingleton<RegistryViewModel>(
+  g.registerFactory<RegistryViewModel>(
       () => RegistryViewModel(g<IRegistryUseCase>()));
   g.registerLazySingleton<AuthViewModel>(
       () => AuthViewModel(g<IAuthUseCase>()));

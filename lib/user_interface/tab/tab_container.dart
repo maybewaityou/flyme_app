@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flyme_annotation/flyme_annotation.dart';
+import 'package:flyme_app/feature/home/page/page.dart';
 import 'package:flyme_app/generated/l10n.dart';
-import 'package:flyme_app/user_interface/tab/home/page/page.dart';
 
 @FRoute(url: '/tab')
 class TabContainer extends StatefulWidget {

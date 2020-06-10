@@ -1,6 +1,6 @@
-import 'package:flyme_app/application/use_case/use_case.dart';
 import 'package:flyme_app/feature/auth/domain/repository/auth_repository.dart';
 import 'package:flyme_app/feature/auth/infrastructure/repository/repository.dart';
+import 'package:flyme_app/shared/application/use_case/use_case.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class IAuthUseCase implements IUseCase {

@@ -1,4 +1,3 @@
-/// 本地数据源
 import 'package:flyme_app/common/service/db_service.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/domain/repository/repository.dart';

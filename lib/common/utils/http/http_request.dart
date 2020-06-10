@@ -1,4 +1,4 @@
-import 'package:flyme_app/anticorruption/anticorruption.dart';
+import 'package:flyme_app/shared/anticorruption/anticorruption.dart';
 import 'package:meta/meta.dart';
 
 enum Method { get, post }

@@ -48,6 +48,7 @@ dependencies:
   fluro: ^1.6.3
   dio: ^3.0.9
   tuple: ^1.0.3
+  uuid: ^2.0.4
   shared_preferences: ^0.5.7+3
   # NoSQL 数据库
   hive: ^1.4.1+1

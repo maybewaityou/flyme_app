@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flyme_app/shared/domain/validator/error/error.dart';
 import 'package:flyme_app/shared/domain/validator/failure/failure.dart';
+import 'package:uuid/uuid.dart';
 
 // 值对象 - 接口
 abstract class IValueObject {}
@@ -29,4 +30,15 @@ abstract class ValueObject<T> extends Equatable implements IValueObject {
 
   @override
   bool get stringify => true;
+}
+
+class UniqueId extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory UniqueId() => UniqueId._(right(Uuid().v1()));
+  factory UniqueId.fromUniqueString(String uniqueString) =>
+      UniqueId._(right(uniqueString));
+
+  UniqueId._(this.value);
 }

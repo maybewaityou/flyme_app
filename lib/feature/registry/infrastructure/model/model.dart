@@ -1,4 +1,3 @@
-/// 数据模型 - 值对象
 import 'package:equatable/equatable.dart';
 import 'package:flyme_app/shared/infrastructure/model/model.dart';
 import 'package:json_annotation/json_annotation.dart';

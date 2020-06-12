@@ -1,4 +1,4 @@
-/// 数据模型 - 值对象
+/// 领域模型 - 值对象
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';

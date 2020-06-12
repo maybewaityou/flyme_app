@@ -12,3 +12,6 @@ abstract class IValidatableEntity implements IValidatable, IEntity {}
 // 实体类 - 基类
 @immutable
 abstract class Entity implements IEntity {}
+
+@immutable
+abstract class ValidatableEntity implements IValidatableEntity {}

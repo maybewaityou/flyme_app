@@ -10,7 +10,7 @@
 
 ## 架构图 ( Layered Architecture )
 
-![architecture](./docs/image/DDD.png)
+![architecture](docs/image/DDD.png)
 
 ## 目录结构
 

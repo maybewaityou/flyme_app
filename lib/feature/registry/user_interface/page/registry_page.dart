@@ -34,7 +34,7 @@ Widget _contentBuilder(
     error: (errorMessage) => Center(
       child: Text(errorMessage),
     ),
-    viewObject: (name, users) {
+    viewObject: (name, users, refreshing) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[

@@ -13,10 +13,13 @@ class _$RegistryViewObjectTearOff {
   const _$RegistryViewObjectTearOff();
 
   _ViewObject viewObject(
-      {@required String name, @required List<CustomUser> users}) {
+      {@required String name,
+      @required List<CustomUser> users,
+      @required bool refreshing}) {
     return _ViewObject(
       name: name,
       users: users,
+      refreshing: refreshing,
     );
   }
 
@@ -37,13 +40,14 @@ const $RegistryViewObject = _$RegistryViewObjectTearOff();
 mixin _$RegistryViewObject {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result viewObject(String name, List<CustomUser> users),
+    @required
+        Result viewObject(String name, List<CustomUser> users, bool refreshing),
     @required Result loading(),
     @required Result error(String errorMessage),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result viewObject(String name, List<CustomUser> users),
+    Result viewObject(String name, List<CustomUser> users, bool refreshing),
     Result loading(),
     Result error(String errorMessage),
     @required Result orElse(),
@@ -82,7 +86,7 @@ abstract class _$ViewObjectCopyWith<$Res> {
   factory _$ViewObjectCopyWith(
           _ViewObject value, $Res Function(_ViewObject) then) =
       __$ViewObjectCopyWithImpl<$Res>;
-  $Res call({String name, List<CustomUser> users});
+  $Res call({String name, List<CustomUser> users, bool refreshing});
 }
 
 class __$ViewObjectCopyWithImpl<$Res>
@@ -99,27 +103,34 @@ class __$ViewObjectCopyWithImpl<$Res>
   $Res call({
     Object name = freezed,
     Object users = freezed,
+    Object refreshing = freezed,
   }) {
     return _then(_ViewObject(
       name: name == freezed ? _value.name : name as String,
       users: users == freezed ? _value.users : users as List<CustomUser>,
+      refreshing:
+          refreshing == freezed ? _value.refreshing : refreshing as bool,
     ));
   }
 }
 
 class _$_ViewObject implements _ViewObject {
-  const _$_ViewObject({@required this.name, @required this.users})
+  const _$_ViewObject(
+      {@required this.name, @required this.users, @required this.refreshing})
       : assert(name != null),
-        assert(users != null);
+        assert(users != null),
+        assert(refreshing != null);
 
   @override
   final String name;
   @override
   final List<CustomUser> users;
+  @override
+  final bool refreshing;
 
   @override
   String toString() {
-    return 'RegistryViewObject.viewObject(name: $name, users: $users)';
+    return 'RegistryViewObject.viewObject(name: $name, users: $users, refreshing: $refreshing)';
   }
 
   @override
@@ -129,14 +140,18 @@ class _$_ViewObject implements _ViewObject {
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.users, users) ||
-                const DeepCollectionEquality().equals(other.users, users)));
+                const DeepCollectionEquality().equals(other.users, users)) &&
+            (identical(other.refreshing, refreshing) ||
+                const DeepCollectionEquality()
+                    .equals(other.refreshing, refreshing)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(users);
+      const DeepCollectionEquality().hash(users) ^
+      const DeepCollectionEquality().hash(refreshing);
 
   @override
   _$ViewObjectCopyWith<_ViewObject> get copyWith =>
@@ -145,27 +160,28 @@ class _$_ViewObject implements _ViewObject {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result viewObject(String name, List<CustomUser> users),
+    @required
+        Result viewObject(String name, List<CustomUser> users, bool refreshing),
     @required Result loading(),
     @required Result error(String errorMessage),
   }) {
     assert(viewObject != null);
     assert(loading != null);
     assert(error != null);
-    return viewObject(name, users);
+    return viewObject(name, users, refreshing);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result viewObject(String name, List<CustomUser> users),
+    Result viewObject(String name, List<CustomUser> users, bool refreshing),
     Result loading(),
     Result error(String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (viewObject != null) {
-      return viewObject(name, users);
+      return viewObject(name, users, refreshing);
     }
     return orElse();
   }
@@ -202,10 +218,12 @@ class _$_ViewObject implements _ViewObject {
 abstract class _ViewObject implements RegistryViewObject {
   const factory _ViewObject(
       {@required String name,
-      @required List<CustomUser> users}) = _$_ViewObject;
+      @required List<CustomUser> users,
+      @required bool refreshing}) = _$_ViewObject;
 
   String get name;
   List<CustomUser> get users;
+  bool get refreshing;
   _$ViewObjectCopyWith<_ViewObject> get copyWith;
 }
 
@@ -245,7 +263,8 @@ class _$_ViewLoading implements _ViewLoading {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result viewObject(String name, List<CustomUser> users),
+    @required
+        Result viewObject(String name, List<CustomUser> users, bool refreshing),
     @required Result loading(),
     @required Result error(String errorMessage),
   }) {
@@ -258,7 +277,7 @@ class _$_ViewLoading implements _ViewLoading {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result viewObject(String name, List<CustomUser> users),
+    Result viewObject(String name, List<CustomUser> users, bool refreshing),
     Result loading(),
     Result error(String errorMessage),
     @required Result orElse(),
@@ -363,7 +382,8 @@ class _$_ViewError implements _ViewError {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result viewObject(String name, List<CustomUser> users),
+    @required
+        Result viewObject(String name, List<CustomUser> users, bool refreshing),
     @required Result loading(),
     @required Result error(String errorMessage),
   }) {
@@ -376,7 +396,7 @@ class _$_ViewError implements _ViewError {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result viewObject(String name, List<CustomUser> users),
+    Result viewObject(String name, List<CustomUser> users, bool refreshing),
     Result loading(),
     Result error(String errorMessage),
     @required Result orElse(),

@@ -11,6 +11,7 @@ abstract class RegistryViewObject
   const factory RegistryViewObject.viewObject({
     @required String name,
     @required List<CustomUser> users,
+    @required bool refreshing,
   }) = _ViewObject;
   const factory RegistryViewObject.loading() = _ViewLoading;
   const factory RegistryViewObject.error({@required String errorMessage}) =
@@ -19,11 +20,13 @@ abstract class RegistryViewObject
   factory RegistryViewObject.initial() => RegistryViewObject.viewObject(
         name: '',
         users: [],
+        refreshing: false,
       );
 
   factory RegistryViewObject.fromDataModel(UserInfo model) =>
       RegistryViewObject.viewObject(
         name: model.name,
         users: model.customUsers,
+        refreshing: false,
       );
 }

@@ -77,9 +77,7 @@ dependencies:
   strings: ^0.1.2
   # 生成器注解
   freezed_annotation: ^0.7.1
-  flyme_annotation:
-    git:
-      url: https://github.com/maybewaityou/flyme_annotation.git
+  flyme_annotation: ^0.0.3
 
 dev_dependencies:
   flutter_test:

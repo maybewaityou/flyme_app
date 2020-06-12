@@ -11,3 +11,13 @@ extension OptionX<A> on Option<A> {
         id);
   }
 }
+
+extension EitherX<A, B> on Either<A, B> {
+  getOrCrash() {
+    return fold(
+        (f) => throw UnexpectedValueError(
+              ValueFailure.invalidValue(failedValue: '$f'),
+            ),
+        id);
+  }
+}

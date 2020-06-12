@@ -36,7 +36,6 @@ dependencies:
   velocity_x: ^0.4.0
   styled_widget: ^0.2.1+2
   flushbar: ^1.10.4
-  flutter_portal: ^0.1.0
   # 引导页中的"点"
   dots_indicator: ^1.1.0
   # 轮播图

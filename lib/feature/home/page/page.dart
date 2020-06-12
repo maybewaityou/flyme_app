@@ -102,7 +102,7 @@ class HomePage extends StatelessWidget {
                   ModelProvider<HomeViewModel>(
                     model: getIt.get(),
                     autoDispose: false,
-                    builder: (context, model, __) => RaisedButton(
+                    builder: (context, model, _) => RaisedButton(
                       child: const Text('login'),
                       onPressed: model.handlePress,
                     ),

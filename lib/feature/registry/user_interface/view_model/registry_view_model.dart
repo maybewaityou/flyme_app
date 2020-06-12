@@ -45,7 +45,7 @@ class RegistryViewModel extends _$ViewModel {
 //
 //    print('== userInfo in view model ===>>>> $viewObject');
     DomainEventPublisher.instance()
-        .publish<UserCreated>(UserCreated('user created id: 11111'));
+        .publish<UserCreated>(UserCreated('event from registry view model'));
   }
 
   void handleGoBack(BuildContext context) {

@@ -4,8 +4,9 @@ import 'dart:async';
 import 'package:event_bus/event_bus.dart';
 import 'package:flyme_app/shared/domain/model/domain_event.dart';
 import 'package:flyme_app/shared/domain/model/domain_event_subscriber.dart';
+import 'package:rxdart/rxdart.dart';
 
-EventBus _eventBus = EventBus();
+EventBus _eventBus = EventBus.customController(BehaviorSubject());
 
 class DomainEventPublisher {
   const DomainEventPublisher._();

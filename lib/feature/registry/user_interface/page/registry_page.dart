@@ -51,6 +51,10 @@ Widget _contentBuilder(
             onPressed: viewModel.handleRegistryPress,
           ),
           RaisedButton(
+            child: Text('Publish event.'),
+            onPressed: viewModel.handlePublishEvent,
+          ),
+          RaisedButton(
             child: Text('Go back.'),
             onPressed: () => viewModel.handleGoBack(context),
           ),

@@ -37,17 +37,24 @@ class RegistryViewModel extends _$ViewModel {
     _subscription =
         DomainEventPublisher.instance().subscribe<UserCreated>((event) {
       print('== event ===>>>> $event');
+
+      viewObject = viewObject.maybeMap(
+        orElse: () => null,
+        viewObject: (value) => value.copyWith(name: event.id),
+      );
     });
   }
 
   void handleRegistryPress() async {
     viewObject = RegistryViewObject.loading();
-//    viewObject = await _useCase.registry(RegistryInfo('email'));
     viewObject = await _useCase.registry(RegistryInfo('phone'));
 
     print('== userInfo in view model ===>>>> $viewObject');
-//    DomainEventPublisher.instance()
-//        .publish<UserCreated>(UserCreated('event from registry view model'));
+  }
+
+  void handlePublishEvent() {
+    DomainEventPublisher.instance()
+        .publish<UserCreated>(UserCreated('event from registry view model'));
   }
 
   void handleGoBack(BuildContext context) {

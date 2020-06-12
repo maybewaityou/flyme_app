@@ -16,7 +16,7 @@
 
 ```shell
 lib
-├── shared.anticorruption																						# 防腐层
+├── shared.anticorruption																			# 防腐层
 │   ├── adapter																								# 适配器
 │   │   └── adapter.dart
 │   ├── shared.anticorruption.dart
@@ -24,7 +24,7 @@ lib
 │   │   └── assemble.dart
 │   └── translator																						# 翻译器
 │       └── translator.dart
-├── shared.application																								# 应用层
+├── shared.application																				# 应用层
 │   ├── shared.application.dart
 │   ├── service																								# 应用服务
 │   │   └── service.dart
@@ -79,7 +79,7 @@ lib
 │       ├── stroage
 │       │   └── sp_utils.dart
 │       └── utils.dart
-├── shared.domain																										# 领域层
+├── shared.domain																							# 领域层
 │   ├── factory																								# 工厂
 │   │   └── factory.dart
 │   ├── model																									# 领域模型
@@ -155,7 +155,7 @@ lib
 │   │   ├── messages_en.dart
 │   │   └── messages_zh.dart
 │   └── l10n.dart
-├── shared.infrastructure																						# 基础设施层
+├── shared.infrastructure																			# 基础设施层
 │   ├── data_source																						# 数据源
 │   │   ├── data_source.dart
 │   │   ├── local																							# 本地数据源

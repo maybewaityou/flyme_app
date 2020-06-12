@@ -28,7 +28,7 @@ class RegistryPage extends StatelessWidget {
 Widget _contentBuilder(
     BuildContext context, RegistryViewModel viewModel, Widget child) {
   return viewModel.viewObject.when(
-    loading: (loading) => Center(
+    loading: () => Center(
       child: Text('Loading...'),
     ),
     error: (errorMessage) => Center(

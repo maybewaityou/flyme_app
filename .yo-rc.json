@@ -2,7 +2,8 @@
   "generator-flyme": {
     "promptValues": {
       "type": "yes",
-      "modulePath": "lib/feature"
+      "modulePath": "lib/feature",
+      "module": "login"
     }
   }
 }

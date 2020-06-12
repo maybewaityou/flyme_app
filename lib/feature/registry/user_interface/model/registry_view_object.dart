@@ -12,8 +12,9 @@ abstract class RegistryViewObject
     @required String name,
     @required List<CustomUser> users,
   }) = _ViewObject;
-  const factory RegistryViewObject.loading(bool loading) = _ViewLoading;
-  const factory RegistryViewObject.error({String errorMessage}) = _ViewError;
+  const factory RegistryViewObject.loading() = _ViewLoading;
+  const factory RegistryViewObject.error({@required String errorMessage}) =
+      _ViewError;
 
   factory RegistryViewObject.initial() => RegistryViewObject.viewObject(
         name: '',

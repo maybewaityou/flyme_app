@@ -39,10 +39,6 @@ class _AppComponentState extends State<AppComponent> {
             return ModelProvider2<ThemeModel, LocaleModel>(
               model: getIt.get(),
               model2: getIt.get(),
-              onReady: (themeModel, localeModel) {
-                themeModel.init();
-                localeModel.init();
-              },
               builder: (context, themeModel, localeModel, _) => MaterialApp(
                 title: Config.value.appName,
                 debugShowCheckedModeBanner: false,

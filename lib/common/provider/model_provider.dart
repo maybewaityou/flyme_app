@@ -30,7 +30,11 @@ class _ModelProviderState<T extends ViewModel> extends State<ModelProvider<T>> {
   @override
   void initState() {
     _model = widget.model;
-    widget.onReady?.call(_model);
+    if (widget.onReady != null) {
+      widget.onReady.call(_model);
+    } else {
+      _model.init();
+    }
     super.initState();
   }
 
@@ -87,7 +91,12 @@ class _ModelProviderState2<A extends ViewModel, B extends ViewModel>
   void initState() {
     _model = widget.model;
     _model2 = widget.model2;
-    widget.onReady?.call(_model, _model2);
+    if (widget.onReady != null) {
+      widget.onReady.call(_model, _model2);
+    } else {
+      _model.init();
+      _model2.init();
+    }
     super.initState();
   }
 
@@ -154,7 +163,13 @@ class _ModelProviderState3<A extends ViewModel, B extends ViewModel,
     _model = widget.model;
     _model2 = widget.model2;
     _model3 = widget.model3;
-    widget.onReady?.call(_model, _model2, _model3);
+    if (widget.onReady != null) {
+      widget.onReady.call(_model, _model2, _model3);
+    } else {
+      _model.init();
+      _model2.init();
+      _model3.init();
+    }
     super.initState();
   }
 
@@ -230,7 +245,14 @@ class _ModelProviderState4<
     _model2 = widget.model2;
     _model3 = widget.model3;
     _model4 = widget.model4;
-    widget.onReady?.call(_model, _model2, _model3, _model4);
+    if (widget.onReady != null) {
+      widget.onReady.call(_model, _model2, _model3, _model4);
+    } else {
+      _model.init();
+      _model2.init();
+      _model3.init();
+      _model4.init();
+    }
     super.initState();
   }
 
@@ -317,7 +339,15 @@ class _ModelProviderState5<
     _model3 = widget.model3;
     _model4 = widget.model4;
     _model5 = widget.model5;
-    widget.onReady?.call(_model, _model2, _model3, _model4, _model5);
+    if (widget.onReady != null) {
+      widget.onReady.call(_model, _model2, _model3, _model4, _model5);
+    } else {
+      _model.init();
+      _model2.init();
+      _model3.init();
+      _model4.init();
+      _model5.init();
+    }
     super.initState();
   }
 
@@ -413,7 +443,16 @@ class _ModelProviderState6<
     _model4 = widget.model4;
     _model5 = widget.model5;
     _model6 = widget.model6;
-    widget.onReady?.call(_model, _model2, _model3, _model4, _model5, _model6);
+    if (widget.onReady != null) {
+      widget.onReady.call(_model, _model2, _model3, _model4, _model5, _model6);
+    } else {
+      _model.init();
+      _model2.init();
+      _model3.init();
+      _model4.init();
+      _model5.init();
+      _model6.init();
+    }
     super.initState();
   }
 

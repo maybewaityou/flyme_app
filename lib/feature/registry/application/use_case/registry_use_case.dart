@@ -19,10 +19,16 @@ class RegistryUseCase implements IRegistryUseCase {
   Future<RegistryViewObject> registry(RegistryInfo info) async {
     // TODO 构建领域对象
     if (info.type == 'phone') {
-      final errorMessageOption = PhoneRegistry(repository).validate();
-      return RegistryViewObject.error(
-        errorMessage: errorMessageOption.getOrElse(() => ''),
-      );
+      // 校验参数
+      final validateOption = PhoneRegistry(repository).validate();
+      if (validateOption.isSome()) {
+        return RegistryViewObject.error(
+          errorMessage: validateOption.getOrElse(() => ''),
+        );
+      }
+
+      final userInfo = await PhoneRegistry(repository).registry(info);
+      return RegistryViewObject.fromDataModel(userInfo);
     } else if (info.type == 'email') {
       final userInfo = await EmailRegistry(repository).registry(info);
       return RegistryViewObject.fromDataModel(userInfo);

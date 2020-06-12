@@ -8,6 +8,7 @@ class RegistryValidator extends Validator {
 
   @override
   Option<String> validate() {
-    return some('registry is error : $_registry');
+//    return some('registry is error : $_registry');
+    return none();
   }
 }

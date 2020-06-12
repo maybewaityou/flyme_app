@@ -1,9 +1,11 @@
+import 'package:dartz/dartz.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/domain/repository/repository.dart';
+import 'package:flyme_app/feature/registry/domain/validator/validator.dart';
 import 'package:flyme_app/feature/registry/infrastructure/model/model.dart';
 import 'package:flyme_app/shared/domain/model/entity.dart';
 
-abstract class IRegistry extends IEntity {
+abstract class IRegistry extends IValidatableEntity {
   Future<UserInfo> registry(RegistryInfo info);
 }
 
@@ -16,6 +18,11 @@ class PhoneRegistry implements IRegistry {
     // TODO: 执行业务逻辑
     return repository.registry(info);
   }
+
+  @override
+  Option<String> validate() {
+    return RegistryValidator(this).validate();
+  }
 }
 
 class EmailRegistry implements IRegistry {
@@ -27,6 +34,11 @@ class EmailRegistry implements IRegistry {
     // TODO: 执行业务逻辑
     return repository.registry(info);
   }
+
+  @override
+  Option<String> validate() {
+    return RegistryValidator(this).validate();
+  }
 }
 
 class WeixinRegistry implements IRegistry {
@@ -37,5 +49,10 @@ class WeixinRegistry implements IRegistry {
   Future<UserInfo> registry(RegistryInfo info) {
     // TODO: 执行业务逻辑
     return repository.registry(info);
+  }
+
+  @override
+  Option<String> validate() {
+    return RegistryValidator(this).validate();
   }
 }

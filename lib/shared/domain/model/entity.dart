@@ -1,7 +1,10 @@
+// 实体 - 接口
+import 'package:flyme_app/shared/domain/validator/validator.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-// 实体 - 接口
 abstract class IEntity {}
+
+abstract class IValidatableEntity implements IValidatable {}
 
 // 实体类 - 基类
 @immutable

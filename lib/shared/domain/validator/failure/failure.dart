@@ -4,6 +4,9 @@ part 'failure.freezed.dart';
 
 @freezed
 abstract class ValueFailure<T> with _$ValueFailure<T> {
+  const factory ValueFailure.invalidValue({
+    @required String failedValue,
+  }) = InvalidValue<T>;
   const factory ValueFailure.invalidEmail({
     @required String failedValue,
   }) = InvalidEmail<T>;

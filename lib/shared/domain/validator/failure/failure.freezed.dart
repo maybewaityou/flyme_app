@@ -12,6 +12,12 @@ T _$identity<T>(T value) => value;
 class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
+  InvalidValue<T> invalidValue<T>({@required String failedValue}) {
+    return InvalidValue<T>(
+      failedValue: failedValue,
+    );
+  }
+
   InvalidEmail<T> invalidEmail<T>({@required String failedValue}) {
     return InvalidEmail<T>(
       failedValue: failedValue,
@@ -33,22 +39,26 @@ mixin _$ValueFailure<T> {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result invalidValue(String failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result shortPassword(String failedValue),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result invalidValue(String failedValue),
     Result invalidEmail(String failedValue),
     Result shortPassword(String failedValue),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result invalidValue(InvalidValue<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result invalidValue(InvalidValue<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result shortPassword(ShortPassword<T> value),
     @required Result orElse(),
@@ -81,6 +91,132 @@ class _$ValueFailureCopyWithImpl<T, $Res>
           failedValue == freezed ? _value.failedValue : failedValue as String,
     ));
   }
+}
+
+abstract class $InvalidValueCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidValueCopyWith(
+          InvalidValue<T> value, $Res Function(InvalidValue<T>) then) =
+      _$InvalidValueCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String failedValue});
+}
+
+class _$InvalidValueCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidValueCopyWith<T, $Res> {
+  _$InvalidValueCopyWithImpl(
+      InvalidValue<T> _value, $Res Function(InvalidValue<T>) _then)
+      : super(_value, (v) => _then(v as InvalidValue<T>));
+
+  @override
+  InvalidValue<T> get _value => super._value as InvalidValue<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidValue<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$InvalidValue<T> implements InvalidValue<T> {
+  const _$InvalidValue({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidValue(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidValue<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $InvalidValueCopyWith<T, InvalidValue<T>> get copyWith =>
+      _$InvalidValueCopyWithImpl<T, InvalidValue<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidValue(String failedValue),
+    @required Result invalidEmail(String failedValue),
+    @required Result shortPassword(String failedValue),
+  }) {
+    assert(invalidValue != null);
+    assert(invalidEmail != null);
+    assert(shortPassword != null);
+    return invalidValue(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidValue(String failedValue),
+    Result invalidEmail(String failedValue),
+    Result shortPassword(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidValue != null) {
+      return invalidValue(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidValue(InvalidValue<T> value),
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result shortPassword(ShortPassword<T> value),
+  }) {
+    assert(invalidValue != null);
+    assert(invalidEmail != null);
+    assert(shortPassword != null);
+    return invalidValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidValue(InvalidValue<T> value),
+    Result invalidEmail(InvalidEmail<T> value),
+    Result shortPassword(ShortPassword<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidValue != null) {
+      return invalidValue(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidValue<T> implements ValueFailure<T> {
+  const factory InvalidValue({@required String failedValue}) =
+      _$InvalidValue<T>;
+
+  @override
+  String get failedValue;
+  @override
+  $InvalidValueCopyWith<T, InvalidValue<T>> get copyWith;
 }
 
 abstract class $InvalidEmailCopyWith<T, $Res>
@@ -145,9 +281,11 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result invalidValue(String failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result shortPassword(String failedValue),
   }) {
+    assert(invalidValue != null);
     assert(invalidEmail != null);
     assert(shortPassword != null);
     return invalidEmail(failedValue);
@@ -156,6 +294,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result invalidValue(String failedValue),
     Result invalidEmail(String failedValue),
     Result shortPassword(String failedValue),
     @required Result orElse(),
@@ -170,9 +309,11 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result invalidValue(InvalidValue<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
   }) {
+    assert(invalidValue != null);
     assert(invalidEmail != null);
     assert(shortPassword != null);
     return invalidEmail(this);
@@ -181,6 +322,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result invalidValue(InvalidValue<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result shortPassword(ShortPassword<T> value),
     @required Result orElse(),
@@ -265,9 +407,11 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result invalidValue(String failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result shortPassword(String failedValue),
   }) {
+    assert(invalidValue != null);
     assert(invalidEmail != null);
     assert(shortPassword != null);
     return shortPassword(failedValue);
@@ -276,6 +420,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result invalidValue(String failedValue),
     Result invalidEmail(String failedValue),
     Result shortPassword(String failedValue),
     @required Result orElse(),
@@ -290,9 +435,11 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result invalidValue(InvalidValue<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
   }) {
+    assert(invalidValue != null);
     assert(invalidEmail != null);
     assert(shortPassword != null);
     return shortPassword(this);
@@ -301,6 +448,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result invalidValue(InvalidValue<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result shortPassword(ShortPassword<T> value),
     @required Result orElse(),

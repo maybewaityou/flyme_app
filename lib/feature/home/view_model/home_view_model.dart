@@ -1,8 +1,8 @@
 import 'package:flyme_annotation/flyme_annotation.dart';
-import 'package:flyme_app/common/provider/view_model/view_model.dart';
 import 'package:flyme_app/feature/auth/application/use_case/use_case.dart';
 import 'package:flyme_app/feature/registry/domain/model/event/user_created.dart';
 import 'package:flyme_app/shared/domain/model/domain_event_publisher.dart';
+import 'package:flyme_app/shared/user_interface/view_model/view_model.dart';
 import 'package:injectable/injectable.dart';
 
 part 'home_view_model.g.dart';

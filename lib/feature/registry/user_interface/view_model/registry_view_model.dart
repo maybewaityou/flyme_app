@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flyme_annotation/flyme_annotation.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
-import 'package:flyme_app/common/provider/view_model/view_model.dart';
+import 'package:flyme_app/shared/user_interface/view_model/view_model.dart';
 import 'package:flyme_app/feature/registry/application/use_case/use_case.dart';
 import 'package:flyme_app/feature/registry/domain/model/event/user_created.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';

@@ -1,6 +1,5 @@
-import 'package:dartz/dartz.dart';
-
 /// 验证器
+import 'package:dartz/dartz.dart';
 
 export 'value_validators.dart';
 

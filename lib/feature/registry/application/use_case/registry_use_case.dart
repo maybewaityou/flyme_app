@@ -1,3 +1,4 @@
+import 'package:flyme_app/common/extension/extension.dart';
 import 'package:flyme_app/feature/registry/domain/model/entity/registry.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/domain/repository/repository.dart';
@@ -23,7 +24,7 @@ class RegistryUseCase implements IRegistryUseCase {
       final validateOption = PhoneRegistry(repository).validate();
       if (validateOption.isSome()) {
         return RegistryViewObject.error(
-          errorMessage: validateOption.getOrElse(() => ''),
+          errorMessage: validateOption.getOrCrash(),
         );
       }
 

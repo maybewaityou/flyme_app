@@ -102,9 +102,7 @@ dev_dependencies:
   injectable_generator: ^0.4.0
   intl_utils: ^1.5.0
   freezed: ^0.10.9
-  flyme_generator:
-    git:
-      url: https://github.com/maybewaityou/flyme_generator.git
+  flyme_generator: ^0.0.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

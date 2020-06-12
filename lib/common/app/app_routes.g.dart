@@ -9,15 +9,15 @@ part of 'app_routes.dart';
 class AppRoutesPath {
   static const splash = '/splash';
   static const tab = '/tab';
-  static const registry = '/registry';
   static const second = '/home/second';
+  static const registry = '/registry';
 }
 
 final _routesMap = {
   AppRoutesPath.splash: (params) => SplashPage(),
   AppRoutesPath.tab: (params) => TabContainer(),
-  AppRoutesPath.registry: (params) => RegistryPage(),
   AppRoutesPath.second: (params) => SecondPage(),
+  AppRoutesPath.registry: (params) => RegistryPage(),
 };
 
 void setupRoutes(Router router) {

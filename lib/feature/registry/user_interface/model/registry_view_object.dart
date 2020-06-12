@@ -8,8 +8,12 @@ part 'registry_view_object.freezed.dart';
 abstract class RegistryViewObject
     with _$RegistryViewObject
     implements IViewObject {
-  const factory RegistryViewObject.viewObject(
-      {@required String name, @required List<CustomUser> users}) = _ViewObject;
+  const factory RegistryViewObject.viewObject({
+    @required String name,
+    @required List<CustomUser> users,
+  }) = _ViewObject;
+  const factory RegistryViewObject.loading(bool loading) = _ViewLoading;
+  const factory RegistryViewObject.error({String errorMessage}) = _ViewError;
 
   factory RegistryViewObject.initial() => RegistryViewObject.viewObject(
         name: '',

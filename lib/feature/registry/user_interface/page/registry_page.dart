@@ -27,25 +27,35 @@ class RegistryPage extends StatelessWidget {
 
 Widget _contentBuilder(
     BuildContext context, RegistryViewModel viewModel, Widget child) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children: <Widget>[
-      ...viewModel.users.map((user) => Text(user.name ?? '')).toList(),
-      Text(
-        viewModel.userName,
-        style: TextStyle(
-          fontSize: 30,
-          color: Colors.red,
-        ),
-      ),
-      RaisedButton(
-        child: Text('Registry.'),
-        onPressed: viewModel.handleRegistryPress,
-      ),
-      RaisedButton(
-        child: Text('Go back.'),
-        onPressed: () => viewModel.handleGoBack(context),
-      ),
-    ],
+  return viewModel.viewObject.when(
+    loading: (loading) => Center(
+      child: Text('Loading...'),
+    ),
+    error: (errorMessage) => Center(
+      child: Text(errorMessage),
+    ),
+    viewObject: (name, users) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          ...users.map((user) => Text(user.name ?? '')).toList(),
+          Text(
+            name,
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.red,
+            ),
+          ),
+          RaisedButton(
+            child: Text('Registry.'),
+            onPressed: viewModel.handleRegistryPress,
+          ),
+          RaisedButton(
+            child: Text('Go back.'),
+            onPressed: () => viewModel.handleGoBack(context),
+          ),
+        ],
+      );
+    },
   );
 }

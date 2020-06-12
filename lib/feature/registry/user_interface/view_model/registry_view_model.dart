@@ -31,9 +31,8 @@ class RegistryViewModel extends _$ViewModel {
   }
 
   void handleRegistryPress() async {
+    viewObject = RegistryViewObject.loading(true);
     viewObject = await _useCase.registry(RegistryInfo('email'));
-    userName = viewObject.name;
-    users = viewObject.users;
 
     print('== userInfo in view model ===>>>> $viewObject');
   }

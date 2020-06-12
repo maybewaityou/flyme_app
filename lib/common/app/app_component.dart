@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_portal/flutter_portal.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
 import 'package:flyme_app/common/app/app_routes.dart';
 import 'package:flyme_app/common/app/application.dart';
@@ -39,20 +40,22 @@ class _AppComponentState extends State<AppComponent> {
             return ModelProvider2<ThemeModel, LocaleModel>(
               model: getIt.get(),
               model2: getIt.get(),
-              builder: (context, themeModel, localeModel, _) => MaterialApp(
-                title: Config.value.appName,
-                debugShowCheckedModeBanner: false,
-                theme: appThemeData[themeModel.theme],
-                initialRoute: initialRoute,
-                onGenerateRoute: _application.router.generator,
-                home: Container(),
-                localizationsDelegates: const [
-                  S.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate
-                ],
-                supportedLocales: S.delegate.supportedLocales,
+              builder: (context, themeModel, localeModel, _) => Portal(
+                child: MaterialApp(
+                  title: Config.value.appName,
+                  debugShowCheckedModeBanner: false,
+                  theme: appThemeData[themeModel.theme],
+                  initialRoute: initialRoute,
+                  onGenerateRoute: _application.router.generator,
+                  home: Container(),
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate
+                  ],
+                  supportedLocales: S.delegate.supportedLocales,
+                ),
               ),
             );
           },

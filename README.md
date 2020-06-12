@@ -10,7 +10,7 @@
 
 ## 架构图 ( Layered Architecture )
 
-![architecture](/Users/MeePwn/Desktop/flyme_app/doc/image/DDD.png)
+![architecture](./docs/image/DDD.png)
 
 ## 目录结构
 

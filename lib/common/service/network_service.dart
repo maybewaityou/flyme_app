@@ -47,7 +47,7 @@ class NetworkService {
     }
   }
 
-  Future<Either<Future<Exception>, T>> request<T extends DataModel>(String url,
+  Future<Either<HttpError, T>> request<T extends DataModel>(String url,
       {@required ParameterWrapper wrapper}) async {
     final meta = wrapper.meta;
     // TODO: 弹框判断
@@ -61,16 +61,23 @@ class NetworkService {
       }
       // TODO: 弹框判断
 
-      if (!_isSuccess(response)) {
-        return left(_handleError<T>(HttpException(response),
-            url: url, wrapper: wrapper));
-      }
       // 转换格式
       final json = DataModelAdapter.snakeCase2Camelize(response.data);
+
+      if (!_isSuccess(response)) {
+        return left(
+          BusinessError.error(
+            code: json['retCode'],
+            message: json['retMsg'],
+            response: response,
+          ),
+        );
+      }
       return right(DataModelAdapter.toModel<T>(json, meta.translator));
-    } on Exception catch (error) {
-      print('== error ===>>>> $error');
-      return left(_handleError<T>(error, url: url, wrapper: wrapper));
+    } on DioError catch (error) {
+      final httpError = HttpError.fromDioError(error);
+      print('== httpError ===>>>> $httpError');
+      return left(httpError);
     }
   }
 

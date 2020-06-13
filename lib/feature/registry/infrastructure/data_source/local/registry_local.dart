@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:flyme_app/common/service/db_service.dart';
+import 'package:flyme_app/common/utils/http/http_exception.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/domain/repository/repository.dart';
 import 'package:flyme_app/feature/registry/infrastructure/model/model.dart';
@@ -14,7 +16,7 @@ class RegistryLocalDataSource implements IRegistryLocalDataSource {
   const RegistryLocalDataSource(this._service);
 
   @override
-  Future<UserInfo> registry(RegistryInfo info) {
+  Future<Either<HttpError, UserInfo>> registry(RegistryInfo info) {
     // TODO: implement registry
     throw UnimplementedError();
   }

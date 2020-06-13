@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flyme_app/common/utils/http/http_exception.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/domain/repository/repository.dart';
 import 'package:flyme_app/feature/registry/domain/validator/validator.dart';
@@ -7,7 +8,7 @@ import 'package:flyme_app/shared/domain/model/entity.dart';
 import 'package:flyme_app/shared/domain/model/value_object.dart';
 
 abstract class IRegistry implements IValidatableEntity {
-  Future<UserInfo> registry(RegistryInfo info);
+  Future<Either<HttpError, UserInfo>> registry(RegistryInfo info);
 }
 
 class PhoneRegistry implements IRegistry {
@@ -16,7 +17,7 @@ class PhoneRegistry implements IRegistry {
 
   PhoneRegistry(this.repository);
 
-  Future<UserInfo> registry(RegistryInfo info) {
+  Future<Either<HttpError, UserInfo>> registry(RegistryInfo info) {
     // TODO: 执行业务逻辑
     return repository.registry(info);
   }
@@ -36,7 +37,7 @@ class EmailRegistry implements IRegistry {
 
   EmailRegistry(this.repository);
 
-  Future<UserInfo> registry(RegistryInfo info) {
+  Future<Either<HttpError, UserInfo>> registry(RegistryInfo info) {
     // TODO: 执行业务逻辑
     return repository.registry(info);
   }
@@ -56,7 +57,7 @@ class WeixinRegistry implements IRegistry {
 
   WeixinRegistry(this.repository);
 
-  Future<UserInfo> registry(RegistryInfo info) {
+  Future<Either<HttpError, UserInfo>> registry(RegistryInfo info) {
     // TODO: 执行业务逻辑
     return repository.registry(info);
   }

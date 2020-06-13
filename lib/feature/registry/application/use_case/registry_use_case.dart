@@ -50,8 +50,8 @@ class RegistryUseCase implements IRegistryUseCase {
 //    } else if (info.type == 'weixin') {
 //      final userInfo = await WeixinRegistry(repository).registry(info);
 //      return RegistryViewObject.fromDataModel(userInfo);
-//    } else {
-//      throw UnsupportedError('');
+    } else {
+      throw UnsupportedError('');
     }
   }
 }

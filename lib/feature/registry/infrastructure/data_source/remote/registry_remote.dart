@@ -1,3 +1,4 @@
+import 'package:flyme_app/common/extension/extension.dart';
 import 'package:flyme_app/common/service/network_service.dart';
 import 'package:flyme_app/common/utils/http/http_request.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
@@ -23,6 +24,6 @@ class RegistryRemoteDataSource implements IRegistryRemoteDataSource {
         meta: Meta(translator: UserInfoTranslator()),
       ),
     );
-    return userInfoValue.getOrElse(() => null);
+    return userInfoValue.getOrCrash();
   }
 }

@@ -19,7 +19,7 @@ class RegistryUseCase implements IRegistryUseCase {
   @override
   Future<RegistryViewObject> registry(RegistryInfo info) async {
     // TODO 构建领域对象
-    if (info.type == 'phone') {
+    if (info.getOrCrash() == 'phone') {
       // 校验参数
       final validateOption = PhoneRegistry(repository).validate();
       if (validateOption.isSome()) {

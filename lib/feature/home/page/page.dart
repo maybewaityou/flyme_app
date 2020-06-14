@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
               width: 540,
               height: 300,
               child: Swiper(
-                itemBuilder: (BuildContext context, int index) {
+                itemBuilder: (context, index) {
                   return Image.network(
                     "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1590732822&di=f9ff4c298ac1c7ed7a73c3639f62af61&src=http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1306/14/c2/22062743_1371190605358.jpg",
                     fit: BoxFit.fill,

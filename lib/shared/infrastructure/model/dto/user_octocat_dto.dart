@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'user_octocat_dto.freezed.dart';
 part 'user_octocat_dto.g.dart';
 
+@immutable
 @freezed
 abstract class UserOctocatDTO with _$UserOctocatDTO {
   const factory UserOctocatDTO({

@@ -5,9 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'registry_view_object.freezed.dart';
 
 @freezed
-abstract class RegistryViewObject
-    with _$RegistryViewObject
-    implements IViewObject {
+abstract class RegistryViewObject extends ViewObject with _$RegistryViewObject {
   const factory RegistryViewObject.viewObject({
     @required String name,
     @required List<CustomUser> users,

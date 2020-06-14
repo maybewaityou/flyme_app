@@ -17,6 +17,6 @@ class RegistryRepository implements IRegistryRepository {
 
   @override
   Future<Either<HttpError, UserInfo>> registry(RegistryInfo info) async {
-    return this._remoteDataSource.registry(info);
+    return _remoteDataSource.registry(info);
   }
 }

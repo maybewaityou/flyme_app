@@ -88,7 +88,7 @@ dev_dependencies:
   test: any
 
   # 编码规范
-  effective_dart: ^1.2.1
+  effective_dart: ^1.2.2
 
   # mock
   mockito: ^4.1.1

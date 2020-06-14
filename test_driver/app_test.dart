@@ -16,7 +16,9 @@ void main() {
     final enLanguageFinder = find.byValueKey('enLanguage');
 
     final secondPageFinder = find.byValueKey('secondPage');
+    final secondPageGoBackFinder = find.byValueKey('secondPageGoBack');
     final registryPageFinder = find.byValueKey('registryPage');
+    final registryPageGoBackFinder = find.byValueKey('registryPageGoBack');
 
     FlutterDriver driver;
 
@@ -56,13 +58,17 @@ void main() {
       expect('', '');
     });
 
-//    test('change page', () async {
-//      await Future.delayed(Duration(seconds: 2));
-//      await driver.tap(secondPageFinder);
-//      await Future.delayed(Duration(seconds: 2));
-//      await driver.tap(registryPageFinder);
-//
-//      expect('', '');
-//    });
+    test('change page', () async {
+      await Future.delayed(Duration(seconds: 2));
+      await driver.tap(secondPageFinder);
+      await Future.delayed(Duration(seconds: 2));
+      await driver.tap(secondPageGoBackFinder);
+      await Future.delayed(Duration(seconds: 2));
+      await driver.tap(registryPageFinder);
+      await Future.delayed(Duration(seconds: 2));
+      await driver.tap(registryPageGoBackFinder);
+
+      expect('', '');
+    });
   });
 }

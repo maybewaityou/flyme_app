@@ -55,6 +55,7 @@ Widget _contentBuilder(
             onPressed: viewModel.handlePublishEvent,
           ),
           RaisedButton(
+            key: const Key('registryPageGoBack'),
             child: Text('Go back.'),
             onPressed: () => viewModel.handleGoBack(context),
           ),

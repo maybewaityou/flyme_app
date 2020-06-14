@@ -18,6 +18,7 @@ class SecondPage extends StatelessWidget {
           children: <Widget>[
             Text("This is second page."),
             RaisedButton(
+              key: const Key('secondPageGoBack'),
               child: Text('go back'),
               onPressed: () => AppProvider.pop(context),
             )

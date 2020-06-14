@@ -45,6 +45,7 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   RaisedButton(
+                    key: const Key('blueLightTheme'),
                     child: const Text('change theme blueLight'),
                     onPressed: () {
                       final themeModel = getIt.get<ThemeModel>();
@@ -52,6 +53,7 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
+                    key: const Key('blueDarkTheme'),
                     child: const Text('change theme blueDark'),
                     onPressed: () {
                       final themeModel = getIt.get<ThemeModel>();
@@ -59,6 +61,7 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
+                    key: const Key('greenLightTheme'),
                     child: const Text('change theme greenLight'),
                     onPressed: () {
                       final themeModel = getIt.get<ThemeModel>();
@@ -66,6 +69,7 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
+                    key: const Key('greenDarkTheme'),
                     child: const Text('change theme greenDark'),
                     onPressed: () {
                       final themeModel = getIt.get<ThemeModel>();
@@ -73,6 +77,7 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
+                    key: const Key('zhLanguage'),
                     child: const Text('change language zh'),
                     onPressed: () {
                       final localeModel = getIt.get<LocaleModel>();
@@ -80,6 +85,7 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
+                    key: const Key('enLanguage'),
                     child: const Text('change language en'),
                     onPressed: () {
                       final localeModel = getIt.get<LocaleModel>();
@@ -87,12 +93,14 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
+                    key: const Key('secondPage'),
                     child: const Text('navigate to second page'),
                     onPressed: () {
                       AppProvider.navigateTo(context, AppRoutesPath.second);
                     },
                   ),
                   RaisedButton(
+                    key: const Key('registryPage'),
                     child: const Text('navigate to registry'),
                     onPressed: () {
                       AppProvider.navigateTo(context, AppRoutesPath.registry);
@@ -102,6 +110,7 @@ class HomePage extends StatelessWidget {
                     model: getIt.get(),
                     autoDispose: false,
                     builder: (context, model, _) => RaisedButton(
+                      key: const Key('loginButton'),
                       child: const Text('login'),
                       onPressed: model.handlePress,
                     ),

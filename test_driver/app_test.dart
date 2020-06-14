@@ -64,16 +64,5 @@ void main() {
 //
 //      expect('', '');
 //    });
-
-//    test('increments the counter', () async {
-//      for (var i = 0; i < 3; i++) {
-//        // First, tap the button.
-//        await Future.delayed(Duration(seconds: 2));
-//        await driver.tap(buttonFinder);
-//      }
-//
-//      // Then, verify the counter text is incremented by 1.
-//      expect(await driver.getText(counterTextFinder), "Hello World! === 3");
-//    });
   });
 }

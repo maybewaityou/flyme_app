@@ -4,8 +4,8 @@ import 'package:flyme_app/common/utils/http/http_exception.dart';
 import 'package:flyme_app/common/utils/http/http_request.dart';
 import 'package:flyme_app/feature/registry/domain/model/entity/registry.dart';
 import 'package:flyme_app/feature/registry/domain/repository/repository.dart';
+import 'package:flyme_app/feature/registry/infrastructure/anticorruption/translator/translator.dart';
 import 'package:flyme_app/feature/registry/infrastructure/model/model.dart';
-import 'package:flyme_app/shared/anticorruption/anticorruption.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class IRegistryRemoteDataSource implements IRegistryRepository {}

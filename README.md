@@ -22,8 +22,8 @@ lib
 │   ├── shared.anticorruption.dart
 │   ├── assemble																							# 装配器
 │   │   └── assemble.dart
-│   └── translator																						# 翻译器
-│       └── translator.dart
+│   └── feature.registry.infrastructure.anticorruption.translator																						# 翻译器
+│       └── feature.registry.infrastructure.anticorruption.translator.dart
 ├── shared.application																				# 应用层
 │   ├── shared.application.dart
 │   ├── service																								# 应用服务

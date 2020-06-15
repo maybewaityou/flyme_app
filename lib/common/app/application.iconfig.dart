@@ -11,7 +11,6 @@ import 'package:flyme_app/feature/auth/infrastructure/data_source/local/auth_loc
 import 'package:flyme_app/feature/auth/infrastructure/data_source/local/login_local.dart';
 import 'package:flyme_app/feature/registry/infrastructure/data_source/local/registry_local.dart';
 import 'package:flyme_app/user_interface/global/locale_model.dart';
-import 'package:flyme_app/feature/auth/user_interface/view_model/login_view_model.dart';
 import 'package:flyme_app/common/service/network_service.dart';
 import 'package:flyme_app/user_interface/global/theme_model.dart';
 import 'package:flyme_app/feature/auth/infrastructure/data_source/remote/auth_remote.dart';
@@ -26,6 +25,7 @@ import 'package:flyme_app/feature/registry/infrastructure/data_source/remote/reg
 import 'package:flyme_app/feature/registry/infrastructure/repository/registry_repository.dart';
 import 'package:flyme_app/feature/registry/domain/repository/registry_repository.dart';
 import 'package:flyme_app/feature/registry/application/use_case/registry_use_case.dart';
+import 'package:flyme_app/feature/auth/user_interface/view_model/login_view_model.dart';
 import 'package:flyme_app/feature/registry/user_interface/view_model/registry_view_model.dart';
 import 'package:get_it/get_it.dart';
 
@@ -40,7 +40,6 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<IRegistryLocalDataSource>(
       () => RegistryLocalDataSource(g<DBService>()));
   g.registerLazySingleton<LocaleModel>(() => LocaleModel());
-  g.registerFactory<LoginViewModel>(() => LoginViewModel(g()));
   g.registerLazySingleton<NetworkService>(() => NetworkService());
   g.registerLazySingleton<ThemeModel>(() => ThemeModel());
   g.registerLazySingleton<IAuthRemoteDataSource>(
@@ -61,6 +60,7 @@ void $initGetIt(GetIt g, {String environment}) {
       g<IRegistryLocalDataSource>(), g<IRegistryRemoteDataSource>()));
   g.registerLazySingleton<IRegistryUseCase>(
       () => RegistryUseCase(g<IRegistryRepository>()));
+  g.registerFactory<LoginViewModel>(() => LoginViewModel(g<ILoginUseCase>()));
   g.registerFactory<RegistryViewModel>(
       () => RegistryViewModel(g<IRegistryUseCase>()));
 }

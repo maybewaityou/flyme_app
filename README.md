@@ -246,11 +246,26 @@ lib
 
 ### 单元测试
 
+执行单元测试的代码在 **test** 文件夹下.
 
+执行单元测试命令:
+
+```shell
+# 执行指定的单元测试文件
+flutter test test/unit_test.dart
+# 执行所有测试
+flutter test
+```
 
 ### 集成测试
 
+集成测试的代码在 **test_driver** 文件夹下.
 
+执行集成测试命令:
+
+```shell
+flutter drive --target=test_driver/app.dart --keep-app-running
+```
 
 ## DDD 相关概念
 

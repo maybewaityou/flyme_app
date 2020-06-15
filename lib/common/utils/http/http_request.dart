@@ -1,4 +1,5 @@
 import 'package:flyme_app/shared/anticorruption/anticorruption.dart';
+import 'package:flyme_app/shared/infrastructure/infrastructure.dart';
 import 'package:meta/meta.dart';
 
 enum Method { get, post }
@@ -48,7 +49,7 @@ class Meta {
 @immutable
 class ParameterWrapper {
   final Meta meta;
-  final Map<String, dynamic> params;
+  final Dto params;
 
   const ParameterWrapper({this.params, @required this.meta});
 }

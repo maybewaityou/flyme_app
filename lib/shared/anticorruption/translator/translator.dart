@@ -6,20 +6,6 @@ abstract class DataModelTranslator<T extends DataModel> {
   T translate(Map<String, dynamic> json);
 }
 
-class DogTranslator extends DataModelTranslator<Dog> {
-  @override
-  Dog translate(Map<String, dynamic> json) {
-    return Dog.fromJson(json);
-  }
-}
-
-class UserOctocatTranslator extends DataModelTranslator<UserOctocat> {
-  @override
-  UserOctocat translate(Map<String, dynamic> json) {
-    return UserOctocat.fromJson(json);
-  }
-}
-
 class UserInfoTranslator extends DataModelTranslator<UserInfo> {
   @override
   UserInfo translate(Map<String, dynamic> json) {

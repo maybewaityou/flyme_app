@@ -54,10 +54,12 @@ class NetworkService {
 
     try {
       Response response;
+      final parameters = wrapper.params.toJson();
+
       if (meta.method == Method.post) {
-        response = await _dio.post(url, data: wrapper.params);
+        response = await _dio.post(url, data: parameters);
       } else {
-        response = await _dio.get(url, queryParameters: wrapper.params);
+        response = await _dio.get(url, queryParameters: parameters);
       }
       // TODO: 弹框判断
 

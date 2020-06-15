@@ -22,7 +22,7 @@ class RegistryRemoteDataSource implements IRegistryRemoteDataSource {
     return _service.request(
       '/userOctocat.json',
       wrapper: ParameterWrapper(
-        params: RegistryDto.fromDomain(registry).toJson(),
+        params: RegistryDto.fromDomain(registry),
         meta: Meta(translator: UserInfoTranslator()),
       ),
     );

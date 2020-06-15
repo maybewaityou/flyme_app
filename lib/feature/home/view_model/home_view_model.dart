@@ -1,5 +1,4 @@
 import 'package:flyme_annotation/flyme_annotation.dart';
-import 'package:flyme_app/feature/auth/application/use_case/use_case.dart';
 import 'package:flyme_app/feature/registry/domain/model/event/user_created.dart';
 import 'package:flyme_app/shared/domain/model/domain_event_publisher.dart';
 import 'package:flyme_app/shared/user_interface/view_model/view_model.dart';
@@ -12,9 +11,9 @@ part 'home_view_model.g.dart';
   Property(name: 'name', type: String, desc: 'userName'),
 ])
 class HomeViewModel extends _$ViewModel {
-  final IAuthUseCase _useCase;
+//  final IAuthUseCase _useCase;
 
-  HomeViewModel(this._useCase);
+  HomeViewModel();
 
   @override
   void init() {

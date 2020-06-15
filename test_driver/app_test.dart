@@ -18,6 +18,8 @@ void main() {
     final secondPageFinder = find.byValueKey('secondPage');
     final secondPageGoBackFinder = find.byValueKey('secondPageGoBack');
     final registryPageFinder = find.byValueKey('registryPage');
+    final registryRegistryFinder = find.byValueKey('registryRegistry');
+    final registryPublishEventFinder = find.byValueKey('registryPublishEvent');
     final registryPageGoBackFinder = find.byValueKey('registryPageGoBack');
 
     FlutterDriver driver;
@@ -65,6 +67,10 @@ void main() {
       await driver.tap(secondPageGoBackFinder);
       await Future.delayed(Duration(seconds: 2));
       await driver.tap(registryPageFinder);
+      await Future.delayed(Duration(seconds: 2));
+      await driver.tap(registryRegistryFinder);
+      await Future.delayed(Duration(seconds: 2));
+      await driver.tap(registryPublishEventFinder);
       await Future.delayed(Duration(seconds: 2));
       await driver.tap(registryPageGoBackFinder);
 

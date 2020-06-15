@@ -47,10 +47,12 @@ Widget _contentBuilder(
             ),
           ),
           RaisedButton(
+            key: const Key('registryRegistry'),
             child: Text('Registry.'),
             onPressed: viewModel.handleRegistryPress,
           ),
           RaisedButton(
+            key: const Key('registryPublishEvent'),
             child: Text('Publish event.'),
             onPressed: viewModel.handlePublishEvent,
           ),

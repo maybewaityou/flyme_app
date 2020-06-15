@@ -16,7 +16,7 @@ class RegistryValidator extends Validator {
 }
 
 Either<ValueFailure<String>, String> validateRegistryType(String input) {
-  if (input.length >= 6) {
+  if (input.length >= 5) {
     return right(input);
   }
 

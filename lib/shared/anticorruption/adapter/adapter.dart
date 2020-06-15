@@ -17,6 +17,19 @@ class DataModelAdapter {
     });
   }
 
+  static Map<String, dynamic> camelize2SnakeCase(Map<String, dynamic> json) {
+    return json.map((key, value) {
+      if (value is Map) {
+        final subMap = camelize2SnakeCase(value);
+        return MapEntry(snakeCase(key), subMap);
+      } else if (value is List) {
+        return MapEntry(
+            snakeCase(key), value.map((e) => camelize2SnakeCase(e)).toList());
+      }
+      return MapEntry(snakeCase(key), value);
+    });
+  }
+
   static T toModel<T extends DataModel>(
       Map<String, dynamic> json, DataModelTranslator<T> translator) {
     return translator.translate(json['result']);

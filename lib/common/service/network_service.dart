@@ -54,8 +54,8 @@ class NetworkService {
 
     try {
       Response response;
-      final parameters = wrapper.params.toJson();
-
+      final parameters =
+          DataModelAdapter.camelize2SnakeCase(wrapper.params.toJson());
       if (meta.method == Method.post) {
         response = await _dio.post(url, data: parameters);
       } else {

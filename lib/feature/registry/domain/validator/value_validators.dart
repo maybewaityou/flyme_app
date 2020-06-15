@@ -4,13 +4,13 @@ import 'package:flyme_app/shared/domain/validator/failure/failure.dart';
 import 'package:flyme_app/shared/domain/validator/validator.dart';
 
 class RegistryValidator extends Validator {
-  final IRegistry _registry;
+  final IRegistry _entity;
 
-  RegistryValidator(this._registry) : super();
+  RegistryValidator(this._entity) : super();
 
   @override
   Option<String> validate() {
-//    return some('registry is error : $_registry');
+//    return some('entity is error : $_entity');
     return none();
   }
 }

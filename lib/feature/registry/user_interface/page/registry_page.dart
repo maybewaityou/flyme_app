@@ -28,9 +28,7 @@ class RegistryPage extends StatelessWidget {
 Widget _contentBuilder(
     BuildContext context, RegistryViewModel viewModel, Widget child) {
   return viewModel.viewObject.when(
-    loading: () => Center(
-      child: Text('Loading...'),
-    ),
+    loading: () => const Center(child: CircularProgressIndicator()),
     error: (errorMessage) => Center(
       child: Text(errorMessage),
     ),

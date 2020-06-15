@@ -22,8 +22,8 @@ lib
 │   ├── shared.anticorruption.dart
 │   ├── assemble																							# 装配器
 │   │   └── assemble.dart
-│   └── feature.registry.infrastructure.anticorruption.translator																						# 翻译器
-│       └── feature.registry.infrastructure.anticorruption.translator.dart
+│   └── translator																						# 翻译器
+│       └── translator.dart
 ├── shared.application																				# 应用层
 │   ├── shared.application.dart
 │   ├── service																								# 应用服务
@@ -238,17 +238,19 @@ lib
 
 ## 最佳实践
 
-### 相关工具
-
-#### 代码模板
-
-
-
-#### 代码生成器
-
-
-
 ### 执行流水线
+
+
+
+## 相关工具
+
+#### 代码模板 - Flyme
+
+安装方法:
+
+
+
+### 代码生成器 - generator-flyme
 
 
 

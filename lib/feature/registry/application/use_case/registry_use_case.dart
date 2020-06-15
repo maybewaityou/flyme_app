@@ -20,38 +20,40 @@ class RegistryUseCase implements IRegistryUseCase {
   Future<RegistryViewObject> registry(RegistryInfo info) async {
     // TODO 构建领域对象
     if (info.getOrCrash() == 'phone') {
+      final registry = PhoneRegistry();
       // 校验参数
-      final validateOption = PhoneRegistry(repository).validate();
+      final validateOption = registry.validate();
       if (validateOption.isSome()) {
         return RegistryViewObject.error(
           errorMessage: validateOption.getOrCrash(),
         );
       }
 
-      final userInfoValue = await PhoneRegistry(repository).registry(info);
+      final userInfoValue = await repository.register(registry);
       return userInfoValue.fold(
         (error) => RegistryViewObject.error(
           errorMessage: error.toString(),
         ),
         (userInfo) => RegistryViewObject.fromDataModel(userInfo),
       );
-
-//      try {
-//        final userInfo = await PhoneRegistry(repository).registry(info);
-//        return RegistryViewObject.fromDataModel(userInfo);
-//      } on UnexpectedValueError catch (error) {
-//        return RegistryViewObject.error(
-//          errorMessage: error.toString(),
-//        );
-//      }
-//    } else if (info.type == 'email') {
-//      final userInfo = await EmailRegistry(repository).registry(info);
-//      return RegistryViewObject.fromDataModel(userInfo);
-//    } else if (info.type == 'weixin') {
-//      final userInfo = await WeixinRegistry(repository).registry(info);
-//      return RegistryViewObject.fromDataModel(userInfo);
+    } else if (info.getOrCrash() == 'email') {
+      final registry = await EmailRegistry();
+      return _execute(registry);
+    } else if (info.getOrCrash() == 'weixin') {
+      final registry = await WeixinRegistry();
+      return _execute(registry);
     } else {
       throw UnsupportedError('');
     }
+  }
+
+  Future<RegistryViewObject> _execute(IRegistry registry) async {
+    final userInfoValue = await repository.register(registry);
+    return userInfoValue.fold(
+      (error) => RegistryViewObject.error(
+        errorMessage: error.toString(),
+      ),
+      (userInfo) => RegistryViewObject.fromDataModel(userInfo),
+    );
   }
 }

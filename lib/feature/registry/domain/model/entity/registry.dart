@@ -1,26 +1,15 @@
 import 'package:dartz/dartz.dart';
-import 'package:flyme_app/common/utils/http/http_exception.dart';
-import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
-import 'package:flyme_app/feature/registry/domain/repository/repository.dart';
 import 'package:flyme_app/feature/registry/domain/validator/validator.dart';
-import 'package:flyme_app/feature/registry/infrastructure/model/model.dart';
 import 'package:flyme_app/shared/domain/model/entity.dart';
 import 'package:flyme_app/shared/domain/model/value_object.dart';
 
-abstract class IRegistry implements IValidatableEntity {
-  Future<Either<HttpError, UserInfo>> registry(RegistryInfo info);
-}
+abstract class IRegistry implements IValidatableEntity {}
 
 class PhoneRegistry implements IRegistry {
   final UniqueId _id = UniqueId();
-  final IRegistryRepository repository;
 
-  PhoneRegistry(this.repository);
-
-  Future<Either<HttpError, UserInfo>> registry(RegistryInfo info) {
-    // TODO: 执行业务逻辑
-    return repository.registry(info);
-  }
+  PhoneRegistry._();
+  factory PhoneRegistry() => PhoneRegistry._();
 
   @override
   Option<String> validate() {
@@ -33,14 +22,9 @@ class PhoneRegistry implements IRegistry {
 
 class EmailRegistry implements IRegistry {
   final UniqueId _id = UniqueId();
-  final IRegistryRepository repository;
 
-  EmailRegistry(this.repository);
-
-  Future<Either<HttpError, UserInfo>> registry(RegistryInfo info) {
-    // TODO: 执行业务逻辑
-    return repository.registry(info);
-  }
+  EmailRegistry._();
+  factory EmailRegistry() => EmailRegistry._();
 
   @override
   Option<String> validate() {
@@ -53,14 +37,9 @@ class EmailRegistry implements IRegistry {
 
 class WeixinRegistry implements IRegistry {
   final UniqueId _id = UniqueId();
-  final IRegistryRepository repository;
 
-  WeixinRegistry(this.repository);
-
-  Future<Either<HttpError, UserInfo>> registry(RegistryInfo info) {
-    // TODO: 执行业务逻辑
-    return repository.registry(info);
-  }
+  WeixinRegistry._();
+  factory WeixinRegistry() => WeixinRegistry._();
 
   @override
   Option<String> validate() {

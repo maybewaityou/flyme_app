@@ -5,6 +5,7 @@ import 'package:flyme_app/shared/domain/validator/validator.dart';
 
 class RegistryValidator extends Validator {
   final IRegistry _registry;
+
   RegistryValidator(this._registry) : super();
 
   @override
@@ -17,7 +18,7 @@ class RegistryValidator extends Validator {
 Either<ValueFailure<String>, String> validateRegistryType(String input) {
   if (input.length >= 6) {
     return right(input);
-  } else {
-    return left(ValueFailure.invalidValue(failedValue: input));
   }
+
+  return left(ValueFailure.invalidValue(failedValue: input));
 }

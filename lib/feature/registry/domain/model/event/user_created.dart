@@ -6,7 +6,10 @@ class UserCreated implements DomainEvent {
   const UserCreated(this.id);
 
   @override
+  DateTime occurredOn() => DateTime.now();
+
+  @override
   String toString() {
-    return 'UserCreated{id: $id}';
+    return 'UserCreated{id: $id, occurredOn: ${occurredOn()}}';
   }
 }

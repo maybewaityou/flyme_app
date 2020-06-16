@@ -226,35 +226,70 @@ lib
 
 ### 领域层
 
+DDD 中的核心层. 执行特定领域的业务逻辑.
+
 判断一系列交互是否属于领域层的一种方法是问: "**这是否总是会发生?**" 或 "**这些步骤是分不开的吗?**".
 
 ### 基础设施层
 
-
+保存聚合实例.
 
 #### 防腐层
 
-
+用于转换通信协议, 保持内部代码稳定性, 防止代码加速腐化.
 
 ## 最佳实践
 
 ### 执行流水线
 
+![pipeline](docs/image/pipeline.png)
 
+1. **User Interface** 层接收到用户事件, 将事件封装成 **View Object** 或 **Value Object**, 传输到 **Application** 层.
+
+2. **Application** 层通过传输过来的 **VO** 对象, 组装成对应的 **Aggregate**, 调用 **Aggregate** 的方法, 执行 **Aggregate** 内部的校验规则, 执行 **Aggregate** 中的业务逻辑.
+
+3. 将校验后的结果, 传输到 **infrastructure** 层, **infrastructure** 层将传递过来的 **Aggregate** 对象进行存储 ( 网络请求 ), 同时返回 **Value Object**.
+4. **Application** 层将 **infrastructure** 层返回的 **Value Object** 转换为相应的 **View Object**, 再返回给 **User Interface** 层.
+5. **User Interface** 层直接展示 **Application** 层返回的 **View Object**.
+
+### 命名规范
+
+文件统一使用 **小写字母+下划线** 命名.
+
+所有变量命名统一使用 **小驼峰** 命名.
+
+尽量使用私有变量.
+
+尽量使用 **const** 构造函数.
 
 ## 相关工具
 
 #### 代码模板 - Flyme
 
-安装方法:
+##### 安装方法:
 
+* Android Studio: 打开偏好设置, 在 **Plugins Marketplace** 中搜索  **Flyme** 插件, 安装后重新启动即可.
+* VS Code: 在扩展面板中, 搜索 **Flyme Snippet** 插件, 直接安装即可.
 
+##### 使用方法:
+
+详情请 Flyme Snippet 使用文档.
 
 ### 代码生成器 - generator-flyme
 
-安装方法:
+##### 安装方法:
 
+```shell
+npm install -g yo
+npm install -g generator-flyme
+# 如果没有权限, 请使用以下命令
+sudo npm install -g yo
+sudo npm install -g generator-flyme
+```
 
+##### 使用方法
+
+详情请见 generator-flyme 使用文档.
 
 ## 自动化测试
 
@@ -360,11 +395,9 @@ OCP 是我们进行系统架构设计的主导原则, 其主要目标是让系�
 
 ### 领域事件
 
+使用 **领域事件** 来捕获发生在领域中的一些事情.
 
-
-### 模块
-
-
+在 **聚合** 中创建/发布 **领域事件**.
 
 ### 聚合
 

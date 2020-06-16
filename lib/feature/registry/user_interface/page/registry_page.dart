@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flyme_annotation/flyme_annotation.dart';
 import 'package:flyme_app/common/app/application.dart';
-import 'package:flyme_app/common/component/app_title/app_title.dart';
+import 'package:flyme_app/common/component/component.dart';
+import 'package:flyme_app/common/component/widget/app_title/app_title.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/provider/model_provider.dart';
 import 'package:flyme_app/feature/registry/user_interface/view_model/registry_view_model.dart';
@@ -43,6 +44,15 @@ Widget _contentBuilder(
               fontSize: 30,
               color: Colors.red,
             ),
+          ),
+          RaisedButton(
+            key: const Key('registryLoading'),
+            child: Text('Loading.'),
+            onPressed: () async {
+              showLoading(context);
+              await Future.delayed(Duration(seconds: 5));
+              dismiss(context);
+            },
           ),
           RaisedButton(
             key: const Key('registryRegistry'),

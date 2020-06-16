@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flyme_app/common/component/responsive_widget/size_config.dart';
 
+export 'size_config.dart';
+
 class ResponsiveWidget extends StatelessWidget {
   final Widget portraitLayout;
   final Widget landscapeLayout;

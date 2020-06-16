@@ -3,7 +3,8 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
 import 'package:flyme_app/common/app/app_routes.dart';
 import 'package:flyme_app/common/app/application.dart';
-import 'package:flyme_app/common/component/app_title/app_title.dart';
+import 'package:flyme_app/common/component/widget/app_title/app_title.dart';
+import 'package:flyme_app/common/component/widget/widget.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/config/theme/theme.dart';
 import 'package:flyme_app/common/provider/model_provider.dart';
@@ -20,6 +21,8 @@ class HomePage extends StatelessWidget {
         title: AppTitle(title: Config.value.appName),
       ),
       body: SingleChildScrollView(
+        key: Key('scrollable'),
+        padding: EdgeInsets.only(bottom: 30),
         child: Column(
           children: <Widget>[
             Container(
@@ -44,6 +47,15 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+                  AsyncLoader(
+                    request: () => Future.delayed(Duration(seconds: 5)),
+                    error: ([error]) =>
+                        Text('error', style: TextStyle(fontSize: 30)),
+                    loading: () =>
+                        Text('loading....', style: TextStyle(fontSize: 30)),
+                    success: ({data}) =>
+                        Text('result', style: TextStyle(fontSize: 30)),
+                  ),
                   RaisedButton(
                     key: const Key('blueLightTheme'),
                     child: const Text('change theme blueLight'),

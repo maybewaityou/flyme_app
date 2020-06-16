@@ -7,6 +7,7 @@ void main() {
     // First, define the Finders and use them to locate widgets from the
     // test suite. Note: the Strings provided to the `byValueKey` method must
     // be the same as the Strings we used for the Keys in step 1.
+    final scrollableFinder = find.byValueKey('scrollable');
     final blueLightThemeFinder = find.byValueKey('blueLightTheme');
     final blueDarkThemeFinder = find.byValueKey('blueDarkTheme');
     final greenLightThemeFinder = find.byValueKey('greenLightTheme');
@@ -61,6 +62,8 @@ void main() {
     });
 
     test('change page', () async {
+      driver.scroll(scrollableFinder, 0, -100, Duration(seconds: 1));
+
       await Future.delayed(Duration(seconds: 2));
       await driver.tap(secondPageFinder);
       await Future.delayed(Duration(seconds: 2));

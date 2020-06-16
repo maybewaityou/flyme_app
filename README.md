@@ -324,15 +324,11 @@ sudo npm install -g generator-flyme
 
 详情请见 generator-flyme 使用文档.
 
-## 基础知识与相关概念
-
-[DDD 相关概念](./docs/DDD 相关概念.md)
-
-[软件开发基本原则 ( SOLID )](./docs/软件开发基本原则 ( SOLID ).md)
-
 ## 扩展知识
 
-### 四色原型建模
+[Domain-Driven-Design 相关概念](https://github.com/maybewaityou/flyme_ddd/blob/master/README.md)
 
-### DCI 架构 (Data Context Interactions)
+[四色原型建模]()
+
+[DCI 架构 (Data Context Interactions)]()
 

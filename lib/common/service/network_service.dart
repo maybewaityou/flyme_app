@@ -53,9 +53,11 @@ class NetworkService {
     // TODO: 弹框判断
 
     try {
-      Response response;
+      // 请求转换格式
       final parameters =
           DataModelAdapter.camelize2SnakeCase(wrapper.params.toJson());
+
+      Response response;
       if (meta.method == Method.post) {
         response = await _dio.post(url, data: parameters);
       } else {
@@ -63,7 +65,7 @@ class NetworkService {
       }
       // TODO: 弹框判断
 
-      // 转换格式
+      // 响应转换格式
       final json = DataModelAdapter.snakeCase2Camelize(response.data);
 
       if (!_isSuccess(response)) {

@@ -10,7 +10,7 @@
 
 ## 架构图 ( Layered Architecture )
 
-![architecture](docs/image/DDD.png)
+![architecture](doc/image/DDD.png)
 
 ## 目录结构
 
@@ -242,7 +242,7 @@ DDD 中的核心层. 执行特定领域的业务逻辑.
 
 ### 执行流水线
 
-![pipeline](docs/image/pipeline.png)
+![pipeline](doc/image/pipeline.png)
 
 1. **User Interface** 层接收到用户事件, 将事件封装成 **View Object** 或 **Value Object**, 传输到 **Application** 层.
 

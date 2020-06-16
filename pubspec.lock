@@ -379,10 +379,10 @@ packages:
   flyme_ddd:
     dependency: "direct main"
     description:
-      path: "/Users/MeePwn/Desktop/flyme_app/packages/flyme_ddd"
-      relative: false
-    source: path
-    version: "0.0.1"
+      name: flyme_ddd
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.2"
   flyme_generator:
     dependency: "direct dev"
     description:
@@ -396,14 +396,14 @@ packages:
       name: freezed
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.10.9"
+    version: "0.11.0"
   freezed_annotation:
     dependency: "direct main"
     description:
       name: freezed_annotation
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.7.1"
+    version: "0.11.0"
   fuchsia_remote_debug_protocol:
     dependency: transitive
     description: flutter

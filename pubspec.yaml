@@ -76,12 +76,10 @@ dependencies:
   # 闪退日志收集
   catcher: ^0.3.7
   strings: ^0.1.2
-
-  flyme_ddd:
-    path: /Users/MeePwn/Desktop/flyme_app/packages/flyme_ddd
-
+  # DDD
+  flyme_ddd: ^0.1.2
   # 生成器注解
-  freezed_annotation: ^0.7.1
+  freezed_annotation: ^0.11.0
   flyme_annotation: ^0.0.3
 
 dev_dependencies:
@@ -106,7 +104,7 @@ dev_dependencies:
   # 生成器
   injectable_generator: ^0.4.0
   intl_utils: ^1.5.0
-  freezed: ^0.10.9
+  freezed: ^0.11.0
   flyme_generator: ^0.0.2
 
 # For information on the generic Dart part of this file, see the

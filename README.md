@@ -304,9 +304,9 @@ flutter drive --target=test_driver/app.dart --keep-app-running
 
 详情请见 **Flyme Snippet** 使用文档.
 
-[Flyme Snippet for Android Studio](./docs/Flyme Snippet for Android Studio.md)
+[Flyme Snippet for Android Studio](https://github.com/maybewaityou/idea-flyme-plugin)
 
-[Flyme Snippet for VS Code](./docs/Flyme Snippet for VS Code.md)
+[Flyme Snippet for VS Code](https://github.com/maybewaityou/flyme-snippet)
 
 ### 代码生成器 - generator-flyme
 

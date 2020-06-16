@@ -1,4 +1,4 @@
-import 'package:flyme_app/shared/domain/model/domain_event.dart';
+import 'package:flyme_ddd/flyme_ddd.dart';
 
 class UserCreated implements DomainEvent {
   final String id;

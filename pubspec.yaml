@@ -76,6 +76,10 @@ dependencies:
   # 闪退日志收集
   catcher: ^0.3.7
   strings: ^0.1.2
+
+  flyme_ddd:
+    path: /Users/MeePwn/Desktop/flyme_app/packages/flyme_ddd
+
   # 生成器注解
   freezed_annotation: ^0.7.1
   flyme_annotation: ^0.0.3

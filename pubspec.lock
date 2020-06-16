@@ -119,7 +119,7 @@ packages:
       name: catcher
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.3.11"
+    version: "0.3.14"
   characters:
     dependency: transitive
     description:
@@ -299,7 +299,7 @@ packages:
       name: flutter_cache_manager
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.4.0"
+    version: "1.4.1"
   flutter_driver:
     dependency: "direct dev"
     description: flutter
@@ -376,6 +376,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.0.3"
+  flyme_ddd:
+    dependency: "direct main"
+    description:
+      path: "/Users/MeePwn/Desktop/flyme_app/packages/flyme_ddd"
+      relative: false
+    source: path
+    version: "0.0.1"
   flyme_generator:
     dependency: "direct dev"
     description:
@@ -1050,7 +1057,7 @@ packages:
       name: uuid
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.4"
+    version: "2.1.0"
   vector_math:
     dependency: transitive
     description:
@@ -1129,5 +1136,5 @@ packages:
     source: hosted
     version: "2.2.1"
 sdks:
-  dart: ">=2.7.2 <3.0.0"
+  dart: ">=2.8.0 <3.0.0"
   flutter: ">=1.17.0 <2.0.0"

@@ -8,8 +8,7 @@ import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/utils/http/http_exception.dart';
 import 'package:flyme_app/common/utils/http/http_request.dart';
 import 'package:flyme_app/common/utils/log/dio_logger.dart';
-import 'package:flyme_app/shared/anticorruption/adapter/adapter.dart';
-import 'package:flyme_app/shared/infrastructure/model/model.dart';
+import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:injectable/injectable.dart';
 
 typedef Action = void Function();

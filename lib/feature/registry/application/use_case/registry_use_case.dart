@@ -3,7 +3,7 @@ import 'package:flyme_app/feature/registry/domain/model/entity/registry.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/domain/repository/repository.dart';
 import 'package:flyme_app/feature/registry/user_interface/model/model.dart';
-import 'package:flyme_app/shared/application/use_case/use_case.dart';
+import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class IRegistryUseCase implements IUseCase {

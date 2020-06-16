@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flyme_app/feature/registry/domain/validator/validator.dart';
-import 'package:flyme_app/shared/domain/model/entity.dart';
-import 'package:flyme_app/shared/domain/model/value_object.dart';
+import 'package:flyme_ddd/flyme_ddd.dart';
 
 abstract class IRegistry implements IValidatableEntity {}
 

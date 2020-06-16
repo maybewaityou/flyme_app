@@ -1,5 +1,5 @@
 import 'package:flyme_app/feature/registry/domain/model/entity/registry.dart';
-import 'package:flyme_app/shared/infrastructure/infrastructure.dart';
+import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'registry_dto.freezed.dart';

@@ -1,5 +1,5 @@
 import 'package:flyme_app/feature/registry/infrastructure/model/model.dart';
-import 'package:flyme_app/shared/user_interface/model/view_object.dart';
+import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'registry_view_object.freezed.dart';

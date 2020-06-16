@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flyme_app/shared/user_interface/view_model/view_model.dart';
+import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:provider/provider.dart';
 
 /// Provider 封装类

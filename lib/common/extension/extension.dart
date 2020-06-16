@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flyme_ddd/domain/validator/error/error.dart';
-import 'package:flyme_ddd/domain/validator/failure/failure.dart';
+import 'package:flyme_ddd/flyme_ddd.dart';
 
 extension OptionX<A> on Option<A> {
   A getOrCrash() {

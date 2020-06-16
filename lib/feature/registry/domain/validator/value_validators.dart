@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flyme_app/feature/registry/domain/model/entity/registry.dart';
-import 'package:flyme_app/shared/domain/validator/failure/failure.dart';
-import 'package:flyme_app/shared/domain/validator/validator.dart';
+import 'package:flyme_ddd/flyme_ddd.dart';
 
 class RegistryValidator extends Validator {
   final IRegistry _entity;

@@ -61,9 +61,9 @@ Widget _contentBuilder(
                       fillColor: Colors.blue.shade100,
                       filled: true,
                       labelText: '请输入手机号',
-                      errorText: !phoneNumber.isValid()
-                          ? 'phone number is invalidate'
-                          : null,
+                      errorText: phoneNumber.isValid()
+                          ? null
+                          : 'phone number is invalidate',
                     ),
                   ),
               email: () => TextField(
@@ -77,9 +77,8 @@ Widget _contentBuilder(
                       fillColor: Colors.blue.shade100,
                       filled: true,
                       labelText: '请输入邮箱',
-                      errorText: !emailAddress.isValid()
-                          ? 'email is invalidate'
-                          : null,
+                      errorText:
+                          emailAddress.isValid() ? null : 'email is invalidate',
                     ),
                   ),
               weiXin: () => Container()),

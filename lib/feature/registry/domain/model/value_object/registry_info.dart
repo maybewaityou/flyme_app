@@ -3,15 +3,21 @@ import 'package:flutter/foundation.dart';
 import 'package:flyme_app/feature/registry/domain/validator/validator.dart';
 import 'package:flyme_ddd/flyme_ddd.dart';
 
-class RegistryInfo extends ValueObject<String> {
+enum RegistryType {
+  phone,
+  email,
+  weiXin,
+}
+
+class RegistryInfo extends ValueObject<RegistryType> {
   const RegistryInfo._(this.value);
 
-  factory RegistryInfo({@required String type}) {
+  factory RegistryInfo({@required RegistryType type}) {
     return RegistryInfo._(
       validateRegistryType(type),
     );
   }
 
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<RegistryType>, RegistryType> value;
 }

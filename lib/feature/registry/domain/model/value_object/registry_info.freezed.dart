@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$RegistryTypeTearOff {
   const _$RegistryTypeTearOff();
 
-  _RegistryPhone phone() {
-    return const _RegistryPhone();
+  _RegistryTypePhone phone() {
+    return const _RegistryTypePhone();
   }
 
   _RegistryEmail email() {
@@ -44,13 +44,13 @@ mixin _$RegistryType {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result phone(_RegistryPhone value),
+    @required Result phone(_RegistryTypePhone value),
     @required Result email(_RegistryEmail value),
     @required Result weiXin(_RegistryWeiXin value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result phone(_RegistryPhone value),
+    Result phone(_RegistryTypePhone value),
     Result email(_RegistryEmail value),
     Result weiXin(_RegistryWeiXin value),
     @required Result orElse(),
@@ -71,25 +71,27 @@ class _$RegistryTypeCopyWithImpl<$Res> implements $RegistryTypeCopyWith<$Res> {
   final $Res Function(RegistryType) _then;
 }
 
-abstract class _$RegistryPhoneCopyWith<$Res> {
-  factory _$RegistryPhoneCopyWith(
-          _RegistryPhone value, $Res Function(_RegistryPhone) then) =
-      __$RegistryPhoneCopyWithImpl<$Res>;
+abstract class _$RegistryTypePhoneCopyWith<$Res> {
+  factory _$RegistryTypePhoneCopyWith(
+          _RegistryTypePhone value, $Res Function(_RegistryTypePhone) then) =
+      __$RegistryTypePhoneCopyWithImpl<$Res>;
 }
 
-class __$RegistryPhoneCopyWithImpl<$Res>
+class __$RegistryTypePhoneCopyWithImpl<$Res>
     extends _$RegistryTypeCopyWithImpl<$Res>
-    implements _$RegistryPhoneCopyWith<$Res> {
-  __$RegistryPhoneCopyWithImpl(
-      _RegistryPhone _value, $Res Function(_RegistryPhone) _then)
-      : super(_value, (v) => _then(v as _RegistryPhone));
+    implements _$RegistryTypePhoneCopyWith<$Res> {
+  __$RegistryTypePhoneCopyWithImpl(
+      _RegistryTypePhone _value, $Res Function(_RegistryTypePhone) _then)
+      : super(_value, (v) => _then(v as _RegistryTypePhone));
 
   @override
-  _RegistryPhone get _value => super._value as _RegistryPhone;
+  _RegistryTypePhone get _value => super._value as _RegistryTypePhone;
 }
 
-class _$_RegistryPhone with DiagnosticableTreeMixin implements _RegistryPhone {
-  const _$_RegistryPhone();
+class _$_RegistryTypePhone
+    with DiagnosticableTreeMixin
+    implements _RegistryTypePhone {
+  const _$_RegistryTypePhone();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -104,7 +106,7 @@ class _$_RegistryPhone with DiagnosticableTreeMixin implements _RegistryPhone {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RegistryPhone);
+    return identical(this, other) || (other is _RegistryTypePhone);
   }
 
   @override
@@ -141,7 +143,7 @@ class _$_RegistryPhone with DiagnosticableTreeMixin implements _RegistryPhone {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result phone(_RegistryPhone value),
+    @required Result phone(_RegistryTypePhone value),
     @required Result email(_RegistryEmail value),
     @required Result weiXin(_RegistryWeiXin value),
   }) {
@@ -154,7 +156,7 @@ class _$_RegistryPhone with DiagnosticableTreeMixin implements _RegistryPhone {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result phone(_RegistryPhone value),
+    Result phone(_RegistryTypePhone value),
     Result email(_RegistryEmail value),
     Result weiXin(_RegistryWeiXin value),
     @required Result orElse(),
@@ -167,8 +169,8 @@ class _$_RegistryPhone with DiagnosticableTreeMixin implements _RegistryPhone {
   }
 }
 
-abstract class _RegistryPhone implements RegistryType {
-  const factory _RegistryPhone() = _$_RegistryPhone;
+abstract class _RegistryTypePhone implements RegistryType {
+  const factory _RegistryTypePhone() = _$_RegistryTypePhone;
 }
 
 abstract class _$RegistryEmailCopyWith<$Res> {
@@ -241,7 +243,7 @@ class _$_RegistryEmail with DiagnosticableTreeMixin implements _RegistryEmail {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result phone(_RegistryPhone value),
+    @required Result phone(_RegistryTypePhone value),
     @required Result email(_RegistryEmail value),
     @required Result weiXin(_RegistryWeiXin value),
   }) {
@@ -254,7 +256,7 @@ class _$_RegistryEmail with DiagnosticableTreeMixin implements _RegistryEmail {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result phone(_RegistryPhone value),
+    Result phone(_RegistryTypePhone value),
     Result email(_RegistryEmail value),
     Result weiXin(_RegistryWeiXin value),
     @required Result orElse(),
@@ -343,7 +345,7 @@ class _$_RegistryWeiXin
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result phone(_RegistryPhone value),
+    @required Result phone(_RegistryTypePhone value),
     @required Result email(_RegistryEmail value),
     @required Result weiXin(_RegistryWeiXin value),
   }) {
@@ -356,7 +358,7 @@ class _$_RegistryWeiXin
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result phone(_RegistryPhone value),
+    Result phone(_RegistryTypePhone value),
     Result email(_RegistryEmail value),
     Result weiXin(_RegistryWeiXin value),
     @required Result orElse(),

@@ -10,9 +10,9 @@ part 'registry_info.freezed.dart';
 
 @freezed
 abstract class RegistryType with _$RegistryType {
-  const factory RegistryType.phone() = _RegistryPhone;
-  const factory RegistryType.email() = _RegistryEmail;
-  const factory RegistryType.weiXin() = _RegistryWeiXin;
+  const factory RegistryType.phone() = _RegistryTypePhone;
+  const factory RegistryType.email() = _RegistryTypeEmail;
+  const factory RegistryType.weiXin() = _RegistryTypeWeiXin;
 }
 
 class RegistryInfo extends ValueObject<RegistryType> {

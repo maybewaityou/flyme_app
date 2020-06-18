@@ -1,4 +1,6 @@
+import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/infrastructure/model/model.dart';
+import 'package:flyme_app/shared/domain/model/value_object/value_object.dart';
 import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -7,6 +9,10 @@ part 'registry_view_object.freezed.dart';
 @freezed
 abstract class RegistryViewObject extends ViewObject with _$RegistryViewObject {
   const factory RegistryViewObject.viewObject({
+    @required RegistryType type,
+    @required String userName,
+    @required EmailAddress emailAddress,
+    @required PhoneNumber phoneNumber,
     @required String name,
     @required List<CustomUser> users,
     @required bool refreshing,
@@ -16,6 +22,10 @@ abstract class RegistryViewObject extends ViewObject with _$RegistryViewObject {
       _ViewError;
 
   factory RegistryViewObject.initial() => RegistryViewObject.viewObject(
+        type: RegistryType.phone(),
+        userName: '',
+        emailAddress: EmailAddress(input: ''),
+        phoneNumber: PhoneNumber(input: ''),
         name: '',
         users: [],
         refreshing: false,
@@ -23,6 +33,10 @@ abstract class RegistryViewObject extends ViewObject with _$RegistryViewObject {
 
   factory RegistryViewObject.fromDataModel(UserInfo model) =>
       RegistryViewObject.viewObject(
+        type: RegistryType.phone(),
+        userName: '',
+        emailAddress: EmailAddress(input: ''),
+        phoneNumber: PhoneNumber(input: ''),
         name: model.name,
         users: model.customUsers,
         refreshing: false,

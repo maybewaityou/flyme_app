@@ -30,14 +30,14 @@ class RegistryPage extends StatelessWidget {
 Widget _contentBuilder(
     BuildContext context, RegistryViewModel viewModel, Widget child) {
   final viewObject = viewModel.viewObject;
-  final inputObject = viewModel.inputObject;
   print('===== _contentBuilder =====');
   return viewObject.when(
     loading: () => const Center(child: CircularProgressIndicator()),
     error: (errorMessage) => Center(
       child: Text(errorMessage),
     ),
-    viewObject: (name, users, refreshing) {
+    viewObject:
+        (type, userName, emailAddress, phoneNumber, name, users, refreshing) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
@@ -49,7 +49,7 @@ Widget _contentBuilder(
               color: Colors.red,
             ),
           ),
-          inputObject.getOrCrash().when(
+          type.when(
               phone: () => TextField(
                     controller: viewModel.phoneController,
                     maxLength: 11,
@@ -61,7 +61,7 @@ Widget _contentBuilder(
                       fillColor: Colors.blue.shade100,
                       filled: true,
                       labelText: '请输入手机号',
-                      errorText: !inputObject.phoneNumber.isValid()
+                      errorText: !phoneNumber.isValid()
                           ? 'phone number is invalidate'
                           : null,
                     ),
@@ -77,7 +77,7 @@ Widget _contentBuilder(
                       fillColor: Colors.blue.shade100,
                       filled: true,
                       labelText: '请输入邮箱',
-                      errorText: !inputObject.emailAddress.isValid()
+                      errorText: !emailAddress.isValid()
                           ? 'email is invalidate'
                           : null,
                     ),
@@ -89,13 +89,13 @@ Widget _contentBuilder(
               Text('手机号'),
               Radio(
                   value: RegistryType.phone(),
-                  groupValue: inputObject.getOrCrash(),
+                  groupValue: type,
                   onChanged: viewModel.handleChangeType),
               SizedBox(width: 50),
               Text('Email'),
               Radio(
                   value: RegistryType.email(),
-                  groupValue: inputObject.getOrCrash(),
+                  groupValue: type,
                   onChanged: viewModel.handleChangeType),
             ],
           ),

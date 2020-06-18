@@ -23,11 +23,6 @@ part 'registry_view_model.g.dart';
     type: RegistryViewObject,
     initial: 'RegistryViewObject.initial()',
   ),
-  Property(
-    name: 'inputObject',
-    type: RegistryInfo,
-    initial: 'RegistryInfo.initial()',
-  ),
 ])
 class RegistryViewModel extends _$ViewModel {
   final IRegistryUseCase _useCase;
@@ -57,25 +52,41 @@ class RegistryViewModel extends _$ViewModel {
   }
 
   void handleChangeType(input) {
-    inputObject = inputObject.copyWith(type: input);
+    viewObject = viewObject.maybeMap(
+      orElse: () => null,
+      viewObject: (value) => value.copyWith(type: input),
+    );
   }
 
   void handleEmailChange(input) {
     print('== email input ===>>>> $input');
-    inputObject =
-        inputObject.copyWith(emailAddress: EmailAddress(input: input));
-    print('== inputObject ===>>>> $inputObject');
+    viewObject = viewObject.maybeMap(
+      orElse: () => null,
+      viewObject: (value) => value.copyWith(
+        emailAddress: EmailAddress(input: input),
+      ),
+    );
   }
 
   void handlePhoneChange(input) {
     print('== phone input ===>>>> $input');
-    inputObject = inputObject.copyWith(phoneNumber: PhoneNumber(input: input));
-    print('== inputObject ===>>>> $inputObject');
+    viewObject = viewObject.maybeMap(
+      orElse: () => null,
+      viewObject: (value) => value.copyWith(
+        phoneNumber: PhoneNumber(input: input),
+      ),
+    );
   }
 
   void handleRegistryPress() async {
+    final registryInfo = viewObject.maybeWhen(
+      orElse: () => null,
+      viewObject: (type, userName, emailAddress, phoneNumber, name, users,
+              refreshing) =>
+          RegistryInfo(type: type, userName: ''),
+    );
     viewObject = RegistryViewObject.loading();
-    viewObject = await _useCase.registry(inputObject);
+    viewObject = await _useCase.registry(registryInfo);
     print('== userInfo in view model ===>>>> $viewObject');
   }
 

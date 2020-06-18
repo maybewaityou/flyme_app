@@ -13,10 +13,18 @@ class _$RegistryViewObjectTearOff {
   const _$RegistryViewObjectTearOff();
 
   _ViewObject viewObject(
-      {@required String name,
+      {@required RegistryType type,
+      @required String userName,
+      @required EmailAddress emailAddress,
+      @required PhoneNumber phoneNumber,
+      @required String name,
       @required List<CustomUser> users,
       @required bool refreshing}) {
     return _ViewObject(
+      type: type,
+      userName: userName,
+      emailAddress: emailAddress,
+      phoneNumber: phoneNumber,
       name: name,
       users: users,
       refreshing: refreshing,
@@ -41,13 +49,27 @@ mixin _$RegistryViewObject {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result viewObject(String name, List<CustomUser> users, bool refreshing),
+        Result viewObject(
+            RegistryType type,
+            String userName,
+            EmailAddress emailAddress,
+            PhoneNumber phoneNumber,
+            String name,
+            List<CustomUser> users,
+            bool refreshing),
     @required Result loading(),
     @required Result error(String errorMessage),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result viewObject(String name, List<CustomUser> users, bool refreshing),
+    Result viewObject(
+        RegistryType type,
+        String userName,
+        EmailAddress emailAddress,
+        PhoneNumber phoneNumber,
+        String name,
+        List<CustomUser> users,
+        bool refreshing),
     Result loading(),
     Result error(String errorMessage),
     @required Result orElse(),
@@ -86,7 +108,16 @@ abstract class _$ViewObjectCopyWith<$Res> {
   factory _$ViewObjectCopyWith(
           _ViewObject value, $Res Function(_ViewObject) then) =
       __$ViewObjectCopyWithImpl<$Res>;
-  $Res call({String name, List<CustomUser> users, bool refreshing});
+  $Res call(
+      {RegistryType type,
+      String userName,
+      EmailAddress emailAddress,
+      PhoneNumber phoneNumber,
+      String name,
+      List<CustomUser> users,
+      bool refreshing});
+
+  $RegistryTypeCopyWith<$Res> get type;
 }
 
 class __$ViewObjectCopyWithImpl<$Res>
@@ -101,26 +132,66 @@ class __$ViewObjectCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object type = freezed,
+    Object userName = freezed,
+    Object emailAddress = freezed,
+    Object phoneNumber = freezed,
     Object name = freezed,
     Object users = freezed,
     Object refreshing = freezed,
   }) {
     return _then(_ViewObject(
+      type: type == freezed ? _value.type : type as RegistryType,
+      userName: userName == freezed ? _value.userName : userName as String,
+      emailAddress: emailAddress == freezed
+          ? _value.emailAddress
+          : emailAddress as EmailAddress,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber as PhoneNumber,
       name: name == freezed ? _value.name : name as String,
       users: users == freezed ? _value.users : users as List<CustomUser>,
       refreshing:
           refreshing == freezed ? _value.refreshing : refreshing as bool,
     ));
   }
+
+  @override
+  $RegistryTypeCopyWith<$Res> get type {
+    if (_value.type == null) {
+      return null;
+    }
+    return $RegistryTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
 }
 
 class _$_ViewObject implements _ViewObject {
   const _$_ViewObject(
-      {@required this.name, @required this.users, @required this.refreshing})
-      : assert(name != null),
+      {@required this.type,
+      @required this.userName,
+      @required this.emailAddress,
+      @required this.phoneNumber,
+      @required this.name,
+      @required this.users,
+      @required this.refreshing})
+      : assert(type != null),
+        assert(userName != null),
+        assert(emailAddress != null),
+        assert(phoneNumber != null),
+        assert(name != null),
         assert(users != null),
         assert(refreshing != null);
 
+  @override
+  final RegistryType type;
+  @override
+  final String userName;
+  @override
+  final EmailAddress emailAddress;
+  @override
+  final PhoneNumber phoneNumber;
   @override
   final String name;
   @override
@@ -130,13 +201,24 @@ class _$_ViewObject implements _ViewObject {
 
   @override
   String toString() {
-    return 'RegistryViewObject.viewObject(name: $name, users: $users, refreshing: $refreshing)';
+    return 'RegistryViewObject.viewObject(type: $type, userName: $userName, emailAddress: $emailAddress, phoneNumber: $phoneNumber, name: $name, users: $users, refreshing: $refreshing)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ViewObject &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.userName, userName) ||
+                const DeepCollectionEquality()
+                    .equals(other.userName, userName)) &&
+            (identical(other.emailAddress, emailAddress) ||
+                const DeepCollectionEquality()
+                    .equals(other.emailAddress, emailAddress)) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.phoneNumber, phoneNumber)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.users, users) ||
@@ -149,6 +231,10 @@ class _$_ViewObject implements _ViewObject {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(userName) ^
+      const DeepCollectionEquality().hash(emailAddress) ^
+      const DeepCollectionEquality().hash(phoneNumber) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(users) ^
       const DeepCollectionEquality().hash(refreshing);
@@ -161,27 +247,43 @@ class _$_ViewObject implements _ViewObject {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result viewObject(String name, List<CustomUser> users, bool refreshing),
+        Result viewObject(
+            RegistryType type,
+            String userName,
+            EmailAddress emailAddress,
+            PhoneNumber phoneNumber,
+            String name,
+            List<CustomUser> users,
+            bool refreshing),
     @required Result loading(),
     @required Result error(String errorMessage),
   }) {
     assert(viewObject != null);
     assert(loading != null);
     assert(error != null);
-    return viewObject(name, users, refreshing);
+    return viewObject(
+        type, userName, emailAddress, phoneNumber, name, users, refreshing);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result viewObject(String name, List<CustomUser> users, bool refreshing),
+    Result viewObject(
+        RegistryType type,
+        String userName,
+        EmailAddress emailAddress,
+        PhoneNumber phoneNumber,
+        String name,
+        List<CustomUser> users,
+        bool refreshing),
     Result loading(),
     Result error(String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (viewObject != null) {
-      return viewObject(name, users, refreshing);
+      return viewObject(
+          type, userName, emailAddress, phoneNumber, name, users, refreshing);
     }
     return orElse();
   }
@@ -217,10 +319,18 @@ class _$_ViewObject implements _ViewObject {
 
 abstract class _ViewObject implements RegistryViewObject {
   const factory _ViewObject(
-      {@required String name,
+      {@required RegistryType type,
+      @required String userName,
+      @required EmailAddress emailAddress,
+      @required PhoneNumber phoneNumber,
+      @required String name,
       @required List<CustomUser> users,
       @required bool refreshing}) = _$_ViewObject;
 
+  RegistryType get type;
+  String get userName;
+  EmailAddress get emailAddress;
+  PhoneNumber get phoneNumber;
   String get name;
   List<CustomUser> get users;
   bool get refreshing;
@@ -264,7 +374,14 @@ class _$_ViewLoading implements _ViewLoading {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result viewObject(String name, List<CustomUser> users, bool refreshing),
+        Result viewObject(
+            RegistryType type,
+            String userName,
+            EmailAddress emailAddress,
+            PhoneNumber phoneNumber,
+            String name,
+            List<CustomUser> users,
+            bool refreshing),
     @required Result loading(),
     @required Result error(String errorMessage),
   }) {
@@ -277,7 +394,14 @@ class _$_ViewLoading implements _ViewLoading {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result viewObject(String name, List<CustomUser> users, bool refreshing),
+    Result viewObject(
+        RegistryType type,
+        String userName,
+        EmailAddress emailAddress,
+        PhoneNumber phoneNumber,
+        String name,
+        List<CustomUser> users,
+        bool refreshing),
     Result loading(),
     Result error(String errorMessage),
     @required Result orElse(),
@@ -383,7 +507,14 @@ class _$_ViewError implements _ViewError {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result viewObject(String name, List<CustomUser> users, bool refreshing),
+        Result viewObject(
+            RegistryType type,
+            String userName,
+            EmailAddress emailAddress,
+            PhoneNumber phoneNumber,
+            String name,
+            List<CustomUser> users,
+            bool refreshing),
     @required Result loading(),
     @required Result error(String errorMessage),
   }) {
@@ -396,7 +527,14 @@ class _$_ViewError implements _ViewError {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result viewObject(String name, List<CustomUser> users, bool refreshing),
+    Result viewObject(
+        RegistryType type,
+        String userName,
+        EmailAddress emailAddress,
+        PhoneNumber phoneNumber,
+        String name,
+        List<CustomUser> users,
+        bool refreshing),
     Result loading(),
     Result error(String errorMessage),
     @required Result orElse(),

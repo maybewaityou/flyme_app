@@ -40,26 +40,6 @@ class RegistryInfo extends ValueObject<RegistryType> {
         phoneNumber,
       );
 
-  factory RegistryInfo.initial() => RegistryInfo(
-        type: RegistryType.phone(),
-        userName: '',
-        emailAddress: EmailAddress(input: ''),
-        phoneNumber: PhoneNumber(input: ''),
-      );
-
-  RegistryInfo copyWith({
-    RegistryType type,
-    String userName,
-    EmailAddress emailAddress,
-    PhoneNumber phoneNumber,
-  }) =>
-      RegistryInfo._(
-        type != null ? validateRegistryType(type) : value,
-        userName ?? this.userName,
-        emailAddress ?? this.emailAddress,
-        phoneNumber ?? this.phoneNumber,
-      );
-
   @override
   final Either<ValueFailure<RegistryType>, RegistryType> value;
 

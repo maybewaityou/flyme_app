@@ -17,12 +17,12 @@ class RegistryRepository implements IRegistryRepository {
   const RegistryRepository(this._localDataSource, this._remoteDataSource);
 
   @override
-  Future<Either<HttpError, UserInfo>> register(IRegistry registry) async {
-    return _remoteDataSource.register(registry);
+  IRegistry registryByInfo(RegistryInfo info) {
+    return _remoteDataSource.registryByInfo(info);
   }
 
   @override
-  IRegistry registryByInfo(RegistryInfo info) {
-    return _remoteDataSource.registryByInfo(info);
+  Future<Either<HttpError, UserInfo>> register(IRegistry registry) async {
+    return _remoteDataSource.register(registry);
   }
 }

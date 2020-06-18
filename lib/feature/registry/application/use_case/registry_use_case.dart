@@ -1,5 +1,4 @@
 import 'package:flyme_app/common/extension/extension.dart';
-import 'package:flyme_app/feature/registry/domain/model/entity/registry.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/domain/repository/repository.dart';
 import 'package:flyme_app/feature/registry/user_interface/model/model.dart';
@@ -18,41 +17,20 @@ class RegistryUseCase implements IRegistryUseCase {
 
   @override
   Future<RegistryViewObject> registry(RegistryInfo info) async {
-    // TODO 构建领域对象
-    if (info.getOrCrash() == 'phone') {
-      final registry = PhoneRegistry();
-      // 校验参数
-      final validateOption = registry.validate();
-      if (validateOption.isSome()) {
-        return RegistryViewObject.error(
-          errorMessage: validateOption.getOrCrash(),
-        );
-      }
-
-      final userInfoValue = await repository.register(registry);
-      return userInfoValue.fold(
-        (error) => RegistryViewObject.error(
-          errorMessage: error.toString(),
-        ),
-        (userInfo) => RegistryViewObject.fromDataModel(userInfo),
+    // 获取领域对象
+    final registry = repository.registryByInfo(info);
+    // 校验参数
+    final validateOption = registry.validate();
+    if (validateOption.isSome()) {
+      return RegistryViewObject.error(
+        errorMessage: validateOption.getOrCrash(),
       );
-    } else if (info.getOrCrash() == 'email') {
-      final registry = await EmailRegistry();
-      return _execute(registry);
-    } else if (info.getOrCrash() == 'weixin') {
-      final registry = await WeixinRegistry();
-      return _execute(registry);
-    } else {
-      throw UnsupportedError('');
     }
-  }
 
-  Future<RegistryViewObject> _execute(IRegistry registry) async {
+    // 执行业务逻辑
     final userInfoValue = await repository.register(registry);
     return userInfoValue.fold(
-      (error) => RegistryViewObject.error(
-        errorMessage: error.toString(),
-      ),
+      (error) => RegistryViewObject.error(errorMessage: error.toString()),
       (userInfo) => RegistryViewObject.fromDataModel(userInfo),
     );
   }

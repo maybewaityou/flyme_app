@@ -13,6 +13,8 @@ class _$ViewModel extends ViewModel {
 
   RegistryViewObject _viewObject = RegistryViewObject.initial();
 
+  RegistryInfo _inputObject = RegistryInfo.initial();
+
   String get userName => _userName;
   set userName(String args) {
     _userName = args;
@@ -28,6 +30,12 @@ class _$ViewModel extends ViewModel {
   RegistryViewObject get viewObject => _viewObject;
   set viewObject(RegistryViewObject args) {
     _viewObject = args;
+    notifyListeners();
+  }
+
+  RegistryInfo get inputObject => _inputObject;
+  set inputObject(RegistryInfo args) {
+    _inputObject = args;
     notifyListeners();
   }
 }

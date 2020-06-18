@@ -20,11 +20,11 @@ class RegistryRemoteDataSource implements IRegistryRemoteDataSource {
 
   @override
   IRegistry registryByInfo(RegistryInfo info) {
-    if (info.getOrCrash() == RegistryType.phone) {
+    if (info.getOrCrash() == RegistryType.phone()) {
       return PhoneRegistry();
-    } else if (info.getOrCrash() == RegistryType.email) {
+    } else if (info.getOrCrash() == RegistryType.email()) {
       return EmailRegistry();
-    } else if (info.getOrCrash() == RegistryType.weiXin) {
+    } else if (info.getOrCrash() == RegistryType.weiXin()) {
       return WeixinRegistry();
     } else {
       throw UnsupportedError('');

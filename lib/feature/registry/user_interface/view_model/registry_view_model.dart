@@ -8,6 +8,7 @@ import 'package:flyme_app/feature/registry/domain/model/event/user_created.dart'
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/infrastructure/model/model.dart';
 import 'package:flyme_app/feature/registry/user_interface/model/model.dart';
+import 'package:flyme_app/shared/domain/model/value_object/value_object.dart';
 import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:injectable/injectable.dart';
 
@@ -22,16 +23,27 @@ part 'registry_view_model.g.dart';
     type: RegistryViewObject,
     initial: 'RegistryViewObject.initial()',
   ),
+  Property(
+    name: 'inputObject',
+    type: RegistryInfo,
+    initial: 'RegistryInfo.initial()',
+  ),
 ])
 class RegistryViewModel extends _$ViewModel {
   final IRegistryUseCase _useCase;
   StreamSubscription<UserCreated> _subscription;
+
+  TextEditingController phoneController;
+  TextEditingController emailController;
 
   RegistryViewModel(this._useCase);
 
   @override
   void init() {
     print('==== RegistryViewModel init ====');
+
+    phoneController = TextEditingController();
+    emailController = TextEditingController();
 
     _subscription =
         DomainEventPublisher.instance().subscribe<UserCreated>((event) {
@@ -44,22 +56,32 @@ class RegistryViewModel extends _$ViewModel {
     });
   }
 
-  void handleEmailChange(e) {
-//    viewObject.maybeWhen(
-//      orElse: null,
-//      viewObject: (name, users, refreshing) => RegistryViewObject.viewObject(
-//        name: name,
-//        users: users,
-//        refreshing: refreshing,
-//      ),
-//    );
+  void handleChangeType(input) {
+    if (input == RegistryType.phone()) {
+      emailController.clear();
+    } else if (input == RegistryType.email()) {
+      phoneController.clear();
+    }
+
+    inputObject = inputObject.copyWith(type: input);
+  }
+
+  void handleEmailChange(input) {
+    print('== email input ===>>>> $input');
+    inputObject =
+        inputObject.copyWith(emailAddress: EmailAddress(input: input));
+    print('== inputObject ===>>>> $inputObject');
+  }
+
+  void handlePhoneChange(input) {
+    print('== phone input ===>>>> $input');
+    inputObject = inputObject.copyWith(phoneNumber: PhoneNumber(input: input));
+    print('== inputObject ===>>>> $inputObject');
   }
 
   void handleRegistryPress() async {
     viewObject = RegistryViewObject.loading();
-    viewObject =
-        await _useCase.registry(RegistryInfo(type: RegistryType.phone));
-
+    viewObject = await _useCase.registry(inputObject);
     print('== userInfo in view model ===>>>> $viewObject');
   }
 
@@ -74,6 +96,8 @@ class RegistryViewModel extends _$ViewModel {
 
   @override
   void dispose() async {
+    if (phoneController != null) phoneController.dispose();
+    if (emailController != null) emailController.dispose();
     if (_subscription != null) await _subscription.cancel();
 
     super.dispose();

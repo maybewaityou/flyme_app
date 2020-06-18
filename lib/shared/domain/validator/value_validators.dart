@@ -10,7 +10,7 @@ Either<ValueFailure<String>, String> validateUserName(String input) {
 }
 
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
-  if (input is String) {
+  if (input.length >= 5) {
     return right(input);
   }
 
@@ -18,7 +18,7 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
 }
 
 Either<ValueFailure<String>, String> validatePhoneNumber(String input) {
-  if (input is String) {
+  if (input.length == 11) {
     return right(input);
   }
 

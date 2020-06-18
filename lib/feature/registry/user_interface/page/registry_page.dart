@@ -51,7 +51,7 @@ Widget _contentBuilder(
           ),
           inputObject.getOrCrash().when(
               phone: () => TextField(
-                    controller: viewModel.emailController,
+                    controller: viewModel.phoneController,
                     maxLength: 11,
                     maxLines: 1,
                     style: TextStyle(fontSize: 18.0), //输入文本的样式
@@ -61,13 +61,13 @@ Widget _contentBuilder(
                       fillColor: Colors.blue.shade100,
                       filled: true,
                       labelText: '请输入手机号',
-                      errorText: inputObject.phoneNumber.isValid()
-                          ? null
-                          : 'phone number is invalidate',
+                      errorText: !inputObject.phoneNumber.isValid()
+                          ? 'phone number is invalidate'
+                          : null,
                     ),
                   ),
               email: () => TextField(
-                    controller: viewModel.phoneController,
+                    controller: viewModel.emailController,
                     maxLength: 10,
                     maxLines: 1,
                     style: TextStyle(fontSize: 18.0), //输入文本的样式
@@ -77,9 +77,9 @@ Widget _contentBuilder(
                       fillColor: Colors.blue.shade100,
                       filled: true,
                       labelText: '请输入邮箱',
-                      errorText: inputObject.emailAddress.isValid()
-                          ? null
-                          : 'email is invalidate',
+                      errorText: !inputObject.emailAddress.isValid()
+                          ? 'email is invalidate'
+                          : null,
                     ),
                   ),
               weiXin: () => Container()),

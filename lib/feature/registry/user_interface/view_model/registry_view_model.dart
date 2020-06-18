@@ -57,12 +57,6 @@ class RegistryViewModel extends _$ViewModel {
   }
 
   void handleChangeType(input) {
-    if (input == RegistryType.phone()) {
-      emailController.clear();
-    } else if (input == RegistryType.email()) {
-      phoneController.clear();
-    }
-
     inputObject = inputObject.copyWith(type: input);
   }
 

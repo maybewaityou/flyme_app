@@ -31,7 +31,7 @@ class RegistryUseCase implements IRegistryUseCase {
     final userInfoValue = await repository.register(registry);
     return userInfoValue.fold(
       (error) => RegistryViewObject.error(errorMessage: error.toString()),
-      (userInfo) => RegistryViewObject.fromDataModel(userInfo),
+      (userInfo) => RegistryViewObject.fromDataModel(userInfo, info),
     );
   }
 }

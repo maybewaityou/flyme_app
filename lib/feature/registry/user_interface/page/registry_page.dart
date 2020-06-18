@@ -30,7 +30,6 @@ class RegistryPage extends StatelessWidget {
 Widget _contentBuilder(
     BuildContext context, RegistryViewModel viewModel, Widget child) {
   final viewObject = viewModel.viewObject;
-  print('===== _contentBuilder =====');
   return viewObject.when(
     loading: () => const Center(child: CircularProgressIndicator()),
     error: (errorMessage) => Center(

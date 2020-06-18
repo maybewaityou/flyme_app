@@ -83,7 +83,11 @@ class RegistryViewModel extends _$ViewModel {
       orElse: () => null,
       viewObject: (type, userName, emailAddress, phoneNumber, name, users,
               refreshing) =>
-          RegistryInfo(type: type, userName: ''),
+          RegistryInfo(
+              type: type,
+              userName: '',
+              emailAddress: emailAddress,
+              phoneNumber: phoneNumber),
     );
     viewObject = RegistryViewObject.loading();
     viewObject = await _useCase.registry(registryInfo);

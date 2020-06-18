@@ -31,12 +31,12 @@ abstract class RegistryViewObject extends ViewObject with _$RegistryViewObject {
         refreshing: false,
       );
 
-  factory RegistryViewObject.fromDataModel(UserInfo model) =>
+  factory RegistryViewObject.fromDataModel(UserInfo model, RegistryInfo info) =>
       RegistryViewObject.viewObject(
-        type: RegistryType.phone(),
-        userName: '',
-        emailAddress: EmailAddress(input: ''),
-        phoneNumber: PhoneNumber(input: ''),
+        type: info.getOrCrash(),
+        userName: info.userName.getOrElse(() => ''),
+        emailAddress: info.emailAddress ?? EmailAddress(input: ''),
+        phoneNumber: info.phoneNumber ?? PhoneNumber(input: ''),
         name: model.name,
         users: model.customUsers,
         refreshing: false,

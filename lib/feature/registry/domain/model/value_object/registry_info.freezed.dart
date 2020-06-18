@@ -16,12 +16,12 @@ class _$RegistryTypeTearOff {
     return const _RegistryTypePhone();
   }
 
-  _RegistryEmail email() {
-    return const _RegistryEmail();
+  _RegistryTypeEmail email() {
+    return const _RegistryTypeEmail();
   }
 
-  _RegistryWeiXin weiXin() {
-    return const _RegistryWeiXin();
+  _RegistryTypeWeiXin weiXin() {
+    return const _RegistryTypeWeiXin();
   }
 }
 
@@ -45,14 +45,14 @@ mixin _$RegistryType {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result phone(_RegistryTypePhone value),
-    @required Result email(_RegistryEmail value),
-    @required Result weiXin(_RegistryWeiXin value),
+    @required Result email(_RegistryTypeEmail value),
+    @required Result weiXin(_RegistryTypeWeiXin value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result phone(_RegistryTypePhone value),
-    Result email(_RegistryEmail value),
-    Result weiXin(_RegistryWeiXin value),
+    Result email(_RegistryTypeEmail value),
+    Result weiXin(_RegistryTypeWeiXin value),
     @required Result orElse(),
   });
 }
@@ -144,8 +144,8 @@ class _$_RegistryTypePhone
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result phone(_RegistryTypePhone value),
-    @required Result email(_RegistryEmail value),
-    @required Result weiXin(_RegistryWeiXin value),
+    @required Result email(_RegistryTypeEmail value),
+    @required Result weiXin(_RegistryTypeWeiXin value),
   }) {
     assert(phone != null);
     assert(email != null);
@@ -157,8 +157,8 @@ class _$_RegistryTypePhone
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result phone(_RegistryTypePhone value),
-    Result email(_RegistryEmail value),
-    Result weiXin(_RegistryWeiXin value),
+    Result email(_RegistryTypeEmail value),
+    Result weiXin(_RegistryTypeWeiXin value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -173,25 +173,27 @@ abstract class _RegistryTypePhone implements RegistryType {
   const factory _RegistryTypePhone() = _$_RegistryTypePhone;
 }
 
-abstract class _$RegistryEmailCopyWith<$Res> {
-  factory _$RegistryEmailCopyWith(
-          _RegistryEmail value, $Res Function(_RegistryEmail) then) =
-      __$RegistryEmailCopyWithImpl<$Res>;
+abstract class _$RegistryTypeEmailCopyWith<$Res> {
+  factory _$RegistryTypeEmailCopyWith(
+          _RegistryTypeEmail value, $Res Function(_RegistryTypeEmail) then) =
+      __$RegistryTypeEmailCopyWithImpl<$Res>;
 }
 
-class __$RegistryEmailCopyWithImpl<$Res>
+class __$RegistryTypeEmailCopyWithImpl<$Res>
     extends _$RegistryTypeCopyWithImpl<$Res>
-    implements _$RegistryEmailCopyWith<$Res> {
-  __$RegistryEmailCopyWithImpl(
-      _RegistryEmail _value, $Res Function(_RegistryEmail) _then)
-      : super(_value, (v) => _then(v as _RegistryEmail));
+    implements _$RegistryTypeEmailCopyWith<$Res> {
+  __$RegistryTypeEmailCopyWithImpl(
+      _RegistryTypeEmail _value, $Res Function(_RegistryTypeEmail) _then)
+      : super(_value, (v) => _then(v as _RegistryTypeEmail));
 
   @override
-  _RegistryEmail get _value => super._value as _RegistryEmail;
+  _RegistryTypeEmail get _value => super._value as _RegistryTypeEmail;
 }
 
-class _$_RegistryEmail with DiagnosticableTreeMixin implements _RegistryEmail {
-  const _$_RegistryEmail();
+class _$_RegistryTypeEmail
+    with DiagnosticableTreeMixin
+    implements _RegistryTypeEmail {
+  const _$_RegistryTypeEmail();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -206,7 +208,7 @@ class _$_RegistryEmail with DiagnosticableTreeMixin implements _RegistryEmail {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RegistryEmail);
+    return identical(this, other) || (other is _RegistryTypeEmail);
   }
 
   @override
@@ -244,8 +246,8 @@ class _$_RegistryEmail with DiagnosticableTreeMixin implements _RegistryEmail {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result phone(_RegistryTypePhone value),
-    @required Result email(_RegistryEmail value),
-    @required Result weiXin(_RegistryWeiXin value),
+    @required Result email(_RegistryTypeEmail value),
+    @required Result weiXin(_RegistryTypeWeiXin value),
   }) {
     assert(phone != null);
     assert(email != null);
@@ -257,8 +259,8 @@ class _$_RegistryEmail with DiagnosticableTreeMixin implements _RegistryEmail {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result phone(_RegistryTypePhone value),
-    Result email(_RegistryEmail value),
-    Result weiXin(_RegistryWeiXin value),
+    Result email(_RegistryTypeEmail value),
+    Result weiXin(_RegistryTypeWeiXin value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -269,31 +271,31 @@ class _$_RegistryEmail with DiagnosticableTreeMixin implements _RegistryEmail {
   }
 }
 
-abstract class _RegistryEmail implements RegistryType {
-  const factory _RegistryEmail() = _$_RegistryEmail;
+abstract class _RegistryTypeEmail implements RegistryType {
+  const factory _RegistryTypeEmail() = _$_RegistryTypeEmail;
 }
 
-abstract class _$RegistryWeiXinCopyWith<$Res> {
-  factory _$RegistryWeiXinCopyWith(
-          _RegistryWeiXin value, $Res Function(_RegistryWeiXin) then) =
-      __$RegistryWeiXinCopyWithImpl<$Res>;
+abstract class _$RegistryTypeWeiXinCopyWith<$Res> {
+  factory _$RegistryTypeWeiXinCopyWith(
+          _RegistryTypeWeiXin value, $Res Function(_RegistryTypeWeiXin) then) =
+      __$RegistryTypeWeiXinCopyWithImpl<$Res>;
 }
 
-class __$RegistryWeiXinCopyWithImpl<$Res>
+class __$RegistryTypeWeiXinCopyWithImpl<$Res>
     extends _$RegistryTypeCopyWithImpl<$Res>
-    implements _$RegistryWeiXinCopyWith<$Res> {
-  __$RegistryWeiXinCopyWithImpl(
-      _RegistryWeiXin _value, $Res Function(_RegistryWeiXin) _then)
-      : super(_value, (v) => _then(v as _RegistryWeiXin));
+    implements _$RegistryTypeWeiXinCopyWith<$Res> {
+  __$RegistryTypeWeiXinCopyWithImpl(
+      _RegistryTypeWeiXin _value, $Res Function(_RegistryTypeWeiXin) _then)
+      : super(_value, (v) => _then(v as _RegistryTypeWeiXin));
 
   @override
-  _RegistryWeiXin get _value => super._value as _RegistryWeiXin;
+  _RegistryTypeWeiXin get _value => super._value as _RegistryTypeWeiXin;
 }
 
-class _$_RegistryWeiXin
+class _$_RegistryTypeWeiXin
     with DiagnosticableTreeMixin
-    implements _RegistryWeiXin {
-  const _$_RegistryWeiXin();
+    implements _RegistryTypeWeiXin {
+  const _$_RegistryTypeWeiXin();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -308,7 +310,7 @@ class _$_RegistryWeiXin
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RegistryWeiXin);
+    return identical(this, other) || (other is _RegistryTypeWeiXin);
   }
 
   @override
@@ -346,8 +348,8 @@ class _$_RegistryWeiXin
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result phone(_RegistryTypePhone value),
-    @required Result email(_RegistryEmail value),
-    @required Result weiXin(_RegistryWeiXin value),
+    @required Result email(_RegistryTypeEmail value),
+    @required Result weiXin(_RegistryTypeWeiXin value),
   }) {
     assert(phone != null);
     assert(email != null);
@@ -359,8 +361,8 @@ class _$_RegistryWeiXin
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result phone(_RegistryTypePhone value),
-    Result email(_RegistryEmail value),
-    Result weiXin(_RegistryWeiXin value),
+    Result email(_RegistryTypeEmail value),
+    Result weiXin(_RegistryTypeWeiXin value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -371,6 +373,6 @@ class _$_RegistryWeiXin
   }
 }
 
-abstract class _RegistryWeiXin implements RegistryType {
-  const factory _RegistryWeiXin() = _$_RegistryWeiXin;
+abstract class _RegistryTypeWeiXin implements RegistryType {
+  const factory _RegistryTypeWeiXin() = _$_RegistryTypeWeiXin;
 }

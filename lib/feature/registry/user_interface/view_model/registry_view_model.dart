@@ -44,6 +44,17 @@ class RegistryViewModel extends _$ViewModel {
     });
   }
 
+  void handleEmailChange(e) {
+//    viewObject.maybeWhen(
+//      orElse: null,
+//      viewObject: (name, users, refreshing) => RegistryViewObject.viewObject(
+//        name: name,
+//        users: users,
+//        refreshing: refreshing,
+//      ),
+//    );
+  }
+
   void handleRegistryPress() async {
     viewObject = RegistryViewObject.loading();
     viewObject =

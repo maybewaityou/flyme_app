@@ -28,6 +28,7 @@ class RegistryPage extends StatelessWidget {
 
 Widget _contentBuilder(
     BuildContext context, RegistryViewModel viewModel, Widget child) {
+  final controller = TextEditingController();
   return viewModel.viewObject.when(
     loading: () => const Center(child: CircularProgressIndicator()),
     error: (errorMessage) => Center(
@@ -43,6 +44,20 @@ Widget _contentBuilder(
             style: TextStyle(
               fontSize: 30,
               color: Colors.red,
+            ),
+          ),
+          TextField(
+            controller: controller,
+            maxLength: 10,
+            maxLines: 1,
+            style: TextStyle(fontSize: 18.0), //输入文本的样式
+            onChanged: viewModel.handleEmailChange,
+            enabled: true,
+            decoration: InputDecoration(
+              fillColor: Colors.blue.shade100,
+              filled: true,
+              labelText: '请输入邮箱',
+//              errorText: 'email is invalidate',
             ),
           ),
           RaisedButton(

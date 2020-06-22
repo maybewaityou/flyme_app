@@ -51,7 +51,7 @@ class RegistryViewModel extends _$ViewModel {
     });
   }
 
-  handleFormValueChange(RegistryFormType type) => (input) {
+  handleFormValueChanged(RegistryFormType type) => (input) {
         viewObject = viewObject.maybeMap(
           orElse: () => null,
           viewObject: (value) => type.map(

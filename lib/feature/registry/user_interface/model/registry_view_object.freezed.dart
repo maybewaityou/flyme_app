@@ -9,6 +9,479 @@ part of 'registry_view_object.dart';
 
 T _$identity<T>(T value) => value;
 
+class _$RegistryFormTypeTearOff {
+  const _$RegistryFormTypeTearOff();
+
+  _RegistryFormType type() {
+    return const _RegistryFormType();
+  }
+
+  _RegistryFormUserName userName() {
+    return const _RegistryFormUserName();
+  }
+
+  _RegistryFormEmailAddress emailAddress() {
+    return const _RegistryFormEmailAddress();
+  }
+
+  _RegistryFormPhoneNumber phoneNumber() {
+    return const _RegistryFormPhoneNumber();
+  }
+}
+
+// ignore: unused_element
+const $RegistryFormType = _$RegistryFormTypeTearOff();
+
+mixin _$RegistryFormType {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result type(),
+    @required Result userName(),
+    @required Result emailAddress(),
+    @required Result phoneNumber(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result type(),
+    Result userName(),
+    Result emailAddress(),
+    Result phoneNumber(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result type(_RegistryFormType value),
+    @required Result userName(_RegistryFormUserName value),
+    @required Result emailAddress(_RegistryFormEmailAddress value),
+    @required Result phoneNumber(_RegistryFormPhoneNumber value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result type(_RegistryFormType value),
+    Result userName(_RegistryFormUserName value),
+    Result emailAddress(_RegistryFormEmailAddress value),
+    Result phoneNumber(_RegistryFormPhoneNumber value),
+    @required Result orElse(),
+  });
+}
+
+abstract class $RegistryFormTypeCopyWith<$Res> {
+  factory $RegistryFormTypeCopyWith(
+          RegistryFormType value, $Res Function(RegistryFormType) then) =
+      _$RegistryFormTypeCopyWithImpl<$Res>;
+}
+
+class _$RegistryFormTypeCopyWithImpl<$Res>
+    implements $RegistryFormTypeCopyWith<$Res> {
+  _$RegistryFormTypeCopyWithImpl(this._value, this._then);
+
+  final RegistryFormType _value;
+  // ignore: unused_field
+  final $Res Function(RegistryFormType) _then;
+}
+
+abstract class _$RegistryFormTypeCopyWith<$Res> {
+  factory _$RegistryFormTypeCopyWith(
+          _RegistryFormType value, $Res Function(_RegistryFormType) then) =
+      __$RegistryFormTypeCopyWithImpl<$Res>;
+}
+
+class __$RegistryFormTypeCopyWithImpl<$Res>
+    extends _$RegistryFormTypeCopyWithImpl<$Res>
+    implements _$RegistryFormTypeCopyWith<$Res> {
+  __$RegistryFormTypeCopyWithImpl(
+      _RegistryFormType _value, $Res Function(_RegistryFormType) _then)
+      : super(_value, (v) => _then(v as _RegistryFormType));
+
+  @override
+  _RegistryFormType get _value => super._value as _RegistryFormType;
+}
+
+class _$_RegistryFormType implements _RegistryFormType {
+  const _$_RegistryFormType();
+
+  @override
+  String toString() {
+    return 'RegistryFormType.type()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _RegistryFormType);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result type(),
+    @required Result userName(),
+    @required Result emailAddress(),
+    @required Result phoneNumber(),
+  }) {
+    assert(type != null);
+    assert(userName != null);
+    assert(emailAddress != null);
+    assert(phoneNumber != null);
+    return type();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result type(),
+    Result userName(),
+    Result emailAddress(),
+    Result phoneNumber(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (type != null) {
+      return type();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result type(_RegistryFormType value),
+    @required Result userName(_RegistryFormUserName value),
+    @required Result emailAddress(_RegistryFormEmailAddress value),
+    @required Result phoneNumber(_RegistryFormPhoneNumber value),
+  }) {
+    assert(type != null);
+    assert(userName != null);
+    assert(emailAddress != null);
+    assert(phoneNumber != null);
+    return type(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result type(_RegistryFormType value),
+    Result userName(_RegistryFormUserName value),
+    Result emailAddress(_RegistryFormEmailAddress value),
+    Result phoneNumber(_RegistryFormPhoneNumber value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (type != null) {
+      return type(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegistryFormType implements RegistryFormType {
+  const factory _RegistryFormType() = _$_RegistryFormType;
+}
+
+abstract class _$RegistryFormUserNameCopyWith<$Res> {
+  factory _$RegistryFormUserNameCopyWith(_RegistryFormUserName value,
+          $Res Function(_RegistryFormUserName) then) =
+      __$RegistryFormUserNameCopyWithImpl<$Res>;
+}
+
+class __$RegistryFormUserNameCopyWithImpl<$Res>
+    extends _$RegistryFormTypeCopyWithImpl<$Res>
+    implements _$RegistryFormUserNameCopyWith<$Res> {
+  __$RegistryFormUserNameCopyWithImpl(
+      _RegistryFormUserName _value, $Res Function(_RegistryFormUserName) _then)
+      : super(_value, (v) => _then(v as _RegistryFormUserName));
+
+  @override
+  _RegistryFormUserName get _value => super._value as _RegistryFormUserName;
+}
+
+class _$_RegistryFormUserName implements _RegistryFormUserName {
+  const _$_RegistryFormUserName();
+
+  @override
+  String toString() {
+    return 'RegistryFormType.userName()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _RegistryFormUserName);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result type(),
+    @required Result userName(),
+    @required Result emailAddress(),
+    @required Result phoneNumber(),
+  }) {
+    assert(type != null);
+    assert(userName != null);
+    assert(emailAddress != null);
+    assert(phoneNumber != null);
+    return userName();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result type(),
+    Result userName(),
+    Result emailAddress(),
+    Result phoneNumber(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userName != null) {
+      return userName();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result type(_RegistryFormType value),
+    @required Result userName(_RegistryFormUserName value),
+    @required Result emailAddress(_RegistryFormEmailAddress value),
+    @required Result phoneNumber(_RegistryFormPhoneNumber value),
+  }) {
+    assert(type != null);
+    assert(userName != null);
+    assert(emailAddress != null);
+    assert(phoneNumber != null);
+    return userName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result type(_RegistryFormType value),
+    Result userName(_RegistryFormUserName value),
+    Result emailAddress(_RegistryFormEmailAddress value),
+    Result phoneNumber(_RegistryFormPhoneNumber value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userName != null) {
+      return userName(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegistryFormUserName implements RegistryFormType {
+  const factory _RegistryFormUserName() = _$_RegistryFormUserName;
+}
+
+abstract class _$RegistryFormEmailAddressCopyWith<$Res> {
+  factory _$RegistryFormEmailAddressCopyWith(_RegistryFormEmailAddress value,
+          $Res Function(_RegistryFormEmailAddress) then) =
+      __$RegistryFormEmailAddressCopyWithImpl<$Res>;
+}
+
+class __$RegistryFormEmailAddressCopyWithImpl<$Res>
+    extends _$RegistryFormTypeCopyWithImpl<$Res>
+    implements _$RegistryFormEmailAddressCopyWith<$Res> {
+  __$RegistryFormEmailAddressCopyWithImpl(_RegistryFormEmailAddress _value,
+      $Res Function(_RegistryFormEmailAddress) _then)
+      : super(_value, (v) => _then(v as _RegistryFormEmailAddress));
+
+  @override
+  _RegistryFormEmailAddress get _value =>
+      super._value as _RegistryFormEmailAddress;
+}
+
+class _$_RegistryFormEmailAddress implements _RegistryFormEmailAddress {
+  const _$_RegistryFormEmailAddress();
+
+  @override
+  String toString() {
+    return 'RegistryFormType.emailAddress()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _RegistryFormEmailAddress);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result type(),
+    @required Result userName(),
+    @required Result emailAddress(),
+    @required Result phoneNumber(),
+  }) {
+    assert(type != null);
+    assert(userName != null);
+    assert(emailAddress != null);
+    assert(phoneNumber != null);
+    return emailAddress();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result type(),
+    Result userName(),
+    Result emailAddress(),
+    Result phoneNumber(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emailAddress != null) {
+      return emailAddress();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result type(_RegistryFormType value),
+    @required Result userName(_RegistryFormUserName value),
+    @required Result emailAddress(_RegistryFormEmailAddress value),
+    @required Result phoneNumber(_RegistryFormPhoneNumber value),
+  }) {
+    assert(type != null);
+    assert(userName != null);
+    assert(emailAddress != null);
+    assert(phoneNumber != null);
+    return emailAddress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result type(_RegistryFormType value),
+    Result userName(_RegistryFormUserName value),
+    Result emailAddress(_RegistryFormEmailAddress value),
+    Result phoneNumber(_RegistryFormPhoneNumber value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emailAddress != null) {
+      return emailAddress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegistryFormEmailAddress implements RegistryFormType {
+  const factory _RegistryFormEmailAddress() = _$_RegistryFormEmailAddress;
+}
+
+abstract class _$RegistryFormPhoneNumberCopyWith<$Res> {
+  factory _$RegistryFormPhoneNumberCopyWith(_RegistryFormPhoneNumber value,
+          $Res Function(_RegistryFormPhoneNumber) then) =
+      __$RegistryFormPhoneNumberCopyWithImpl<$Res>;
+}
+
+class __$RegistryFormPhoneNumberCopyWithImpl<$Res>
+    extends _$RegistryFormTypeCopyWithImpl<$Res>
+    implements _$RegistryFormPhoneNumberCopyWith<$Res> {
+  __$RegistryFormPhoneNumberCopyWithImpl(_RegistryFormPhoneNumber _value,
+      $Res Function(_RegistryFormPhoneNumber) _then)
+      : super(_value, (v) => _then(v as _RegistryFormPhoneNumber));
+
+  @override
+  _RegistryFormPhoneNumber get _value =>
+      super._value as _RegistryFormPhoneNumber;
+}
+
+class _$_RegistryFormPhoneNumber implements _RegistryFormPhoneNumber {
+  const _$_RegistryFormPhoneNumber();
+
+  @override
+  String toString() {
+    return 'RegistryFormType.phoneNumber()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _RegistryFormPhoneNumber);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result type(),
+    @required Result userName(),
+    @required Result emailAddress(),
+    @required Result phoneNumber(),
+  }) {
+    assert(type != null);
+    assert(userName != null);
+    assert(emailAddress != null);
+    assert(phoneNumber != null);
+    return phoneNumber();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result type(),
+    Result userName(),
+    Result emailAddress(),
+    Result phoneNumber(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (phoneNumber != null) {
+      return phoneNumber();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result type(_RegistryFormType value),
+    @required Result userName(_RegistryFormUserName value),
+    @required Result emailAddress(_RegistryFormEmailAddress value),
+    @required Result phoneNumber(_RegistryFormPhoneNumber value),
+  }) {
+    assert(type != null);
+    assert(userName != null);
+    assert(emailAddress != null);
+    assert(phoneNumber != null);
+    return phoneNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result type(_RegistryFormType value),
+    Result userName(_RegistryFormUserName value),
+    Result emailAddress(_RegistryFormEmailAddress value),
+    Result phoneNumber(_RegistryFormPhoneNumber value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (phoneNumber != null) {
+      return phoneNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegistryFormPhoneNumber implements RegistryFormType {
+  const factory _RegistryFormPhoneNumber() = _$_RegistryFormPhoneNumber;
+}
+
 class _$RegistryViewObjectTearOff {
   const _$RegistryViewObjectTearOff();
 

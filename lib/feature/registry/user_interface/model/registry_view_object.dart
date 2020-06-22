@@ -7,6 +7,14 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'registry_view_object.freezed.dart';
 
 @freezed
+abstract class RegistryFormType with _$RegistryFormType {
+  const factory RegistryFormType.type() = _RegistryFormType;
+  const factory RegistryFormType.userName() = _RegistryFormUserName;
+  const factory RegistryFormType.emailAddress() = _RegistryFormEmailAddress;
+  const factory RegistryFormType.phoneNumber() = _RegistryFormPhoneNumber;
+}
+
+@freezed
 abstract class RegistryViewObject extends ViewObject with _$RegistryViewObject {
   const factory RegistryViewObject.viewObject({
     @required RegistryType type,

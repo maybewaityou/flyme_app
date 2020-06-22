@@ -6,6 +6,7 @@ import 'package:flyme_app/common/component/widget/app_title/app_title.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/provider/model_provider.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
+import 'package:flyme_app/feature/registry/user_interface/model/model.dart';
 import 'package:flyme_app/feature/registry/user_interface/view_model/registry_view_model.dart';
 
 @FRoute(url: '/registry')
@@ -54,7 +55,8 @@ Widget _contentBuilder(
                     maxLength: 11,
                     maxLines: 1,
                     style: TextStyle(fontSize: 18.0), //输入文本的样式
-                    onChanged: viewModel.handlePhoneChange,
+                    onChanged: viewModel
+                        .handleFormValueChange(RegistryFormType.phoneNumber()),
                     enabled: true,
                     decoration: InputDecoration(
                       fillColor: Colors.blue.shade100,
@@ -70,7 +72,8 @@ Widget _contentBuilder(
                     maxLength: 10,
                     maxLines: 1,
                     style: TextStyle(fontSize: 18.0), //输入文本的样式
-                    onChanged: viewModel.handleEmailChange,
+                    onChanged: viewModel
+                        .handleFormValueChange(RegistryFormType.emailAddress()),
                     enabled: true,
                     decoration: InputDecoration(
                       fillColor: Colors.blue.shade100,
@@ -86,15 +89,19 @@ Widget _contentBuilder(
             children: <Widget>[
               Text('手机号'),
               Radio(
-                  value: RegistryType.phone(),
-                  groupValue: type,
-                  onChanged: viewModel.handleChangeType),
+                value: RegistryType.phone(),
+                groupValue: type,
+                onChanged:
+                    viewModel.handleFormValueChange(RegistryFormType.type()),
+              ),
               SizedBox(width: 50),
               Text('Email'),
               Radio(
-                  value: RegistryType.email(),
-                  groupValue: type,
-                  onChanged: viewModel.handleChangeType),
+                value: RegistryType.email(),
+                groupValue: type,
+                onChanged:
+                    viewModel.handleFormValueChange(RegistryFormType.type()),
+              ),
             ],
           ),
           RaisedButton(

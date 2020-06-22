@@ -51,32 +51,19 @@ class RegistryViewModel extends _$ViewModel {
     });
   }
 
-  void handleChangeType(input) {
-    viewObject = viewObject.maybeMap(
-      orElse: () => null,
-      viewObject: (value) => value.copyWith(type: input),
-    );
-  }
-
-  void handleEmailChange(input) {
-    print('== email input ===>>>> $input');
-    viewObject = viewObject.maybeMap(
-      orElse: () => null,
-      viewObject: (value) => value.copyWith(
-        emailAddress: EmailAddress(input: input),
-      ),
-    );
-  }
-
-  void handlePhoneChange(input) {
-    print('== phone input ===>>>> $input');
-    viewObject = viewObject.maybeMap(
-      orElse: () => null,
-      viewObject: (value) => value.copyWith(
-        phoneNumber: PhoneNumber(input: input),
-      ),
-    );
-  }
+  handleFormValueChange(RegistryFormType type) => (input) {
+        viewObject = viewObject.maybeMap(
+          orElse: () => null,
+          viewObject: (value) => type.map(
+            type: (v) => value.copyWith(type: input),
+            userName: (v) => value.copyWith(userName: input),
+            emailAddress: (v) =>
+                value.copyWith(emailAddress: EmailAddress(input: input)),
+            phoneNumber: (v) =>
+                value.copyWith(phoneNumber: PhoneNumber(input: input)),
+          ),
+        );
+      };
 
   void handleRegistryPress() async {
     final registryInfo = viewObject.maybeWhen(
@@ -85,7 +72,7 @@ class RegistryViewModel extends _$ViewModel {
               refreshing) =>
           RegistryInfo(
               type: type,
-              userName: '',
+              userName: userName ?? '',
               emailAddress: emailAddress,
               phoneNumber: phoneNumber),
     );

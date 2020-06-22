@@ -56,7 +56,7 @@ Widget _contentBuilder(
                     maxLines: 1,
                     style: TextStyle(fontSize: 18.0), //输入文本的样式
                     onChanged: viewModel
-                        .handleFormValueChanged(RegistryFormType.phoneNumber()),
+                        .handleFormChanged(RegistryFormType.phoneNumber()),
                     enabled: true,
                     decoration: InputDecoration(
                       fillColor: Colors.blue.shade100,
@@ -72,8 +72,8 @@ Widget _contentBuilder(
                     maxLength: 10,
                     maxLines: 1,
                     style: TextStyle(fontSize: 18.0), //输入文本的样式
-                    onChanged: viewModel.handleFormValueChanged(
-                        RegistryFormType.emailAddress()),
+                    onChanged: viewModel
+                        .handleFormChanged(RegistryFormType.emailAddress()),
                     enabled: true,
                     decoration: InputDecoration(
                       fillColor: Colors.blue.shade100,
@@ -91,16 +91,14 @@ Widget _contentBuilder(
               Radio(
                 value: RegistryType.phone(),
                 groupValue: type,
-                onChanged:
-                    viewModel.handleFormValueChanged(RegistryFormType.type()),
+                onChanged: viewModel.handleFormChanged(RegistryFormType.type()),
               ),
               SizedBox(width: 50),
               Text('Email'),
               Radio(
                 value: RegistryType.email(),
                 groupValue: type,
-                onChanged:
-                    viewModel.handleFormValueChanged(RegistryFormType.type()),
+                onChanged: viewModel.handleFormChanged(RegistryFormType.type()),
               ),
             ],
           ),

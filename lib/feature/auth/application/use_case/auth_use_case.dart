@@ -28,7 +28,7 @@ class AuthUseCase implements IAuthUseCase {
     // 执行业务逻辑
 
     // 执行
-    final userInfoValue = await repository.login(auth);
+    final userInfoValue = await repository.authenticate(auth);
     return userInfoValue.fold(
       (error) => AuthViewObject.error(errorMessage: error.toString()),
       (userInfo) => AuthViewObject.fromDataModel(userInfo),

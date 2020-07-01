@@ -22,7 +22,7 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<HttpError, UserInfo>> login(IAuth auth) {
-    return _remoteDataSource.login(auth);
+  Future<Either<HttpError, UserInfo>> authenticate(IAuth auth) {
+    return _remoteDataSource.authenticate(auth);
   }
 }

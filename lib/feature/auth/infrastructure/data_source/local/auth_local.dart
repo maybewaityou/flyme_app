@@ -22,7 +22,7 @@ class AuthLocalDataSource implements IAuthLocalDataSource {
   }
 
   @override
-  Future<Either<HttpError, UserInfo>> login(IAuth auth) {
+  Future<Either<HttpError, UserInfo>> authenticate(IAuth auth) {
     throw UnimplementedError();
   }
 }

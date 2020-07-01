@@ -17,7 +17,7 @@ class AuthLocalDataSource implements IAuthLocalDataSource {
   const AuthLocalDataSource(this._service);
 
   @override
-  IAuth authByInfo(AuthInfo info) {
+  IAuth authFrom(AuthInfo info) {
     throw UnimplementedError();
   }
 

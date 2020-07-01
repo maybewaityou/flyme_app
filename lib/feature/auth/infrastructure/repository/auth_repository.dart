@@ -17,7 +17,7 @@ class AuthRepository implements IAuthRepository {
   const AuthRepository(this._localDataSource, this._remoteDataSource);
 
   @override
-  IAuth authByInfo(AuthInfo info) {
+  IAuth authFrom(AuthInfo info) {
     return Auth(info);
   }
 

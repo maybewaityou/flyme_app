@@ -18,7 +18,7 @@ class AuthUseCase implements IAuthUseCase {
   @override
   Future<AuthViewObject> goAuth(AuthInfo info) async {
     // 从资源库获取实体对象
-    final auth = repository.authByInfo(info);
+    final auth = repository.authFrom(info);
     // 延迟校验数据
     final validateOption = auth.validate();
     if (validateOption.isSome()) {

@@ -20,7 +20,7 @@ class AuthRemoteDataSource implements IAuthRemoteDataSource {
   const AuthRemoteDataSource(this._service);
 
   @override
-  IAuth authByInfo(AuthInfo info) {
+  IAuth authFrom(AuthInfo info) {
     throw UnimplementedError();
   }
 

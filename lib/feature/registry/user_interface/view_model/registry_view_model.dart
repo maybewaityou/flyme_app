@@ -6,9 +6,9 @@ import 'package:flyme_app/common/app/app_provider.dart';
 import 'package:flyme_app/feature/registry/application/use_case/use_case.dart';
 import 'package:flyme_app/feature/registry/domain/model/event/user_created.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
-import 'package:flyme_app/feature/registry/infrastructure/model/model.dart';
 import 'package:flyme_app/feature/registry/user_interface/model/model.dart';
 import 'package:flyme_app/shared/domain/model/value_object/value_object.dart';
+import 'package:flyme_app/shared/infrastructure/model/model.dart';
 import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:injectable/injectable.dart';
 

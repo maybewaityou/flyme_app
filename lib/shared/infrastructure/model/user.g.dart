@@ -38,9 +38,9 @@ CustomUser _$CustomUserFromJson(Map<String, dynamic> json) {
     userName: json['userName'] as String,
     name: json['name'] as String,
     age: json['age'] as int,
-    selfDog: json['selfDog'] == null
+    dog: json['dog'] == null
         ? null
-        : SelfDog.fromJson(json['selfDog'] as Map<String, dynamic>),
+        : Dog.fromJson(json['dog'] as Map<String, dynamic>),
   );
 }
 
@@ -49,17 +49,17 @@ Map<String, dynamic> _$CustomUserToJson(CustomUser instance) =>
       'userName': instance.userName,
       'name': instance.name,
       'age': instance.age,
-      'selfDog': instance.selfDog,
+      'dog': instance.dog,
     };
 
-SelfDog _$SelfDogFromJson(Map<String, dynamic> json) {
-  return SelfDog(
+Dog _$DogFromJson(Map<String, dynamic> json) {
+  return Dog(
     dogName: json['dogName'] as String,
     age: json['age'] as int,
   );
 }
 
-Map<String, dynamic> _$SelfDogToJson(SelfDog instance) => <String, dynamic>{
+Map<String, dynamic> _$DogToJson(Dog instance) => <String, dynamic>{
       'dogName': instance.dogName,
       'age': instance.age,
     };

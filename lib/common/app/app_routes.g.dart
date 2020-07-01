@@ -11,6 +11,7 @@ class AppRoutesPath {
   static const tab = '/tab';
   static const second = '/home/second';
   static const registry = '/registry';
+  static const auth = '/auth';
 }
 
 final _routesMap = {
@@ -18,6 +19,7 @@ final _routesMap = {
   AppRoutesPath.tab: (params) => TabContainer(),
   AppRoutesPath.second: (params) => SecondPage(),
   AppRoutesPath.registry: (params) => RegistryPage(),
+  AppRoutesPath.auth: (params) => AuthPage(),
 };
 
 void setupRoutes(Router router) {

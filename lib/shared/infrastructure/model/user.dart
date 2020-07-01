@@ -44,9 +44,9 @@ class CustomUser extends Equatable implements DataModel {
   final String userName;
   final String name;
   final int age;
-  final SelfDog selfDog;
+  final Dog dog;
 
-  const CustomUser({this.userName, this.name, this.age, this.selfDog});
+  const CustomUser({this.userName, this.name, this.age, this.dog});
 
   factory CustomUser.fromJson(Map<String, dynamic> json) =>
       _$CustomUserFromJson(json);
@@ -57,26 +57,25 @@ class CustomUser extends Equatable implements DataModel {
 
   @override
   String toString() {
-    return 'CustomUser{userName: $userName, name: $name, age: $age, selfDog: $selfDog}';
+    return 'CustomUser{userName: $userName, name: $name, age: $age, dog: $dog}';
   }
 }
 
 @JsonSerializable()
-class SelfDog extends Equatable implements DataModel {
+class Dog extends Equatable implements DataModel {
   final String dogName;
   final int age;
 
-  const SelfDog({this.dogName, this.age});
+  const Dog({this.dogName, this.age});
 
-  factory SelfDog.fromJson(Map<String, dynamic> json) =>
-      _$SelfDogFromJson(json);
-  Map<String, dynamic> toJson() => _$SelfDogToJson(this);
+  factory Dog.fromJson(Map<String, dynamic> json) => _$DogFromJson(json);
+  Map<String, dynamic> toJson() => _$DogToJson(this);
 
   @override
   List<Object> get props => [];
 
   @override
   String toString() {
-    return 'SelfDog{dogName: $dogName, age: $age}';
+    return 'Dog{dogName: $dogName, age: $age}';
   }
 }

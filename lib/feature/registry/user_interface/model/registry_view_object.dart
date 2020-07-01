@@ -1,6 +1,6 @@
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
-import 'package:flyme_app/feature/registry/infrastructure/model/model.dart';
 import 'package:flyme_app/shared/domain/model/value_object/value_object.dart';
+import 'package:flyme_app/shared/infrastructure/model/model.dart';
 import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

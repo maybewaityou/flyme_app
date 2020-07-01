@@ -1,6 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flyme_annotation/flyme_annotation.dart';
 import 'package:flyme_app/common/component/page/not_found_page.dart';
+import 'package:flyme_app/feature/auth/user_interface/page/page.dart';
 import 'package:flyme_app/feature/home/page/second.dart';
 import 'package:flyme_app/feature/registry/user_interface/page/page.dart';
 import 'package:flyme_app/user_interface/splash/splash_page.dart';

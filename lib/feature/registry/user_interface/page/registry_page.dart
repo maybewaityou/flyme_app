@@ -50,40 +50,40 @@ Widget _contentBuilder(
             ),
           ),
           type.when(
-              phone: () => TextField(
-                    controller: viewModel.phoneController,
-                    maxLength: 11,
-                    maxLines: 1,
-                    style: TextStyle(fontSize: 18.0), //输入文本的样式
-                    onChanged: viewModel
-                        .handleFormChanged(RegistryFormType.phoneNumber()),
-                    enabled: true,
-                    decoration: InputDecoration(
-                      fillColor: Colors.blue.shade100,
-                      filled: true,
-                      labelText: '请输入手机号',
-                      errorText: phoneNumber.isValid()
-                          ? null
-                          : 'phone number is invalidate',
-                    ),
-                  ),
-              email: () => TextField(
-                    controller: viewModel.emailController,
-                    maxLength: 10,
-                    maxLines: 1,
-                    style: TextStyle(fontSize: 18.0), //输入文本的样式
-                    onChanged: viewModel
-                        .handleFormChanged(RegistryFormType.emailAddress()),
-                    enabled: true,
-                    decoration: InputDecoration(
-                      fillColor: Colors.blue.shade100,
-                      filled: true,
-                      labelText: '请输入邮箱',
-                      errorText:
-                          emailAddress.isValid() ? null : 'email is invalidate',
-                    ),
-                  ),
-              weiXin: () => Container()),
+            phone: () => TextField(
+              controller: viewModel.phoneController,
+              maxLength: 11,
+              maxLines: 1,
+              style: TextStyle(fontSize: 18.0), //输入文本的样式
+              onChanged:
+                  viewModel.handleFormChanged(RegistryFormType.phoneNumber()),
+              enabled: true,
+              decoration: InputDecoration(
+                fillColor: Colors.blue.shade100,
+                filled: true,
+                labelText: '请输入手机号',
+                errorText:
+                    phoneNumber.isValid() ? null : 'phone number is invalidate',
+              ),
+            ),
+            email: () => TextField(
+              controller: viewModel.emailController,
+              maxLength: 10,
+              maxLines: 1,
+              style: TextStyle(fontSize: 18.0), //输入文本的样式
+              onChanged:
+                  viewModel.handleFormChanged(RegistryFormType.emailAddress()),
+              enabled: true,
+              decoration: InputDecoration(
+                fillColor: Colors.blue.shade100,
+                filled: true,
+                labelText: '请输入邮箱',
+                errorText:
+                    emailAddress.isValid() ? null : 'email is invalidate',
+              ),
+            ),
+            weiXin: () => Container(),
+          ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[

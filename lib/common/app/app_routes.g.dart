@@ -10,16 +10,16 @@ class AppRoutesPath {
   static const splash = '/splash';
   static const tab = '/tab';
   static const second = '/home/second';
-  static const registry = '/registry';
   static const auth = '/auth';
+  static const registry = '/registry';
 }
 
 final _routesMap = {
   AppRoutesPath.splash: (params) => SplashPage(),
   AppRoutesPath.tab: (params) => TabContainer(),
   AppRoutesPath.second: (params) => SecondPage(),
-  AppRoutesPath.registry: (params) => RegistryPage(),
   AppRoutesPath.auth: (params) => AuthPage(),
+  AppRoutesPath.registry: (params) => RegistryPage(),
 };
 
 void setupRoutes(Router router) {

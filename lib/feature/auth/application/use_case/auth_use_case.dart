@@ -1,7 +1,7 @@
-import 'package:flyme_app/feature/auth/domain/factory/auth_domain_registry.dart';
 import 'package:flyme_app/feature/auth/domain/model/value_object/auth_info.dart';
 import 'package:flyme_app/feature/auth/domain/repository/repository.dart';
 import 'package:flyme_app/feature/auth/user_interface/model/auth_view_object.dart';
+import 'package:flyme_app/shared/domain/factory/domain_registry.dart';
 import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:injectable/injectable.dart';
 
@@ -22,7 +22,7 @@ class AuthUseCase implements IAuthUseCase {
     // TODO: 延迟实体数据的校验 或 在领域服务中进行实体数据的数据校验
     // 执行业务逻辑
     final userInfoValue =
-        await AuthDomainRegistry.authenticationService().authenticate(auth);
+        await DomainRegistry.authenticationService().authenticate(auth);
     return userInfoValue.fold(
       (error) => AuthViewObject.error(errorMessage: error),
       (userInfo) => AuthViewObject.fromDataModel(userInfo),

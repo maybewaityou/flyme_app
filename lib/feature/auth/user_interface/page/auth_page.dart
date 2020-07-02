@@ -26,8 +26,13 @@ class AuthPage extends StatelessWidget {
 Widget _contentBuilder(
     BuildContext context, AuthViewModel viewModel, Widget child) {
   return viewModel.viewObject.when(
-    viewObject: (userName, password, userInfo) => Container(),
     loading: () => Container(),
     error: (errorMessage) => Container(),
+    viewObject: (userName, password, userInfo) => Container(
+      child: FlatButton(
+        onPressed: viewModel.handleAuthPress,
+        child: Text(userInfo?.name ?? "button"),
+      ),
+    ),
   );
 }

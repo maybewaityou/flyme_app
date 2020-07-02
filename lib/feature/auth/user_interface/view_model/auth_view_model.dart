@@ -25,12 +25,12 @@ class AuthViewModel extends _$ViewModel {
     print('==== AuthViewModel init ====');
   }
 
-  void handleAuthPress() {
+  void handleAuthPress() async {
     final authInfo = _viewObject.maybeWhen(
       orElse: () => null,
       viewObject: (userName, password, userInfo) =>
           AuthInfo(userName: userName, password: password),
     );
-    _useCase.goAuth(authInfo);
+    viewObject = await _useCase.authenticate(authInfo);
   }
 }

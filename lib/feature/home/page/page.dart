@@ -118,6 +118,13 @@ class HomePage extends StatelessWidget {
                       AppProvider.navigateTo(context, AppRoutesPath.registry);
                     },
                   ),
+                  RaisedButton(
+                    key: const Key('authPage'),
+                    child: const Text('navigate to auth'),
+                    onPressed: () {
+                      AppProvider.navigateTo(context, AppRoutesPath.auth);
+                    },
+                  ),
                   ModelProvider<HomeViewModel>(
                     model: getIt.get(),
                     autoDispose: false,

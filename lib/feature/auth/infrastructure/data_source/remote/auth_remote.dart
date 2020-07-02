@@ -25,7 +25,8 @@ class AuthRemoteDataSource implements IAuthRemoteDataSource {
   }
 
   @override
-  Future<Either<HttpError, UserInfo>> authenticate(IAuth auth) {
+  Future<Either<HttpError, UserInfo>> userInfoFromAuthenticCredentials(
+      IAuth auth) {
     return _service.request(
       '/userOctocat.json',
       wrapper: ParameterWrapper(

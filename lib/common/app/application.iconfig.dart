@@ -4,6 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+import 'package:flyme_app/feature/auth/domain/model/service/authentication_service.dart';
 import 'package:flyme_app/common/service/db_service.dart';
 import 'package:flyme_app/feature/home/view_model/home_view_model.dart';
 import 'package:flyme_app/feature/auth/infrastructure/data_source/local/auth_local.dart';
@@ -24,6 +25,7 @@ import 'package:flyme_app/feature/auth/user_interface/view_model/auth_view_model
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
+  g.registerFactory<AuthenticationService>(() => AuthenticationService());
   g.registerLazySingleton<DBService>(() => DBService());
   g.registerLazySingleton<HomeViewModel>(() => HomeViewModel());
   g.registerLazySingleton<IAuthLocalDataSource>(

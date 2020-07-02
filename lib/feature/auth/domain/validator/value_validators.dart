@@ -3,7 +3,7 @@ import 'package:flyme_app/feature/auth/domain/model/entity/auth.dart';
 import 'package:flyme_ddd/flyme_ddd.dart';
 
 Either<ValueFailure<String>, String> validateAuthInfoUserName(String input) {
-  if (input.length > 0) {
+  if (input.length > -1) {
     return right(input);
   }
 
@@ -11,7 +11,7 @@ Either<ValueFailure<String>, String> validateAuthInfoUserName(String input) {
 }
 
 Either<ValueFailure<String>, String> validateAuthInfoPassword(String input) {
-  if (input.length > 0) {
+  if (input.length > -1) {
     return right(input);
   }
 

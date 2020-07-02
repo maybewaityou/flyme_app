@@ -22,7 +22,8 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<HttpError, UserInfo>> authenticate(IAuth auth) {
-    return _remoteDataSource.authenticate(auth);
+  Future<Either<HttpError, UserInfo>> userInfoFromAuthenticCredentials(
+      IAuth auth) {
+    return _remoteDataSource.userInfoFromAuthenticCredentials(auth);
   }
 }

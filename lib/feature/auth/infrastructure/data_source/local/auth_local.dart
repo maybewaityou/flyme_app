@@ -22,7 +22,8 @@ class AuthLocalDataSource implements IAuthLocalDataSource {
   }
 
   @override
-  Future<Either<HttpError, UserInfo>> authenticate(IAuth auth) {
+  Future<Either<HttpError, UserInfo>> userInfoFromAuthenticCredentials(
+      IAuth auth) {
     throw UnimplementedError();
   }
 }

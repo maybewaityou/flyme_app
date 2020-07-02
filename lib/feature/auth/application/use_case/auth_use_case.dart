@@ -1,4 +1,4 @@
-import 'package:flyme_app/common/extension/extension.dart';
+import 'package:flyme_app/feature/auth/domain/factory/auth_domain_registry.dart';
 import 'package:flyme_app/feature/auth/domain/model/value_object/auth_info.dart';
 import 'package:flyme_app/feature/auth/domain/repository/repository.dart';
 import 'package:flyme_app/feature/auth/user_interface/model/auth_view_object.dart';
@@ -6,7 +6,7 @@ import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class IAuthUseCase implements IUseCase {
-  Future<AuthViewObject> goAuth(AuthInfo info);
+  Future<AuthViewObject> authenticate(AuthInfo info);
 }
 
 @LazySingleton(as: IAuthUseCase)
@@ -16,21 +16,15 @@ class AuthUseCase implements IAuthUseCase {
   const AuthUseCase(this.repository);
 
   @override
-  Future<AuthViewObject> goAuth(AuthInfo info) async {
+  Future<AuthViewObject> authenticate(AuthInfo info) async {
     // 从资源库获取实体对象
     final auth = repository.authFrom(info);
-    // 延迟校验数据
-    final validateOption = auth.validate();
-    if (validateOption.isSome()) {
-      return AuthViewObject.error(errorMessage: validateOption.getOrCrash());
-    }
-
+    // TODO: 延迟实体数据的校验 或 在领域服务中进行实体数据的数据校验
     // 执行业务逻辑
-
-    // 执行
-    final userInfoValue = await repository.authenticate(auth);
+    final userInfoValue =
+        await AuthDomainRegistry.authenticationService().authenticate(auth);
     return userInfoValue.fold(
-      (error) => AuthViewObject.error(errorMessage: error.toString()),
+      (error) => AuthViewObject.error(errorMessage: error),
       (userInfo) => AuthViewObject.fromDataModel(userInfo),
     );
   }

@@ -4,7 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-import 'package:flyme_app/feature/auth/domain/model/service/authentication_service.dart';
+import 'package:flyme_app/feature/auth/domain/service/authentication_service.dart';
 import 'package:flyme_app/common/service/db_service.dart';
 import 'package:flyme_app/feature/home/view_model/home_view_model.dart';
 import 'package:flyme_app/feature/auth/infrastructure/data_source/local/auth_local.dart';

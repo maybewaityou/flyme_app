@@ -17,7 +17,7 @@ class AuthUseCase implements IAuthUseCase {
 
   @override
   Future<AuthViewObject> authenticate(AuthInfo info) async {
-    // 从资源库获取实体对象
+    // 从资源库获取实体对象 或 通过工厂生成实体对象
     final auth = repository.authFrom(info);
     // TODO: 延迟实体数据的校验 或 在领域服务中进行实体数据的数据校验
     // 执行业务逻辑

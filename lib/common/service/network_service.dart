@@ -5,11 +5,13 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flyme_app/common/config/config.dart';
-import 'package:flyme_app/common/utils/http/http_exception.dart';
-import 'package:flyme_app/common/utils/http/http_request.dart';
+import 'package:flyme_app/common/service/model/http/http.dart';
 import 'package:flyme_app/common/utils/log/dio_logger.dart';
+import 'package:flyme_app/shared/domain/validator/error/error.dart';
 import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:injectable/injectable.dart';
+
+export 'model/http/http.dart';
 
 typedef Action = void Function();
 

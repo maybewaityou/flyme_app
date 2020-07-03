@@ -22,7 +22,7 @@ class RegistryLocalDataSource implements IRegistryLocalDataSource {
   }
 
   @override
-  Future<Either<HttpError, UserInfo>> register(IRegistry registry) {
+  Future<Either<ExceptionDescriptor, UserInfo>> register(IRegistry registry) {
     throw UnimplementedError();
   }
 }

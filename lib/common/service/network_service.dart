@@ -46,7 +46,8 @@ class NetworkService {
     }
   }
 
-  Future<Either<HttpError, T>> request<T extends DataModel>(String url,
+  Future<Either<ExceptionDescriptor, T>> request<T extends DataModel>(
+      String url,
       {@required ParameterWrapper wrapper}) async {
     final meta = wrapper.meta;
     // TODO: 弹框判断
@@ -69,18 +70,19 @@ class NetworkService {
 
       if (!_isSuccess(response)) {
         return left(
-          BusinessError.error(
+          ExceptionDescriptor.exception(
             code: json['retCode'],
             message: json['retMsg'],
-            response: response,
           ),
         );
       }
       return right(DataModelAdapter.toModel<T>(json, meta.translator));
     } on DioError catch (error) {
-      final httpError = HttpError.fromDioError(error);
-      print('== httpError ===>>>> $httpError');
-      return left(httpError);
+      print('== DioError ===>>>> ${error.toString()}');
+      return left(ExceptionDescriptor.exception(
+        code: '-1',
+        message: 'Network Error',
+      ));
     }
   }
 

@@ -7,6 +7,6 @@ import 'package:flyme_ddd/flyme_ddd.dart';
 
 abstract class IAuthRepository implements IRepository {
   IAuth authFrom(AuthInfo info);
-  Future<Either<HttpError, UserInfo>> userInfoFromAuthenticCredentials(
-      IAuth auth);
+  Future<Either<ExceptionDescriptor, UserInfo>>
+      userInfoFromAuthenticCredentials(IAuth auth);
 }

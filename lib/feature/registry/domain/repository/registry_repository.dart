@@ -7,5 +7,5 @@ import 'package:flyme_ddd/flyme_ddd.dart';
 
 abstract class IRegistryRepository implements IRepository {
   IRegistry registryByInfo(RegistryInfo info);
-  Future<Either<HttpError, UserInfo>> register(IRegistry registry);
+  Future<Either<ExceptionDescriptor, UserInfo>> register(IRegistry registry);
 }

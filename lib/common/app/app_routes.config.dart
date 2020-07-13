@@ -6,6 +6,7 @@
 
 import 'package:fluro/fluro.dart';
 import 'package:flyme_app/common/component/component.dart';
+import 'package:flyme_app/common/component/page/not_found_page.dart';
 import 'package:flyme_app/feature/auth/user_interface/page/auth_page.dart';
 import 'package:flyme_app/feature/home/page/second.dart';
 import 'package:flyme_app/feature/registry/user_interface/page/registry_page.dart';

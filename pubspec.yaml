@@ -81,9 +81,7 @@ dependencies:
   flyme_ddd: ^0.1.3
   # 生成器注解
   freezed_annotation: ^0.11.0
-  #  flyme_annotation: ^0.0.3
-  flyme_annotation:
-    path: /Users/MeePwn/Desktop/MeePwn/Flutter/source/flyme/flyme_annotation/
+  flyme_annotation: ^0.1.0
 
 dev_dependencies:
   flutter_test:
@@ -110,8 +108,7 @@ dev_dependencies:
   injectable_generator: ^0.4.0
   intl_utils: ^1.5.0
   freezed: ^0.11.0
-  flyme_generator:
-    path: /Users/MeePwn/Desktop/MeePwn/Flutter/source/flyme/flyme_generator/
+  flyme_generator: ^0.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -1,6 +1,5 @@
 import 'package:flyme_annotation/flyme_annotation.dart';
-
-import './domain_registry.registry.dart';
+import 'package:flyme_app/shared/domain/factory/domain_registry.registry.dart';
 
 @domainFactory
 class DomainRegistry with $DomainRegistry {

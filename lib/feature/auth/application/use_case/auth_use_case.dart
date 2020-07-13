@@ -21,8 +21,9 @@ class AuthUseCase implements IAuthUseCase {
     final auth = repository.authFrom(info);
     // TODO: 延迟实体数据的校验 或 在领域服务中进行实体数据的数据校验
     // 执行业务逻辑
-    final userInfoValue =
-        await DomainRegistry.authenticationService().authenticate(auth);
+    final userInfoValue = await DomainRegistry.instance()
+        .authenticationService()
+        .authenticate(auth);
     return userInfoValue.fold(
       (error) => AuthViewObject.error(errorMessage: error),
       (userInfo) => AuthViewObject.fromDataModel(userInfo),

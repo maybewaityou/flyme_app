@@ -8,8 +8,12 @@ import 'intl/messages_all.dart';
 // Made by Localizely
 // **************************************************************************
 
+// ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
+
 class S {
   S();
+  
+  static S current;
   
   static const AppLocalizationDelegate delegate =
     AppLocalizationDelegate();
@@ -19,7 +23,9 @@ class S {
     final localeName = Intl.canonicalizedLocale(name); 
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      return S();
+      S.current = S();
+      
+      return S.current;
     });
   } 
 
@@ -27,6 +33,7 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Hello World!`
   String get hello {
     return Intl.message(
       'Hello World!',
@@ -36,6 +43,7 @@ class S {
     );
   }
 
+  /// `Skip`
   String get skip {
     return Intl.message(
       'Skip',
@@ -45,6 +53,7 @@ class S {
     );
   }
 
+  /// `Let's Go!`
   String get startApp {
     return Intl.message(
       'Let\'s Go!',
@@ -54,6 +63,7 @@ class S {
     );
   }
 
+  /// `Home`
   String get tabHome {
     return Intl.message(
       'Home',
@@ -63,6 +73,7 @@ class S {
     );
   }
 
+  /// `Community`
   String get tabCommunity {
     return Intl.message(
       'Community',
@@ -72,6 +83,7 @@ class S {
     );
   }
 
+  /// `ScenicArea`
   String get tabScenicArea {
     return Intl.message(
       'ScenicArea',
@@ -81,6 +93,7 @@ class S {
     );
   }
 
+  /// `Me`
   String get tabUser {
     return Intl.message(
       'Me',

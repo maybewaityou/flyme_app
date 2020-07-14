@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
@@ -16,7 +18,6 @@ import 'package:flyme_app/user_interface/global/theme_model.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final dialogManager = DialogManager(context);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -107,13 +108,18 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
+                    key: const Key('current context'),
+                    child: const Text('current context'),
+                    onPressed: () async {
+                      DialogManager.instance().showLoading('current context');
+                      await Future.delayed(Duration(seconds: 3));
+                      DialogManager.instance().dismissLoading();
+                    },
+                  ),
+                  RaisedButton(
                     key: const Key('secondPage'),
                     child: const Text('navigate to second page'),
                     onPressed: () async {
-                      await dialogManager.showLoading();
-                      await Future.delayed(Duration(seconds: 3));
-                      await dialogManager.dismissLoading();
-
                       AppProvider.navigateTo(context, AppRoutesPath.second);
                     },
                   ),

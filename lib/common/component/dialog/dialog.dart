@@ -1,41 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:progress_dialog/progress_dialog.dart';
+import 'package:flyme_app/common/component/provider/context_provider.dart';
+
+import 'loading/loading.dart';
 
 class DialogManager {
-  ProgressDialog _progressDialog;
+  static DialogManager _instance;
+  OverlayEntry _overlayEntry;
 
-  DialogManager._(BuildContext context) {
-    _progressDialog = ProgressDialog(context,
-        type: ProgressDialogType.Normal, isDismissible: false, showLogs: false);
+  DialogManager._();
+
+  static DialogManager instance() {
+    if (_instance == null) {
+      _instance = DialogManager._();
+    }
+    return _instance;
   }
 
-  factory DialogManager(BuildContext context) => DialogManager._(context);
+  void showLoading(String message) {
+    final context = ContextProvider.context();
 
-  Future<bool> showLoading({String message}) {
-    _progressDialog.update(message: message);
-    return _progressDialog.show();
+    if (_overlayEntry != null) _overlayEntry.remove();
+
+    final entry = OverlayEntry(builder: (ctx) {
+      return Loading(message: message);
+    });
+
+    _overlayEntry = entry;
+
+    Overlay.of(context).insert(entry);
   }
 
-  Future<bool> showLoadingWithConfig({
-    double progress,
-    double maxProgress,
-    String message,
-    Widget progressWidget,
-    TextStyle progressTextStyle,
-    TextStyle messageTextStyle,
-  }) {
-    _progressDialog.update(
-      message: message,
-      progress: progress,
-      maxProgress: maxProgress,
-      progressWidget: progressWidget,
-      progressTextStyle: progressTextStyle,
-      messageTextStyle: messageTextStyle,
-    );
-    return _progressDialog.show();
-  }
-
-  Future<bool> dismissLoading() {
-    return _progressDialog.hide();
+  void dismissLoading() {
+    if (_overlayEntry != null) {
+      _overlayEntry.remove();
+      _overlayEntry = null;
+    }
   }
 }

@@ -31,7 +31,6 @@ class RegistryPage extends StatelessWidget {
 Widget _contentBuilder(
     BuildContext context, RegistryViewModel viewModel, Widget child) {
   final viewObject = viewModel.viewObject;
-  final dialogManager = DialogManager(context);
   return viewObject.when(
     loading: () => const Center(child: CircularProgressIndicator()),
     error: (errorMessage) => Center(
@@ -106,10 +105,8 @@ Widget _contentBuilder(
           RaisedButton(
             key: const Key('registryLoading'),
             child: Text('Loading.'),
-            onPressed: () async {
-              await dialogManager.showLoading();
-              await Future.delayed(Duration(seconds: 5));
-              await dialogManager.dismissLoading();
+            onPressed: () {
+              DialogManager.instance().showLoading('Loading...');
             },
           ),
           RaisedButton(

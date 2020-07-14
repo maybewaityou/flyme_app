@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
 import 'package:flyme_app/common/app/app_routes.dart';
 import 'package:flyme_app/common/app/application.dart';
+import 'package:flyme_app/common/component/component.dart';
 import 'package:flyme_app/common/component/responsive_widget/size_config.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/config/theme/theme.dart';
@@ -32,30 +33,32 @@ class _AppComponentState extends State<AppComponent> {
     info('== initial core.route ===>>>> $initialRoute');
     return AppProvider(
       application: _application,
-      child: LayoutBuilder(
-        builder: (context, constraints) => OrientationBuilder(
-          builder: (context, orientation) {
-            SizeConfig().init(constraints, orientation);
-            return ModelProvider2<ThemeModel, LocaleModel>(
-              model: getIt.get(),
-              model2: getIt.get(),
-              builder: (context, themeModel, localeModel, _) => MaterialApp(
-                title: Config.value.appName,
-                debugShowCheckedModeBanner: false,
-                theme: appThemeData[themeModel.theme],
-                initialRoute: initialRoute,
-                onGenerateRoute: _application.router.generator,
-                home: Container(),
-                localizationsDelegates: const [
-                  S.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate
-                ],
-                supportedLocales: S.delegate.supportedLocales,
-              ),
-            );
-          },
+      child: ContextProvider(
+        child: LayoutBuilder(
+          builder: (context, constraints) => OrientationBuilder(
+            builder: (context, orientation) {
+              SizeConfig().init(constraints, orientation);
+              return ModelProvider2<ThemeModel, LocaleModel>(
+                model: getIt.get(),
+                model2: getIt.get(),
+                builder: (context, themeModel, localeModel, _) => MaterialApp(
+                  title: Config.value.appName,
+                  debugShowCheckedModeBanner: false,
+                  theme: appThemeData[themeModel.theme],
+                  initialRoute: initialRoute,
+                  onGenerateRoute: _application.router.generator,
+                  home: Container(),
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate
+                  ],
+                  supportedLocales: S.delegate.supportedLocales,
+                ),
+              );
+            },
+          ),
         ),
       ),
     );

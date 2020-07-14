@@ -75,7 +75,7 @@ dependencies:
   # 图标库
   flutter_icons: 1.1.0
   # 闪退日志收集
-  catcher: ^0.3.7
+#  catcher: ^0.3.7
   strings: ^0.1.2
   # DDD
   flyme_ddd: ^0.1.3

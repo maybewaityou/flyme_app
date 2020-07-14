@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class Loading extends StatelessWidget {
   final String message;
-  const Loading({Key key, this.message}) : super(key: key);
+  const Loading({Key key, @required this.message})
+      : assert(message != null),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -16,13 +16,13 @@ class DialogManager {
     return _instance;
   }
 
-  void showLoading({String message = 'loading...'}) {
+  void showLoading({String message}) {
     final context = ContextProvider.context();
 
     if (_overlayEntry != null) _overlayEntry.remove();
 
     final entry = OverlayEntry(builder: (ctx) {
-      return Loading(message: message);
+      return Loading(message: message ?? 'loading...');
     });
 
     _overlayEntry = entry;

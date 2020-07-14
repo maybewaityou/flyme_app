@@ -33,7 +33,7 @@ class Meta {
   final DataModelTranslator translator;
 
   const Meta({
-    this.silence,
+    this.silence = false,
     this.message,
     this.resend,
     this.successTitle,

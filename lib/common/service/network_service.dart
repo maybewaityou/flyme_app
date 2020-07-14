@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flyme_app/common/component/component.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/service/model/http/http.dart';
 import 'package:flyme_app/common/utils/log/dio_logger.dart';
@@ -52,7 +53,10 @@ class NetworkService {
       String url,
       {@required ParameterWrapper wrapper}) async {
     final meta = wrapper.meta;
-    // TODO: 弹框判断
+    //  弹框判断
+    if (!meta.silence) {
+      DialogManager.instance().showLoading(message: meta.message);
+    }
 
     try {
       // 请求转换格式
@@ -65,7 +69,8 @@ class NetworkService {
       } else {
         response = await _dio.get(url, queryParameters: parameters);
       }
-      // TODO: 弹框判断
+      // 弹框判断
+      if (!meta.silence) DialogManager.instance().dismissLoading();
 
       // 响应转换格式
       final json = DataModelAdapter.snakeCase2Camelize(response.data);
@@ -80,6 +85,9 @@ class NetworkService {
       }
       return right(DataModelAdapter.toModel<T>(json, meta.translator));
     } on DioError catch (error) {
+      // 弹框判断
+      if (!meta.silence) DialogManager.instance().dismissLoading();
+
       print('== DioError ===>>>> ${error.toString()}');
       return left(ExceptionDescriptor.exception(
         code: '-1',

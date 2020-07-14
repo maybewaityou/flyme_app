@@ -16,7 +16,7 @@ class DialogManager {
     return _instance;
   }
 
-  void showLoading(String message) {
+  void showLoading({String message = 'loading...'}) {
     final context = ContextProvider.context();
 
     if (_overlayEntry != null) _overlayEntry.remove();

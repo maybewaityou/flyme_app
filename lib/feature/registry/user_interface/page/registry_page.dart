@@ -106,7 +106,7 @@ Widget _contentBuilder(
             key: const Key('registryLoading'),
             child: Text('Loading.'),
             onPressed: () {
-              DialogManager.instance().showLoading('Loading...');
+              DialogManager.instance().showLoading();
             },
           ),
           RaisedButton(

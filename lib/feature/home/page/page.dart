@@ -111,7 +111,8 @@ class HomePage extends StatelessWidget {
                     key: const Key('current context'),
                     child: const Text('current context'),
                     onPressed: () async {
-                      DialogManager.instance().showLoading('current context');
+                      DialogManager.instance()
+                          .showLoading(message: 'current context');
                       await Future.delayed(Duration(seconds: 3));
                       DialogManager.instance().dismissLoading();
                     },

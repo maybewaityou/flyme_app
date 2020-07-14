@@ -29,7 +29,7 @@ class SecondPage extends StatelessWidget {
               key: const Key('second context'),
               child: const Text('second context'),
               onPressed: () async {
-                DialogManager.instance().showLoading('second context');
+                DialogManager.instance().showLoading(message: 'second context');
                 await Future.delayed(Duration(seconds: 3));
                 DialogManager.instance().dismissLoading();
               },

@@ -365,10 +365,10 @@ packages:
   flyme_ddd:
     dependency: "direct main"
     description:
-      path: "/Users/MeePwn/Desktop/MeePwn/Flutter/source/flyme_ddd"
-      relative: false
-    source: path
-    version: "0.1.3"
+      name: flyme_ddd
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.4"
   flyme_generator:
     dependency: "direct dev"
     description:

@@ -38,7 +38,9 @@ class RegistryRemoteDataSource implements IRegistryRemoteDataSource {
       '/userOctocat.json',
       wrapper: ParameterWrapper(
         params: RegistryDto.fromDomain(registry),
-        meta: Meta(translator: UserInfoTranslator()),
+        meta: Meta(
+          translator: UserInfoTranslator(),
+        ),
       ),
     );
   }

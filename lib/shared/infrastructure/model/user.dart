@@ -1,9 +1,11 @@
 import 'package:equatable/equatable.dart';
+import 'package:flyme_annotation/ddd/ddd.dart';
 import 'package:flyme_ddd/flyme_ddd.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user.g.dart';
 
+@addTranslator
 @JsonSerializable()
 class UserInfo extends Equatable implements DataModel {
   final String nodeId;

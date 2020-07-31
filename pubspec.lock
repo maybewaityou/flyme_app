@@ -358,23 +358,23 @@ packages:
   flyme_annotation:
     dependency: "direct main"
     description:
-      name: flyme_annotation
-      url: "https://pub.flutter-io.cn"
-    source: hosted
+      path: "/Users/MeePwn/Desktop/MeePwn/Flutter/source/flyme/flyme_annotation"
+      relative: false
+    source: path
     version: "0.1.0"
   flyme_ddd:
     dependency: "direct main"
     description:
-      name: flyme_ddd
-      url: "https://pub.flutter-io.cn"
-    source: hosted
+      path: "/Users/MeePwn/Desktop/MeePwn/Flutter/source/flyme_ddd"
+      relative: false
+    source: path
     version: "0.1.4"
   flyme_generator:
     dependency: "direct dev"
     description:
-      name: flyme_generator
-      url: "https://pub.flutter-io.cn"
-    source: hosted
+      path: "/Users/MeePwn/Desktop/MeePwn/Flutter/source/flyme/flyme_generator"
+      relative: false
+    source: path
     version: "0.1.1"
   freezed:
     dependency: "direct dev"

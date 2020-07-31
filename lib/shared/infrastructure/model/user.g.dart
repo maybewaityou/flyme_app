@@ -63,3 +63,17 @@ Map<String, dynamic> _$DogToJson(Dog instance) => <String, dynamic>{
       'dogName': instance.dogName,
       'age': instance.age,
     };
+
+// **************************************************************************
+// TranslatorGenerator
+// **************************************************************************
+
+class UserInfoTranslator extends DataModelTranslator<UserInfo> {
+  const UserInfoTranslator._();
+  factory UserInfoTranslator() => UserInfoTranslator._();
+
+  @override
+  UserInfo translate(Map<String, dynamic> json) {
+    return UserInfo.fromJson(json);
+  }
+}

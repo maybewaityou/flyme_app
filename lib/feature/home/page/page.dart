@@ -12,8 +12,8 @@ import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/config/theme/theme.dart';
 import 'package:flyme_app/common/provider/model_provider.dart';
 import 'package:flyme_app/feature/home/view_model/home_view_model.dart';
-import 'package:flyme_app/user_interface/global/locale_model.dart';
-import 'package:flyme_app/user_interface/global/theme_model.dart';
+import 'package:flyme_app/user_interface/view_model/locale_model.dart';
+import 'package:flyme_app/user_interface/view_model/theme_model.dart';
 
 class HomePage extends StatelessWidget {
   @override

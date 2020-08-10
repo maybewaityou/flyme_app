@@ -5,7 +5,6 @@ import 'package:flyme_app/feature/registry/domain/model/value_object/registry_in
 import 'package:flyme_app/feature/registry/domain/repository/repository.dart';
 import 'package:flyme_app/feature/registry/infrastructure/model/model.dart';
 import 'package:flyme_app/shared/domain/validator/error/error.dart';
-import 'package:flyme_app/shared/infrastructure/anticorruption/translator/translator.dart';
 import 'package:flyme_app/shared/infrastructure/model/model.dart';
 import 'package:injectable/injectable.dart';
 

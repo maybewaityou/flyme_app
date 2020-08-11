@@ -12,8 +12,7 @@ import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/config/theme/theme.dart';
 import 'package:flyme_app/common/provider/model_provider.dart';
 import 'package:flyme_app/feature/home/view_model/home_view_model.dart';
-import 'package:flyme_app/user_interface/view_model/locale_model.dart';
-import 'package:flyme_app/user_interface/view_model/theme_model.dart';
+import 'package:flyme_app/user_interface/view_model/system_model.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -63,7 +62,7 @@ class HomePage extends StatelessWidget {
                     key: const Key('blueLightTheme'),
                     child: const Text('change theme blueLight'),
                     onPressed: () {
-                      final themeModel = getIt.get<ThemeModel>();
+                      final themeModel = getIt.get<SystemModel>();
                       themeModel.theme = AppTheme.blueLight;
                     },
                   ),
@@ -71,7 +70,7 @@ class HomePage extends StatelessWidget {
                     key: const Key('blueDarkTheme'),
                     child: const Text('change theme blueDark'),
                     onPressed: () {
-                      final themeModel = getIt.get<ThemeModel>();
+                      final themeModel = getIt.get<SystemModel>();
                       themeModel.theme = AppTheme.blueDark;
                     },
                   ),
@@ -79,7 +78,7 @@ class HomePage extends StatelessWidget {
                     key: const Key('greenLightTheme'),
                     child: const Text('change theme greenLight'),
                     onPressed: () {
-                      final themeModel = getIt.get<ThemeModel>();
+                      final themeModel = getIt.get<SystemModel>();
                       themeModel.theme = AppTheme.greenLight;
                     },
                   ),
@@ -87,7 +86,7 @@ class HomePage extends StatelessWidget {
                     key: const Key('greenDarkTheme'),
                     child: const Text('change theme greenDark'),
                     onPressed: () {
-                      final themeModel = getIt.get<ThemeModel>();
+                      final themeModel = getIt.get<SystemModel>();
                       themeModel.theme = AppTheme.greenDark;
                     },
                   ),
@@ -95,7 +94,7 @@ class HomePage extends StatelessWidget {
                     key: const Key('zhLanguage'),
                     child: const Text('change language zh'),
                     onPressed: () {
-                      final localeModel = getIt.get<LocaleModel>();
+                      final localeModel = getIt.get<SystemModel>();
                       localeModel.changeLocale('zh');
                     },
                   ),
@@ -103,7 +102,7 @@ class HomePage extends StatelessWidget {
                     key: const Key('enLanguage'),
                     child: const Text('change language en'),
                     onPressed: () {
-                      final localeModel = getIt.get<LocaleModel>();
+                      final localeModel = getIt.get<SystemModel>();
                       localeModel.changeLocale('en');
                     },
                   ),

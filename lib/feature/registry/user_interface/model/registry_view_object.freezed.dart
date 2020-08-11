@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'registry_view_object.dart';
 
@@ -12,18 +12,22 @@ T _$identity<T>(T value) => value;
 class _$RegistryFormTypeTearOff {
   const _$RegistryFormTypeTearOff();
 
+// ignore: unused_element
   _RegistryFormType type() {
     return const _RegistryFormType();
   }
 
+// ignore: unused_element
   _RegistryFormUserName userName() {
     return const _RegistryFormUserName();
   }
 
+// ignore: unused_element
   _RegistryFormEmailAddress emailAddress() {
     return const _RegistryFormEmailAddress();
   }
 
+// ignore: unused_element
   _RegistryFormPhoneNumber phoneNumber() {
     return const _RegistryFormPhoneNumber();
   }
@@ -485,6 +489,7 @@ abstract class _RegistryFormPhoneNumber implements RegistryFormType {
 class _$RegistryViewObjectTearOff {
   const _$RegistryViewObjectTearOff();
 
+// ignore: unused_element
   _ViewObject viewObject(
       {@required RegistryType type,
       @required String userName,
@@ -504,10 +509,12 @@ class _$RegistryViewObjectTearOff {
     );
   }
 
+// ignore: unused_element
   _ViewLoading loading() {
     return const _ViewLoading();
   }
 
+// ignore: unused_element
   _ViewError error({@required String errorMessage}) {
     return _ViewError(
       errorMessage: errorMessage,

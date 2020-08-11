@@ -10,8 +10,7 @@ import 'package:flyme_app/common/config/theme/theme.dart';
 import 'package:flyme_app/common/provider/model_provider.dart';
 import 'package:flyme_app/common/utils/log/logger.dart';
 import 'package:flyme_app/generated/l10n.dart';
-import 'package:flyme_app/user_interface/view_model/locale_model.dart';
-import 'package:flyme_app/user_interface/view_model/theme_model.dart';
+import 'package:flyme_app/user_interface/view_model/system_model.dart';
 
 class AppComponent extends StatefulWidget {
   final Application _application;
@@ -38,13 +37,12 @@ class _AppComponentState extends State<AppComponent> {
           builder: (context, constraints) => OrientationBuilder(
             builder: (context, orientation) {
               SizeConfig().init(constraints, orientation);
-              return ModelProvider2<ThemeModel, LocaleModel>(
+              return ModelProvider<SystemModel>(
                 model: getIt.get(),
-                model2: getIt.get(),
-                builder: (context, themeModel, localeModel, _) => MaterialApp(
+                builder: (context, systemModel, _) => MaterialApp(
                   title: Config.value.appName,
                   debugShowCheckedModeBanner: false,
-                  theme: appThemeData[themeModel.theme],
+                  theme: appThemeData[systemModel.theme],
                   initialRoute: initialRoute,
                   onGenerateRoute: _application.router.generator,
                   home: Container(),

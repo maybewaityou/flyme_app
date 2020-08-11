@@ -27,7 +27,7 @@ Widget _contentBuilder(
     BuildContext context, AuthViewModel viewModel, Widget child) {
   return viewModel.viewObject.when(
     loading: () => Container(),
-    error: (errorMessage) => Container(),
+    error: (errorMessage) => Container(child: Text(errorMessage)),
     viewObject: (userName, password, userInfo) => Container(
       child: FlatButton(
         onPressed: viewModel.handleAuthPress,

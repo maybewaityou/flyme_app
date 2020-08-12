@@ -7,10 +7,10 @@ import 'package:flyme_app/common/component/component.dart';
 import 'package:flyme_app/common/component/responsive_widget/size_config.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/config/theme/theme.dart';
-import 'package:flyme_app/common/provider/model_provider.dart';
 import 'package:flyme_app/common/utils/log/logger.dart';
 import 'package:flyme_app/generated/l10n.dart';
 import 'package:flyme_app/user_interface/view_model/system_model.dart';
+import 'package:flyme_provider/flyme_provider.dart';
 
 class AppComponent extends StatefulWidget {
   final Application _application;

@@ -10,9 +10,9 @@ import 'package:flyme_app/common/component/widget/app_title/app_title.dart';
 import 'package:flyme_app/common/component/widget/widget.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/config/theme/theme.dart';
-import 'package:flyme_app/common/provider/model_provider.dart';
 import 'package:flyme_app/feature/home/view_model/home_view_model.dart';
 import 'package:flyme_app/user_interface/view_model/system_model.dart';
+import 'package:flyme_provider/flyme_provider.dart';
 
 class HomePage extends StatelessWidget {
   @override

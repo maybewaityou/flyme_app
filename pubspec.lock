@@ -390,6 +390,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.1.3"
+  flyme_provider:
+    dependency: "direct main"
+    description:
+      path: "/Users/MeePwn/Desktop/MeePwn/Flutter/source/flyme_provider"
+      relative: false
+    source: path
+    version: "0.0.1"
   freezed:
     dependency: "direct dev"
     description:

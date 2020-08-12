@@ -4,10 +4,10 @@ import 'package:flyme_app/common/app/application.dart';
 import 'package:flyme_app/common/component/component.dart';
 import 'package:flyme_app/common/component/widget/app_title/app_title.dart';
 import 'package:flyme_app/common/config/config.dart';
-import 'package:flyme_app/common/provider/model_provider.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/user_interface/model/model.dart';
 import 'package:flyme_app/feature/registry/user_interface/view_model/registry_view_model.dart';
+import 'package:flyme_provider/flyme_provider.dart';
 
 @FRoute(url: '/registry')
 class RegistryPage extends StatelessWidget {

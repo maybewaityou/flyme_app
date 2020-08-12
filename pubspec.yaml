@@ -79,6 +79,8 @@ dependencies:
   strings: ^0.1.2
   # DDD
   flyme_ddd: ^0.1.4
+  flyme_provider:
+    path: /Users/MeePwn/Desktop/MeePwn/Flutter/source/flyme_provider
 
   # 生成器注解
   freezed_annotation: ^0.11.0

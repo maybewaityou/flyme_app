@@ -1,60 +1,57 @@
 /// 主题
 import 'package:flutter/material.dart';
 
-enum AppTheme { blueLight, blueDark, greenLight, greenDark }
+import 'palette.dart';
 
-const _blue = Colors.blue;
-final _darkBlue = Colors.blue[700];
-const _green = Colors.green;
-final _darkGreen = Colors.green[700];
+enum AppTheme { blueLight, blueDark, greenLight, greenDark }
 
 Map<AppTheme, ThemeData> appThemeData = {
   AppTheme.blueLight: ThemeData(
     brightness: Brightness.light,
-    primaryColor: _blue,
+    primaryColor: blue,
     buttonTheme: ButtonThemeData(
       textTheme: ButtonTextTheme.primary,
-      buttonColor: _blue,
+      buttonColor: blue,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      foregroundColor: _blue,
-      backgroundColor: _blue,
+      foregroundColor: blue,
+      backgroundColor: blue,
     ),
   ),
   AppTheme.blueDark: ThemeData(
     brightness: Brightness.dark,
-    primaryColor: _darkBlue,
+    primaryColor: darkBlue,
     buttonTheme: ButtonThemeData(
       textTheme: ButtonTextTheme.normal,
-      buttonColor: _darkBlue,
+      buttonColor: darkBlue,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      foregroundColor: _darkBlue,
-      backgroundColor: _darkBlue,
+      foregroundColor: darkBlue,
+      backgroundColor: darkBlue,
     ),
   ),
   AppTheme.greenLight: ThemeData(
     brightness: Brightness.light,
-    primaryColor: _green,
+    primaryColor: green,
     buttonTheme: ButtonThemeData(
       textTheme: ButtonTextTheme.primary,
-      buttonColor: _green,
+      buttonColor: green,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      foregroundColor: _green,
-      backgroundColor: _green,
+      foregroundColor: green,
+      backgroundColor: green,
     ),
   ),
   AppTheme.greenDark: ThemeData(
     brightness: Brightness.dark,
-    primaryColor: _darkGreen,
+    primaryColor: darkGreen,
     buttonTheme: ButtonThemeData(
       textTheme: ButtonTextTheme.normal,
-      buttonColor: _darkGreen,
+      buttonColor: darkGreen,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      foregroundColor: _darkGreen,
-      backgroundColor: _darkGreen,
+      foregroundColor: darkGreen,
+      backgroundColor: darkGreen,
     ),
   ),
 };

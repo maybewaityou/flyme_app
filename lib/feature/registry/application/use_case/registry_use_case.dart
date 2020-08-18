@@ -17,7 +17,7 @@ class RegistryUseCase implements IRegistryUseCase {
 
   @override
   Future<RegistryViewObject> registry(RegistryInfo info) async {
-    // 获取领域对象
+    // 获取领域对象, 资源库充当领域工厂 (可创建领域工厂, 从工厂获取领域对象)
     final registry = repository.registryByInfo(info);
     // 校验参数
     final validateOption = registry.validate();

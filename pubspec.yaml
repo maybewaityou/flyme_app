@@ -87,6 +87,9 @@ dependencies:
   freezed_annotation: ^0.11.0
   flyme_annotation: ^0.1.1
 
+  chassis:
+    path: /Users/MeePwn/Desktop/flyme_app/packages/chassis
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

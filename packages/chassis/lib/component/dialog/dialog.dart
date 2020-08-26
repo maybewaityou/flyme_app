@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flyme_app/common/component/provider/context_provider.dart';
 
+import '../provider/context_provider.dart';
 import 'loading/loading.dart';
 
 class DialogManager {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flyme_app/common/component/responsive_widget/size_config.dart';
+
+import '../responsive_widget/size_config.dart';
 
 export 'size_config.dart';
 

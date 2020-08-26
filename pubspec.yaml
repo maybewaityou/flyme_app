@@ -78,15 +78,14 @@ dependencies:
   # 闪退日志收集
   #  catcher: ^0.3.7
   strings: ^0.1.2
+  # 生成器注解
+  freezed_annotation: ^0.11.0
+  flyme_annotation: ^0.1.1
   # DDD
   flyme_ddd: ^0.1.4
   flyme_provider:
     path: /Users/MeePwn/Desktop/MeePwn/Flutter/source/flyme_provider
-
-  # 生成器注解
-  freezed_annotation: ^0.11.0
-  flyme_annotation: ^0.1.1
-
+  # 通用基底
   chassis:
     path: /Users/MeePwn/Desktop/flyme_app/packages/chassis
 

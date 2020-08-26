@@ -1,4 +1,4 @@
-package com.example.chassis
+package com.zero2hero.chassis
 
 import io.flutter.embedding.android.FlutterActivity
 

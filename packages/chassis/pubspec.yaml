@@ -29,7 +29,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
 
-  flyme_annotation: ^0.1.1
+  shared_preferences: ^0.5.10
+  logging: ^0.11.4
+  strings: ^0.1.2
 
 dev_dependencies:
   flutter_test:

@@ -1,9 +1,9 @@
 import 'dart:async';
 
+import 'package:chassis/chassis.dart';
 import 'package:flutter/material.dart';
 import 'package:flyme_annotation/flyme_annotation.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
-import 'package:flyme_app/common/component/component.dart';
 
 @FRoute(url: '/home/second')
 class SecondPage extends StatelessWidget {

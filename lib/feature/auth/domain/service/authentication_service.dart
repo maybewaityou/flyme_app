@@ -1,6 +1,6 @@
+import 'package:chassis/chassis.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flyme_annotation/flyme_annotation.dart';
-import 'package:flyme_app/common/extension/extension.dart';
 import 'package:flyme_app/feature/auth/domain/model/entity/auth.dart';
 import 'package:flyme_app/shared/domain/factory/domain_registry.dart';
 import 'package:flyme_app/shared/infrastructure/model/model.dart';

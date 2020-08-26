@@ -1,7 +1,7 @@
+import 'package:chassis/chassis.dart';
 import 'package:flutter/material.dart';
 import 'package:flyme_annotation/router/router.dart';
 import 'package:flyme_app/common/app/application.dart';
-import 'package:flyme_app/common/component/widget/widget.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/feature/auth/user_interface/view_model/auth_view_model.dart';
 import 'package:flyme_provider/flyme_provider.dart';

@@ -1,8 +1,7 @@
+import 'package:chassis/chassis.dart';
 import 'package:flutter/material.dart';
 import 'package:flyme_annotation/flyme_annotation.dart';
 import 'package:flyme_app/common/app/application.dart';
-import 'package:flyme_app/common/component/component.dart';
-import 'package:flyme_app/common/component/widget/app_title/app_title.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/user_interface/model/model.dart';

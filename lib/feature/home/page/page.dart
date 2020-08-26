@@ -1,13 +1,11 @@
 import 'dart:async';
 
+import 'package:chassis/chassis.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
 import 'package:flyme_app/common/app/app_routes.dart';
 import 'package:flyme_app/common/app/application.dart';
-import 'package:flyme_app/common/component/component.dart';
-import 'package:flyme_app/common/component/widget/app_title/app_title.dart';
-import 'package:flyme_app/common/component/widget/widget.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/config/theme/theme.dart';
 import 'package:flyme_app/feature/home/view_model/home_view_model.dart';

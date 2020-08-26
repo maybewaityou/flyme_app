@@ -1,13 +1,11 @@
+import 'package:chassis/chassis.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
 import 'package:flyme_app/common/app/app_routes.dart';
 import 'package:flyme_app/common/app/application.dart';
-import 'package:flyme_app/common/component/component.dart';
-import 'package:flyme_app/common/component/responsive_widget/size_config.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/config/theme/theme.dart';
-import 'package:flyme_app/common/utils/log/logger.dart';
 import 'package:flyme_app/generated/l10n.dart';
 import 'package:flyme_app/user_interface/view_model/system_model.dart';
 import 'package:flyme_provider/flyme_provider.dart';

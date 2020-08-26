@@ -1,4 +1,4 @@
-import 'package:flyme_app/common/extension/extension.dart';
+import 'package:chassis/chassis.dart';
 import 'package:flyme_app/feature/registry/domain/model/value_object/registry_info.dart';
 import 'package:flyme_app/feature/registry/domain/repository/repository.dart';
 import 'package:flyme_app/feature/registry/user_interface/model/model.dart';

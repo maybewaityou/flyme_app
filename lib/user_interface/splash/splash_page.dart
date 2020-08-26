@@ -1,3 +1,4 @@
+import 'package:chassis/chassis.dart';
 import 'package:flutter/material.dart';
 import 'package:flyme_annotation/router/router.dart';
 import 'package:flyme_app/common/app/app_provider.dart';
@@ -5,8 +6,6 @@ import 'package:flyme_app/common/app/app_routes.dart';
 import 'package:flyme_app/common/app/application.dart';
 import 'package:flyme_app/common/config/config.dart';
 import 'package:flyme_app/common/service/service.dart';
-import 'package:flyme_app/common/utils/log/logger.dart';
-import 'package:flyme_app/common/utils/stroage/sp_utils.dart';
 
 @FRoute(url: '/splash')
 class SplashPage extends StatefulWidget {

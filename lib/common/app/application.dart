@@ -1,4 +1,4 @@
-import 'package:chassis/chassis.dart';
+import 'package:chassis/utils/log/logger.dart' as logger;
 import 'package:fluro/fluro.dart';
 import 'package:flyme_app/common/app/app_routes.dart';
 import 'package:flyme_app/common/app/application.iconfig.dart';
@@ -23,23 +23,23 @@ class Application {
 
   Future<void> _initInject() async {
     configureDependencies();
-    info('inject container init : Success');
+    logger.info('inject container init : Success');
   }
 
   void _initLog() {
-    init();
+    logger.init();
 
     switch (Config.value.environmentType) {
       case EnvType.testing:
       case EnvType.development:
       case EnvType.staging:
         {
-          setLevel(Level.ALL);
+          logger.setLevel(Level.ALL);
           break;
         }
       case EnvType.production:
         {
-          setLevel(Level.INFO);
+          logger.setLevel(Level.INFO);
           break;
         }
     }

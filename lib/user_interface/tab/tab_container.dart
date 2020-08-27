@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flyme_annotation/flyme_annotation.dart';
 import 'package:flyme_app/feature/home/page/page.dart';
 import 'package:flyme_app/generated/l10n.dart';
+import 'package:oktoast/oktoast.dart';
 
 @FRoute(url: '/tab')
 class TabContainer extends StatefulWidget {
@@ -56,9 +58,12 @@ class _TabContainerState extends State<TabContainer> {
               DateTime.now().difference(_lastPressed) > Duration(seconds: 1)) {
             // 两次点击间隔超过1秒则重新计时
             _lastPressed = DateTime.now();
+            showToast('连续按两次返回键, 退出应用', position: ToastPosition.bottom);
             return false;
           }
-          return true;
+          // 退出 App
+          await SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+          return false;
         },
         child: PageView.builder(
           itemBuilder: (ctx, index) => _widgetOptions[index],

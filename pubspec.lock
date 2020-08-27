@@ -130,7 +130,7 @@ packages:
   chassis:
     dependency: "direct main"
     description:
-      path: "/Users/MeePwn/Desktop/flyme_app/packages/chassis"
+      path: "/Users/MeePwn/Desktop/MeePwn/Flutter/source/chassis"
       relative: false
     source: path
     version: "1.0.0+1"

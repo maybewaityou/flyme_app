@@ -87,7 +87,7 @@ dependencies:
     path: /Users/MeePwn/Desktop/MeePwn/Flutter/source/flyme_provider
   # 通用基底
   chassis:
-    path: /Users/MeePwn/Desktop/flyme_app/packages/chassis
+    path: /Users/MeePwn/Desktop/MeePwn/Flutter/source/chassis
 
 dev_dependencies:
   flutter_test:

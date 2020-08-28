@@ -81,6 +81,7 @@ dependencies:
   # 生成器注解
   freezed_annotation: ^0.11.0
   flyme_annotation: ^0.1.1
+  acyclic_steps: ^0.10.1
   # DDD
   flyme_ddd: ^0.1.4
   flyme_provider:

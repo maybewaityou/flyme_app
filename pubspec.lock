@@ -8,6 +8,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "6.0.0"
+  acyclic_steps:
+    dependency: "direct main"
+    description:
+      name: acyclic_steps
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.10.1"
   analyzer:
     dependency: transitive
     description:

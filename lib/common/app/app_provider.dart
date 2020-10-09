@@ -1,5 +1,5 @@
 import 'package:fluro/fluro.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flyme_app/common/app/application.dart';
 
 class AppProvider extends InheritedWidget {
